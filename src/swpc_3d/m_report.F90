@@ -61,19 +61,40 @@ contains
     if( myid == terminal_output_node ) then
 
       write(STDERR,*)
-      write(STDERR,'(A)') " ------------------------------------------------------------------------------"
+
+      write(STDERR,'(A)') ' --------------------------------------------------------------------------- '
+      write(STDERR,'(A)') '                                                                             '
+      write(STDERR,'(A)') '                                                                             '
+      write(STDERR,'(A)') '            *****    **      ***      **  *********         ******           '
+      write(STDERR,'(A)') '          *********  **      ***      **  ***********     *********          '
+      write(STDERR,'(A)') '         ***         ***    ** **    ***  ***       **   **                  '
+      write(STDERR,'(A)') '         **           **    ** **    **   ***       **  **                   '
+      write(STDERR,'(A)') '         ***          **    ** **    **   ***       **  **                   '
+      write(STDERR,'(A)') '          *****       **    ** ***   **   ***      *** ***                   '
+      write(STDERR,'(A)') '           ******     ***  **   **   **   ***     ***  ***                   '
+      write(STDERR,'(A)') '               ****    **  **   **  **    ********     ***                   '
+      write(STDERR,'(A)') '                 ***   **  **   **  **    ***           **                   '
+      write(STDERR,'(A)') '         *        **   ** **     ** **    ***           ***                  '
+      write(STDERR,'(A)') '         **       **    ****     *****    ***            **        *         '
+      write(STDERR,'(A)') '         **********     ***       ***     ***             *********          '
+      write(STDERR,'(A)') '           ******       ***       ***     ***               ******           '
+      write(STDERR,'(A)') '                                                                             '
+      write(STDERR,'(A)') '                                                                             ' 
+      write(STDERR,'(A)') '          S e i s m i c   W a v e   P r o p a g a t i o n   C o d e          ' 
+      write(STDERR,'(A)') '                                                                             '
+      write(STDERR,'(A)') '  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  '
+      write(STDERR,'(A)') '                                                                             '
       if( benchmark_mode ) then
-        write(STDERR,'(A)') "  SWPC_3D (benchmark mode)                                                    "
+        write(STDERR,'(A)') "   Mode                    :   SWPC_3D (benchmark)                   "
       else if ( pw_mode ) then
-        write(STDERR,'(A)') "  SWPC_3D (plane wave mode)                                                   "
+        write(STDERR,'(A)') "   Mode                    :   SWPC_3D (plane wave)                  "
       else if ( bf_mode ) then
-        write(STDERR,'(A)') "  SWPC_3D (body force mode)                                                   "
+        write(STDERR,'(A)') "   Mode                    :   SWPC_3D (single force)                "
       else if ( green_mode ) then
-        write(STDERR,'(A)') "  SWPC_3D (Green's function mode)                                             "
+        write(STDERR,'(A)') "   Mode                    :   SWPC_3D (Green's function)            "
       else
-        write(STDERR,'(A)') "  SWPC_3D                                                                     "
+        write(STDERR,'(A)') "   Mode                    :   SWPC_3D                               "
       end if
-      write(STDERR,'(A)') " ------------------------------------------------------------------------------"
 
     end if
 
@@ -83,18 +104,19 @@ contains
     call fdm_cond_wavelength( real(dx), real(dy), real(dz), vmin, fmax, r )
 
     if( myid == terminal_output_node ) then
+      write(STDERR,'(A,I8,A,I6,A,I6)') "   Grid Size               : ", nx, " x ", ny ," x ", nz
+      write(STDERR,'(A,I8,A,I4)'     ) "   MPI Partitioning        : ", nproc_x, " x ", nproc_y
+      write(STDERR,'(A,F15.3,A)'     ) "   Total Memory Size       : ", mem_all,  "  [GiB]"
+      write(STDERR,'(A,F15.3,A)'     ) "   Node Memory Size        : ", mem_node, "  [GiB]"
+      write(STDERR,'(A,F15.3,A)'     ) "   Stability  Condition c  : ", c,        "  (c<1)"
+      write(STDERR,'(A,F15.3,A)'     ) "   Wavelength Condition r  : ", r       , "  (r>5-10)"
+      write(STDERR,'(A,F15.3,A)'     ) "   Minimum velocity        : ", vmin,     "  [km/s]"
+      write(STDERR,'(A,F15.3,A)'     ) "   Maximum velocity        : ", vmax,     "  [km/s]"
+      write(STDERR,'(A,F15.3,A)'     ) "   Maximum frequency       : ", fmax,     "  [Hz]"
       write(STDERR,*)
-      write(STDERR,'(A,I8,A,I6,A,I6)') "  Grid Size               : ", nx, " x ", ny ," x ", nz
-      write(STDERR,'(A,I8,A,I4)'     ) "  MPI Partitioning        : ", nproc_x, " x ", nproc_y
-      write(STDERR,'(A,F15.3,A)'     ) "  Total Memory Size       : ", mem_all,  "  [GiB]"
-      write(STDERR,'(A,F15.3,A)'     ) "  Node Memory Size        : ", mem_node, "  [GiB]"
-      write(STDERR,'(A,F15.3,A)'     ) "  Stability  Condition c  : ", c,        "  (c<1)"
-      write(STDERR,'(A,F15.3,A)'     ) "  Wavelength Condition r  : ", r       , "  (r>5-10)"
-      write(STDERR,'(A,F15.3,A)'     ) "  Minimum velocity        : ", vmin,     "  [km/s]"
-      write(STDERR,'(A,F15.3,A)'     ) "  Maximum velocity        : ", vmax,     "  [km/s]"
-      write(STDERR,'(A,F15.3,A)'     ) "  Maximum frequency       : ", fmax,     "  [Hz]"
-      write(STDERR,*)
-      write(STDERR,'(A)') " ------------------------------------------------------------------------------"
+      write(STDERR,'(A)') '  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  '
+
+
       write(STDERR,*)
 
       if( r < 5   ) then
@@ -214,12 +236,11 @@ contains
     if( myid == terminal_output_node ) then
 
       write(STDERR,*)
-      write(STDERR,'(A)') " ------------------------------------------------------------------------------"
+      write(STDERR,'(A)') '  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .  '
       write(STDERR,*) ""
       write(STDERR,'(A,F15.3,A)')        "  Total time             : ", ttotal, " s"
       write(STDERR,*)
-      write(STDERR,'(A)') " ------------------------------------------------------------------------------"
-
+      write(STDERR,'(A)') ' --------------------------------------------------------------------------- '
     end if
 
   end subroutine report__terminate
