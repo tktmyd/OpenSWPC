@@ -957,6 +957,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#-xym0ij-x-y-z-t_0-t_r-m_0-m_xx-m_yy-m_zz-m_yz-m_xz-m_xy" title="-  'xym0ij' :  x, y, z, T_0, T_R, M_0, m_{xx}, m_{yy},  m_{zz},  m_{yz}, m_{xz}, m_{xy}" class="md-nav__link">
+    -  'xym0ij' :  x, y, z, T_0, T_R, M_0, m_{xx}, m_{yy},  m_{zz},  m_{yz}, m_{xz}, m_{xy}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" title="実体力モード" class="md-nav__link">
     実体力モード
   </a>
@@ -1206,6 +1213,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#-xym0ij-x-y-z-t_0-t_r-m_0-m_xx-m_yy-m_zz-m_yz-m_xz-m_xy" title="-  'xym0ij' :  x, y, z, T_0, T_R, M_0, m_{xx}, m_{yy},  m_{zz},  m_{yz}, m_{xz}, m_{xy}" class="md-nav__link">
+    -  'xym0ij' :  x, y, z, T_0, T_R, M_0, m_{xx}, m_{yy},  m_{zz},  m_{yz}, m_{xz}, m_{xy}
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" title="実体力モード" class="md-nav__link">
     実体力モード
   </a>
@@ -1306,7 +1320,7 @@
 <h2 id="_3">モーメントテンソル震源<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>震源メカニズムは6成分のモーメントテンソル，もしくはダブルカップル震源を特徴付ける<code>strike</code>,
 <code>dip</code>,
-<code>rake</code>の3つの角度で与えられる．また，震源位置を計算座標系もしくは地理座標系でも与えられるので，あわせて8種類の震源メカニズムフォーマットがある．</p>
+<code>rake</code>の3つの角度で与えられる．また，震源位置を計算座標系もしくは地理座標系でも与えられる．さらに，震源の大きさを表す方法に地震モーメント<script type="math/tex">M_0</script>，モーメントマグニチュード<script type="math/tex">M_W</script>，すべり量<script type="math/tex">D</script>と断層面積<script type="math/tex">S</script>の3通りがある．これらの組み合わせにより，あわせて10種類の震源メカニズムフォーマットがある．</p>
 <p>震源はモーメント時間関数を用いて応力降下として与えられる．要素モーメント時間関数は上述の6種類から選び，関数名をパラメタとして与える．どの関数であっても，震源の破壊開始時間<script type="math/tex">T_0</script>と継続時間<script type="math/tex">T_R</script>，ならびに全モーメント（モーメント時間関数の時間積分値）<script type="math/tex">M_0</script>がパラメタとして与えられる．</p>
 <p><code>OpenSWPC</code>は複数の点震源を用いることができる．震源ファイルに複数行の震源要素があれば，それらすべての要素（のうち計算モデル領域内にある点）から地震動を放射させる．震源位置と破壊開始時刻等を少しずつずらすことにより，擬似的に有限断層面からの破壊を再現することも可能である．
 なお，震源ファイルは，そのフォーマットに関わらずすべて<code>#</code>から始まる行はコメント行と見なされる．</p>
@@ -1316,42 +1330,49 @@
 <dl>
 <dt><strong><code>stf_format</code></strong></dt>
 <dd>
-<p>モーメントテンソルの表現の種別．以下6種類から選ぶ．</p>
+<p>モーメントテンソルの表現の種別．以下10種類から選ぶ．</p>
+<h2 id="-xym0ij-x-y-z-t_0-t_r-m_0-m_xx-m_yy-m_zz-m_yz-m_xz-m_xy">-  <code>'xym0ij'</code> :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>,  <script type="math/tex">m_{zz}</script>,  <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
+<a class="headerlink" href="#-xym0ij-x-y-z-t_0-t_r-m_0-m_xx-m_yy-m_zz-m_yz-m_xz-m_xy" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>’xym0ij’</code> :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>,  <script type="math/tex">m_{zz}</script>,  <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
+<li>
+<p><code>'xym0dc'</code>  :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>,  strike, dip, rake  </p>
 </li>
 <li>
-<p><code>’xym0dc’</code>  :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>,  strike, dip, rake  </p>
-</li>
-<li>
-<p><code>’llm0ij’</code>   : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>,  <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
+<p><code>'llm0ij'</code>   : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>,  <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
 </p>
 </li>
 <li>
-<p><code>’llm0dc’</code>  :  lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake  </p>
+<p><code>'llm0dc'</code>  :  lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake  </p>
 </li>
 <li>
-<p><code>’xymwij’</code>   :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>,  <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>, <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
+<p><code>'xymwij'</code>   :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>,  <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>, <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
 </p>
 </li>
 <li>
-<p><code>’xymwdc’</code> :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake  </p>
+<p><code>'xymwdc'</code> :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake  </p>
 </li>
 <li>
-<p><code>’llmwij’</code>  : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>, <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>,  <script type="math/tex">m_{xz}</script>,  <script type="math/tex">m_{xy}</script>
+<p><code>'llmwij'</code>  : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>, <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>,  <script type="math/tex">m_{xz}</script>,  <script type="math/tex">m_{xy}</script>
 </p>
 </li>
 <li>
-<p><code>’llmwdc’</code>  : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake</p>
+<p><code>'llmwdc'</code>  : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake</p>
+</li>
+<li>
+<p><code>'lldsdc'</code> : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">D</script>, <script type="math/tex">S</script>, strike, dip, rake</p>
+</li>
+<li>
+<p><code>'xydsdc'</code> : <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">D</script>, <script type="math/tex">S</script>, strike, dip, rake</p>
 </li>
 </ul>
+<p>それぞれの量の単位は，<script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>は[km]，<script type="math/tex">M_0</script> と<script type="math/tex">m_{ij}</script> は [Nm], <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>は [s], 角度変数はすべて [degree]，すべり量<script type="math/tex">D</script>は [m]，面積<script type="math/tex">S</script>は[m<script type="math/tex">{}^2</script>]がそれぞれ仮定されている．</p>
 </dd>
 <dt><strong> <code>stftype</code></strong></dt>
-<dd>要素震源時間関数（モーメント時間関数）の種類．<code>’boxcar’</code>（箱形関数）, <code>’triangle’</code>（三角形）, <code>’herrmann’</code>（Herrmann関数）,<code>’kupper’</code>（Kupper wavelet）, <code>’cosine’</code> （<script type="math/tex">\cos</script>関数）, <code>’texp’</code>（<script type="math/tex">t \exp</script>関数）から選択する．</dd>
+<dd>要素震源時間関数（モーメント時間関数）の種類．<code>'boxcar'</code>（箱形関数）, <code>'triangle'</code>（三角形）, <code>'herrmann'</code>（Herrmann関数）,<code>'kupper'</code>（Kupper wavelet）, <code>'cosine'</code> （<script type="math/tex">\cos</script>関数）, <code>'texp'</code>（<script type="math/tex">t \exp</script>関数）から選択する．</dd>
 <dt><strong> <code>fn_stf</code></strong></dt>
 <dd>震源情報ファイル．このファイル中に<code>stf_format</code>で指定された書式で震源情報を記載する．</dd>
 <dt><strong> <code>sdep_fit</code> </strong></dt>
-<dd>震源の深さを強制的に境界に合わせるかどうかの指定． <code>’asis’</code>: なにもしない（デフォルト）<code>’bd{i}’</code> (i=1,2,<script type="math/tex">\cdots</script>9): <code>i</code>番目の境界に合わせる．</dd>
+<dd>震源の深さを強制的に境界に合わせるかどうかの指定． <code>'asis'</code>: なにもしない（デフォルト）<code>'bd{i}'</code> (i=1,2,<script type="math/tex">\cdots</script>9): <code>i</code>番目の境界に合わせる．</dd>
 </dl>
 </div>
 <h2 id="_4">実体力モード<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
@@ -1370,11 +1391,11 @@
 <p>震源ファイルのフォーマット（下記参照）．モーメントテンソル震源とは記法が異なるので注意．</p>
 <ul>
 <li>
-<p><code>’xy’</code>:    x,    y,     z,   <script type="math/tex">T_0</script> ,  <script type="math/tex">T_R</script> ,  <script type="math/tex">f_x</script>,   <script type="math/tex">f_y</script>,   <script type="math/tex">f_z</script>
+<p><code>'xy'</code>:    x,    y,     z,   <script type="math/tex">T_0</script> ,  <script type="math/tex">T_R</script> ,  <script type="math/tex">f_x</script>,   <script type="math/tex">f_y</script>,   <script type="math/tex">f_z</script>
 </p>
 </li>
 <li>
-<p><code>’ll’</code>:   lon,    lat ,  z,   <script type="math/tex">T_0</script>,   <script type="math/tex">T_R</script> ,  <script type="math/tex">f_x</script>,   <script type="math/tex">f_y</script> ,  <script type="math/tex">f_z</script>
+<p><code>'ll'</code>:   lon,    lat ,  z,   <script type="math/tex">T_0</script>,   <script type="math/tex">T_R</script> ,  <script type="math/tex">f_x</script>,   <script type="math/tex">f_y</script> ,  <script type="math/tex">f_z</script>
 </p>
 </li>
 </ul>
@@ -1384,7 +1405,7 @@
 <dt><strong><code>fn_stf</code></strong></dt>
 <dd>震源情報ファイル．モーメントテンソルとは記法が異なるので注意．</dd>
 <dt><strong><code>sdep_fit</code></strong></dt>
-<dd>震源の深さを強制的に境界に合わせるかどうかの指定． <code>’asis’</code>: なにもしない（デフォルト）<code>’bd{i}’</code> (i=1,2,<script type="math/tex">\cdots</script>9): <code>i</code>番目の境界に合わせる．</dd>
+<dd>震源の深さを強制的に境界に合わせるかどうかの指定． <code>'asis'</code>: なにもしない（デフォルト）<code>'bd{i}'</code> (i=1,2,<script type="math/tex">\cdots</script>9): <code>i</code>番目の境界に合わせる．</dd>
 </dl>
 </div>
 <h2 id="_5">平面波モード<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
@@ -1419,8 +1440,8 @@
 <dd>要素震源時間関数（モーメント時間関数）の種類．指定法はモーメントテンソル震源に同じ．</dd>
 </dl>
 </div>
-<p>なお，平面波モードの場合には，吸収境界条件としてかならず <code>abc_type=’pml’</code>を用いるべきである．
-簡易版の境界条件 <code>abc_type=’cerjan’</code>では，水平方向の端から非常に強い人工反射波が生じてしまう．</p>
+<p>なお，平面波モードの場合には，吸収境界条件としてかならず <code>abc_type='pml'</code>を用いるべきである．
+簡易版の境界条件 <code>abc_type='cerjan'</code>では，水平方向の端から非常に強い人工反射波が生じてしまう．</p>
 <div class="admonition quote">
 <p class="admonition-title">平面波入射と吸収境界条件</p>
 <p><img alt="" src="../../../fig/planewave.png" />
@@ -1505,7 +1526,7 @@ S波平面波入射深さ断面スナップショットの例．緑色がS波(ro
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/takuto-maeda" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/tktmyd" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -1541,8 +1562,6 @@ S波平面波入射深さ断面スナップショットの例．緑色がS波(ro
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../mathjax-config.js"></script>
-      
-        <script src="../../../extra.js"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

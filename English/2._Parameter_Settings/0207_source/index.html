@@ -1316,8 +1316,9 @@ becomes flat in the frequency domain, is approximately <script type="math/tex">f
 <p>The source mechanisms of the faulting are given by a six-component
 moment tensor or by three parameters of a double couple source
 (<code>strike</code>, <code>dip</code>, <code>rake</code>). The source locations can be given either by
-their computational or geographical coordinates. Therefore, there are
-eight possible formats to describe the source. In the program, sources are given as a
+their computational or geographical coordinates. The size of the earthquake can be described by seismic moment <script type="math/tex">M_0</script> or moment magnitude <script type="math/tex">M_W</script> or fault slip <script type="math/tex">D</script> &amp; area <script type="math/tex">S</script>. 
+In total, there are
+ten possible formats to describe the source. In the program, sources are given as a
 stress-drop source by using the moment rate function. The moment rate
 function is chosen from the given six functions. They require
 parameters in the source list file for their starting time <script type="math/tex">T_0</script>,
@@ -1338,42 +1339,49 @@ in the <code>fn_grd</code> or <code>fn_grd_rmed</code> list files.</p>
 <dd>
 <p>Format of the source list file. Choose from the following six candidates. </p>
 <ul>
-<li><code>’xym0ij’</code> :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>,  <script type="math/tex">m_{zz}</script>,  <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
+<li><code>'xym0ij'</code> :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>,  <script type="math/tex">m_{zz}</script>,  <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
 </li>
 <li>
-<p><code>’xym0dc’</code>  :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>,  strike, dip, rake  </p>
+<p><code>'xym0dc'</code>  :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>,  strike, dip, rake  </p>
 </li>
 <li>
-<p><code>’llm0ij’</code>   : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>,  <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
+<p><code>'llm0ij'</code>   : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>,  <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
 </p>
 </li>
 <li>
-<p><code>’llm0dc’</code>  :  lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake  </p>
+<p><code>'llm0dc'</code>  :  lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake  </p>
 </li>
 <li>
-<p><code>’xymwij’</code>   :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>,  <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>, <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
+<p><code>'xymwij'</code>   :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>,  <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>, <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
 </p>
 </li>
 <li>
-<p><code>’xymwdc’</code> :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake  </p>
+<p><code>'xymwdc'</code> :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake  </p>
 </li>
 <li>
-<p><code>’llmwij’</code>  : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>, <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>,  <script type="math/tex">m_{xz}</script>,  <script type="math/tex">m_{xy}</script>
+<p><code>'llmwij'</code>  : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>, <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>,  <script type="math/tex">m_{xz}</script>,  <script type="math/tex">m_{xy}</script>
 </p>
 </li>
 <li>
-<p><code>’llmwdc’</code>  : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake</p>
+<p><code>'llmwdc'</code>  : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake</p>
+</li>
+<li>
+<p><code>'lldsdc'</code> : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">D</script>, <script type="math/tex">S</script>, strike, dip, rake</p>
+</li>
+<li>
+<p><code>'xydsdc'</code> : <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">D</script>, <script type="math/tex">S</script>, strike, dip, rake</p>
 </li>
 </ul>
+<p>The unit of each variables are [km] for <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, [Nm] for <script type="math/tex">M_0</script> and <script type="math/tex">m_{ij}</script>, [s] for <script type="math/tex">T_0</script> and <script type="math/tex">T_R</script>, [degree] for all parameters describing angles, [m] for slip <script type="math/tex">D</script> and [m<script type="math/tex">{}^2</script>] for area <script type="math/tex">S</script>. </p>
 </dd>
 <dt><strong> <code>stftype</code></strong></dt>
-<dd>Choice of the source time function. Select from <code>’boxcar’</code>,
-<code>’triangle’</code>, <code>’herrmann’</code>, <code>’kupper’</code>, <code>’cosine’</code>, and <code>’texp’</code>.</dd>
+<dd>Choice of the source time function. Select from <code>'boxcar'</code>,
+<code>'triangle'</code>, <code>'herrmann'</code>, <code>'kupper'</code>, <code>'cosine'</code>, and <code>'texp'</code>.</dd>
 <dt><strong> <code>fn_stf</code></strong></dt>
 <dd>Filename of the source list.</dd>
 <dt><strong> <code>sdep_fit</code> </strong></dt>
 <dd>Flag to fit the source depth to the velocity discontinuity. 
-<code>’asis’</code>: do not fit (default). <code>’bd{i}’</code>(i=1,2,<script type="math/tex">\cdots</script>9): fits to
+<code>'asis'</code>: do not fit (default). <code>'bd{i}'</code>(i=1,2,<script type="math/tex">\cdots</script>9): fits to
 the <code>i</code>-th boundary specified in the rightmost column of
 <code>fn_grdlst</code>.</dd>
 </dl>
@@ -1397,11 +1405,11 @@ is ignored.</dd>
 <p>Format of the source file. Select from <code>'xy'</code> or <code>'ll'</code>. Note that the source file format is different from that for the moment tensor. </p>
 <ul>
 <li>
-<p><code>’xy’</code>:    x,    y,     z,   <script type="math/tex">T_0</script> ,  <script type="math/tex">T_R</script> ,  <script type="math/tex">f_x</script>,   <script type="math/tex">f_y</script>,   <script type="math/tex">f_z</script>
+<p><code>'xy'</code>:    x,    y,     z,   <script type="math/tex">T_0</script> ,  <script type="math/tex">T_R</script> ,  <script type="math/tex">f_x</script>,   <script type="math/tex">f_y</script>,   <script type="math/tex">f_z</script>
 </p>
 </li>
 <li>
-<p><code>’ll’</code>:   lon,    lat ,  z,   <script type="math/tex">T_0</script>,   <script type="math/tex">T_R</script> ,  <script type="math/tex">f_x</script>,   <script type="math/tex">f_y</script> ,  <script type="math/tex">f_z</script>
+<p><code>'ll'</code>:   lon,    lat ,  z,   <script type="math/tex">T_0</script>,   <script type="math/tex">T_R</script> ,  <script type="math/tex">f_x</script>,   <script type="math/tex">f_y</script> ,  <script type="math/tex">f_z</script>
 </p>
 </li>
 </ul>
@@ -1459,7 +1467,7 @@ locations (body force or moment tensor source) will be ignored.</dd>
 <dt><strong><code>pw_zlen</code></strong></dt>
 <dd>Characteristic spatial scale of the initial plane wave.</dd>
 <dt><strong><code>pw_ps</code></strong></dt>
-<dd>Plane wave type. Choose from <code>’p’</code> or <code>’s’</code></dd>
+<dd>Plane wave type. Choose from <code>'p'</code> or <code>'s'</code></dd>
 <dt><strong><code>pw_strike</code></strong></dt>
 <dd>Strike direction of initial plane wave in degrees measured from the <script type="math/tex">x</script>-axis.</dd>
 <dt><strong><code>pw_dip</code></strong></dt>
@@ -1471,9 +1479,9 @@ locations (body force or moment tensor source) will be ignored.</dd>
 or body force sources.</dd>
 </dl>
 </div>
-<p>The use of the PML absorbing boundary condition (<code>abc_type=’pml’</code>; see <a href="../0208_abc/">this section</a> for details) is
+<p>The use of the PML absorbing boundary condition (<code>abc_type='pml'</code>; see <a href="../0208_abc/">this section</a> for details) is
 strongly recommended for the case of plane wave incidence. The simple
-Cerjan's (<code>abc_type=’cerjan’</code>) condition always causes significant
+Cerjan's (<code>abc_type='cerjan'</code>) condition always causes significant
 contamination by artificial reflections.</p>
 <div class="admonition quote">
 <p class="admonition-title">Figure</p>
@@ -1557,7 +1565,7 @@ snapshot visualization when using this plane wave mode.</p>
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/takuto-maeda" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/tktmyd" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -1593,8 +1601,6 @@ snapshot visualization when using this plane wave mode.</p>
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../mathjax-config.js"></script>
-      
-        <script src="../../../extra.js"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

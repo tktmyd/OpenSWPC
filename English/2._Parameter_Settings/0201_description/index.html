@@ -1213,11 +1213,20 @@ errors.</p>
 </pre></div>
 </td></tr></table>
 
-<p>The order of the parameter definition can be changed freely. If a parameter is not specified, <code>OpenSWPC</code> may use a pre-defined default variable in some cases. In such a case, the use of the default-parameter will be included in the standard error output. 
+<p>The order of the parameter definition can be changed freely. If a parameter is not specified, <code>OpenSWPC</code> may use a pre-defined default variable if the missing parameter is not critical for executing computation. 
 Note that there are parameters that must be defined explicitly. Multiple definitions of the same parameters in a single parameter file are not recommended; however, in this case, the first definition may be adopted. 
 It is acceptable to leave blanks before and after the equal sign; however, <strong>it is not permitted to have a blank space between the minus character and succeeding numbers</strong> (e.g., <code>’- 35.0’</code> is not allowed). 
 It is recommended to <strong>use quotation marks around string parameters</strong>. 
 Without them, the directory path character ('/') may be unexpectedly interpreted as a termination of the string parameter.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If a non-essential parameter is not given in the parameter file, an information message will be displayed in the standard error output as an example below: 
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>[info] key XXXX is not found. 
+[info]     Use default value YYYY instead.
+</pre></div>
+</td></tr></table></p>
+</div>
 <h2 id="an-example-parameter-file">An Example Parameter File<a class="headerlink" href="#an-example-parameter-file" title="Permanent link">&para;</a></h2>
 <p>The following is a full set of example parameters. In the following
 sections, detailed descriptions of each parameter will be given.</p>
@@ -1710,7 +1719,7 @@ sections, detailed descriptions of each parameter will be given.</p>
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     
-      <a href="https://github.com/takuto-maeda" class="md-footer-social__link fa fa-github"></a>
+      <a href="https://github.com/tktmyd" class="md-footer-social__link fa fa-github"></a>
     
   </div>
 
@@ -1746,8 +1755,6 @@ sections, detailed descriptions of each parameter will be given.</p>
       <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
         <script src="../../../mathjax-config.js"></script>
-      
-        <script src="../../../extra.js"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
