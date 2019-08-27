@@ -1,0 +1,1603 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="OpenSWPC User's Guide">
+      
+      
+        <link rel="canonical" href="https://tktmyd.github.io/OpenSWPC/English/2._Parameter_Settings/0207_source/">
+      
+      
+        <meta name="author" content="Takuto Maeda">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en, ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Earthquake Source Specification - OpenSWPC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#earthquake-source-specification" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              OpenSWPC
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Earthquake Source Specification
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="OpenSWPC Users' Guide" class="md-tabs__link">
+        OpenSWPC Users' Guide
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" title="English" class="md-tabs__link md-tabs__link--active">
+          English
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../Japanese/" title="Japanese" class="md-tabs__link">
+          Japanese
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    OpenSWPC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="OpenSWPC Users' Guide" class="md-nav__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      English
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        English
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="OpenSWPC Users' Guide" class="md-nav__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8._Revision_History/" title="Major Revision History" class="md-nav__link">
+      Major Revision History
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../9._License/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      1. SetUp
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        1. SetUp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-1_env/" title="System requirements" class="md-nav__link">
+      System requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-2_tree/" title="Code directory tree" class="md-nav__link">
+      Code directory tree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-3_compile/" title="Compilation and Execution" class="md-nav__link">
+      Compilation and Execution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-4_dataset/" title="Preparing the Dataset" class="md-nav__link">
+      Preparing the Dataset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-5_parallel/" title="Execution" class="md-nav__link">
+      Execution
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
+    
+    <label class="md-nav__link" for="nav-2-5">
+      2. Parameter Settings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        2. Parameter Settings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0201_description/" title="Notation of the Parameter File" class="md-nav__link">
+      Notation of the Parameter File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0202_env/" title="Controlling Parameters" class="md-nav__link">
+      Controlling Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0203_coord/" title="Coordinates and Parallel Computation" class="md-nav__link">
+      Coordinates and Parallel Computation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0204_visco/" title="Viscoelastic Bodies" class="md-nav__link">
+      Viscoelastic Bodies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0205_output/" title="Simulation Data Output" class="md-nav__link">
+      Simulation Data Output
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0206_vmodel/" title="Velocity Model" class="md-nav__link">
+      Velocity Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Earthquake Source Specification
+      </label>
+    
+    <a href="./" title="Earthquake Source Specification" class="md-nav__link md-nav__link--active">
+      Earthquake Source Specification
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#moment-rate-function" title="Moment Rate Function" class="md-nav__link">
+    Moment Rate Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moment-tensor-source" title="Moment Tensor Source" class="md-nav__link">
+    Moment Tensor Source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#body-force-mode" title="Body Force Mode" class="md-nav__link">
+    Body Force Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plane-wave-mode" title="Plane Wave Mode" class="md-nav__link">
+    Plane Wave Mode
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0208_abc/" title="Absorbing Boundary Conditions" class="md-nav__link">
+      Absorbing Boundary Conditions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0209_checkpoint/" title="Checkpointing and Restarting" class="md-nav__link">
+      Checkpointing and Restarting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0210_reciprocity/" title="Reciprocity Mode" class="md-nav__link">
+      Reciprocity Mode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0211_2dcode/" title="About Two-Dimensional Codes" class="md-nav__link">
+      About Two-Dimensional Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      3. Related Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        3. Related Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0301_snapshot/" title="Snapshot data handling" class="md-nav__link">
+      Snapshot data handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0302_vmodel/" title="Velocity Structure" class="md-nav__link">
+      Velocity Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0303_parameter/" title="Programs for Supporting Parameter Settings" class="md-nav__link">
+      Programs for Supporting Parameter Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0304_rmedia/" title="Generation of Random Media" class="md-nav__link">
+      Generation of Random Media
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0305_misc/" title="Miscellaneous Tools" class="md-nav__link">
+      Miscellaneous Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      4. Additional Materials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        4. Additional Materials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4._Additional_Materials/0401_modelset/" title="Hints for Parameter Settings" class="md-nav__link">
+      Hints for Parameter Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4._Additional_Materials/0402_modification/" title="Hints for Modifying the Code" class="md-nav__link">
+      Hints for Modifying the Code
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Japanese
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Japanese
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/" title="OpenSWPC ユーザーズガイド" class="md-nav__link">
+      OpenSWPC ユーザーズガイド
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/8._Revision_History/" title="主な改版履歴" class="md-nav__link">
+      主な改版履歴
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/9._License/" title="ライセンス" class="md-nav__link">
+      ライセンス
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      1. 準備
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        1. 準備
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0101_env/" title="動作環境" class="md-nav__link">
+      動作環境
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0102_tree/" title="ディレクトリ構成" class="md-nav__link">
+      ディレクトリ構成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0103_compile/" title="コンパイル" class="md-nav__link">
+      コンパイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0104_dataset/" title="データセットの準備" class="md-nav__link">
+      データセットの準備
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0105_parallel/" title="並列計算の実行例" class="md-nav__link">
+      並列計算の実行例
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      2. パラメタ設定
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        2. パラメタ設定
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0201_description/" title="パラメタファイルの記法" class="md-nav__link">
+      パラメタファイルの記法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0202_env/" title="動作環境の制御" class="md-nav__link">
+      動作環境の制御
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0203_coord/" title="座標系と並列計算" class="md-nav__link">
+      座標系と並列計算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0204_visco/" title="粘弾性体" class="md-nav__link">
+      粘弾性体
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0205_output/" title="出力ファイルの設定" class="md-nav__link">
+      出力ファイルの設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0206_vmodel/" title="速度構造の指定" class="md-nav__link">
+      速度構造の指定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0207_source/" title="震源の指定" class="md-nav__link">
+      震源の指定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0208_abc/" title="吸収境界条件" class="md-nav__link">
+      吸収境界条件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0209_checkpoint/" title="チェックポイント・リスタート" class="md-nav__link">
+      チェックポイント・リスタート
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0210_reciprocity/" title="相反定理モード" class="md-nav__link">
+      相反定理モード
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0211_2dcode/" title="2次元コード固有の設定" class="md-nav__link">
+      2次元コード固有の設定
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      3. 関係ツール
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        3. 関係ツール
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0301_snapshot/" title="スナップショット" class="md-nav__link">
+      スナップショット
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0302_vmodel/" title="構造モデルの確認" class="md-nav__link">
+      構造モデルの確認
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0303_parameter/" title="パラメタ作成支援" class="md-nav__link">
+      パラメタ作成支援
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0304_rmedia/" title="ランダム媒質生成" class="md-nav__link">
+      ランダム媒質生成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0305_misc/" title="その他のツール" class="md-nav__link">
+      その他のツール
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      4. その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        4. その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/4._その他/0401_modelset/" title="計算モデル設定のヒント" class="md-nav__link">
+      計算モデル設定のヒント
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/4._その他/0402_modification/" title="コード改造のヒント" class="md-nav__link">
+      コード改造のヒント
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#moment-rate-function" title="Moment Rate Function" class="md-nav__link">
+    Moment Rate Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moment-tensor-source" title="Moment Tensor Source" class="md-nav__link">
+    Moment Tensor Source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#body-force-mode" title="Body Force Mode" class="md-nav__link">
+    Body Force Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plane-wave-mode" title="Plane Wave Mode" class="md-nav__link">
+    Plane Wave Mode
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="earthquake-source-specification">Earthquake Source Specification<a class="headerlink" href="#earthquake-source-specification" title="Permanent link">&para;</a></h1>
+<h2 id="moment-rate-function">Moment Rate Function<a class="headerlink" href="#moment-rate-function" title="Permanent link">&para;</a></h2>
+<p>This section describes the moment rate functions, <script type="math/tex">\dot{M}(t)</script>, that can
+be used in <code>OpenSWPC</code> by choosing the parameter <code>stftype</code>. In the
+following, all moment rate functions have a duration (or characteristic
+time) <script type="math/tex">T_R</script> and are normalized so that the total moment is <script type="math/tex">1</script>.</p>
+<ul>
+<li>Box-car function (<code>boxcar</code>)</li>
+</ul>
+<script type="math/tex; mode=display">\begin{align}
+   \dot{m}^ R \left(t\right) &=
+    \frac{1}{T_R} 
+  & \begin{array}{r} ( 0 \le t \le T_R) \\ \end{array}
+\end{align}</script>
+<ul>
+<li>Triangle function (<code>triangle</code>)</li>
+</ul>
+<script type="math/tex; mode=display">\begin{align}
+\dot{m}^ T \left(t\right)  = 
+\begin{cases}
+4t/T_R^2 & ( 0 \le t \le T_R/2 ) \\
+-4(t-T_R)/T_R^2 & ( T_R/2 < t \le T_R )
+\end{cases}
+\end{align}</script>
+<ul>
+<li>Herrmann function (<code>herrmann</code>)</li>
+</ul>
+<script type="math/tex; mode=display">\begin{align}
+\dot{m}^ H \left(t\right) =
+\begin{cases}
+16 t^2 / T_R^3 & ( 0 \le t \le T_R/4  ) \\
+-2 ( 8 t^2 - 8 t T_R + T_R^2 ) / T_R^3  & ( T_R/4 < t \le 3T_R/4  ) \\
+16 \left( t - T_R \right)^2 / T_R^3 &  (3T_R/4 < t \le T_R  )
+\end{cases}
+\end{align}</script>
+<ul>
+<li>Cosine function (<code>cosine</code>)</li>
+</ul>
+<script type="math/tex; mode=display">\begin{align}
+\dot{m}^ C \left(t\right) =
+\frac{1}{T_R} \left[ 1 - \cos \left(\frac{2 \pi t}{T_R} \right) \right]
+\quad ( 0 \le t \le T_R) 
+\end{align}</script>
+<ul>
+<li>Küpper wavelet (<code>kupper</code>)</li>
+</ul>
+<script type="math/tex; mode=display">\begin{align}
+  \dot{m}^K \left( t \right ) &= 
+  \frac{3 \pi}{4 T_R} \sin^3\left( \frac{\pi t}{T_R} \right) 
+  \quad ( 0 \le t \le T_R) 
+\end{align}</script>
+<ul>
+<li>t-exp type function (<code>texp</code>)</li>
+</ul>
+<script type="math/tex; mode=display">\begin{align}
+  \dot{m}^{E} \left( t \right) &= \frac{(2 \pi)^2 t}{T_R^2} \exp\left[ - \frac{ 2 \pi t}{T_R}\right]
+  \quad ( 0 \le t ) 
+\end{align}</script>
+<p>The next figure shows each moment rate function and its Fourier spectrum. </p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/stf.png" />
+Moment rate functions <script type="math/tex">\dot{M}(t)</script> (left) and their Fourier spectra (right). </p>
+</div>
+<p>The moment rate
+functions have a roll off of <script type="math/tex">f^{-1}</script>--<script type="math/tex">f^{-4}</script> at frequencies of
+<script type="math/tex">f\gg 1/T_R</script>. To avoid numerical dispersion, the source spectrum should
+be sufficiently small at the highest target frequency. As this maximum
+frequency, we adopt <script type="math/tex">f_\text{max}=2/T_R</script> for all types of source time
+functions (the red dotted line in the figure.If the
+parameter is appropriately set so that numerical dispersion does not
+occur at frequencies below <script type="math/tex">f_\text{max}</script>, the result should not be
+contaminated by numerical dispersion. In addition, the uppermost
+frequency, where the spectrum response of the source time function
+becomes flat in the frequency domain, is approximately <script type="math/tex">f \le 1/(2 T_R)</script>
+(the blue dotted line in the figure. </p>
+<h2 id="moment-tensor-source">Moment Tensor Source<a class="headerlink" href="#moment-tensor-source" title="Permanent link">&para;</a></h2>
+<p>The source mechanisms of the faulting are given by a six-component
+moment tensor or by three parameters of a double couple source
+(<code>strike</code>, <code>dip</code>, <code>rake</code>). The source locations can be given either by
+their computational or geographical coordinates. Therefore, there are
+eight possible formats to describe the source. In the program, sources are given as a
+stress-drop source by using the moment rate function. The moment rate
+function is chosen from the given six functions. They require
+parameters in the source list file for their starting time <script type="math/tex">T_0</script>,
+duration <script type="math/tex">T_R</script>, and total moment <script type="math/tex">M_0</script>.</p>
+<p><code>OpenSWPC</code> can accept multiple point sources as multiple lines in the
+source list file. There is no fixed limit to the number of sources (in
+practice, this is determined by the memory size). By gradually changing
+the starting time and source location, a finite fault rupture can be
+mimicked. In the source list file, lines starting with <code>#</code> will be
+ignored. By setting <code>sdep_fit</code>, the source depth can be changed so that
+it fits the medium's velocity boundary. In this case, the depth in the
+source list file will be ignored. The layer number should be specified
+in the <code>fn_grd</code> or <code>fn_grd_rmed</code> list files.</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>stf_format</code></strong></dt>
+<dd>
+<p>Format of the source list file. Choose from the following six candidates. </p>
+<ul>
+<li><code>’xym0ij’</code> :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>,  <script type="math/tex">m_{zz}</script>,  <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
+</li>
+<li>
+<p><code>’xym0dc’</code>  :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>,  strike, dip, rake  </p>
+</li>
+<li>
+<p><code>’llm0ij’</code>   : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>,  <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
+</p>
+</li>
+<li>
+<p><code>’llm0dc’</code>  :  lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake  </p>
+</li>
+<li>
+<p><code>’xymwij’</code>   :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>,  <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>, <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>, <script type="math/tex">m_{xz}</script>, <script type="math/tex">m_{xy}</script>
+</p>
+</li>
+<li>
+<p><code>’xymwdc’</code> :  <script type="math/tex">x</script>, <script type="math/tex">y</script>, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake  </p>
+</li>
+<li>
+<p><code>’llmwij’</code>  : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, <script type="math/tex">m_{xx}</script>, <script type="math/tex">m_{yy}</script>, <script type="math/tex">m_{zz}</script>, <script type="math/tex">m_{yz}</script>,  <script type="math/tex">m_{xz}</script>,  <script type="math/tex">m_{xy}</script>
+</p>
+</li>
+<li>
+<p><code>’llmwdc’</code>  : lon, lat, <script type="math/tex">z</script>, <script type="math/tex">T_0</script>, <script type="math/tex">T_R</script>, <script type="math/tex">M_0</script>, strike, dip, rake</p>
+</li>
+</ul>
+</dd>
+<dt><strong> <code>stftype</code></strong></dt>
+<dd>Choice of the source time function. Select from <code>’boxcar’</code>,
+<code>’triangle’</code>, <code>’herrmann’</code>, <code>’kupper’</code>, <code>’cosine’</code>, and <code>’texp’</code>.</dd>
+<dt><strong> <code>fn_stf</code></strong></dt>
+<dd>Filename of the source list.</dd>
+<dt><strong> <code>sdep_fit</code> </strong></dt>
+<dd>Flag to fit the source depth to the velocity discontinuity. 
+<code>’asis’</code>: do not fit (default). <code>’bd{i}’</code>(i=1,2,<script type="math/tex">\cdots</script>9): fits to
+the <code>i</code>-th boundary specified in the rightmost column of
+<code>fn_grdlst</code>.</dd>
+</dl>
+</div>
+<h2 id="body-force-mode">Body Force Mode<a class="headerlink" href="#body-force-mode" title="Permanent link">&para;</a></h2>
+<p>A body force source can be used instead of a moment tensor source. In
+this mode, the three-component force vector (<script type="math/tex">f_x</script>, <script type="math/tex">f_y</script>, <script type="math/tex">f_z</script>) should
+be specified. The force vector is assumed to have a bell-shaped source
+time function, as in the case of the moment tensor source. Although
+there is no restriction on the number of body force elements, it is not
+possible to use both a moment tensor and a body force at the same time.</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>bf_mode</code></strong></dt>
+<dd>Flag for the body force mode. If this is <code>.true.</code>, the following
+parameters are used for the body force and the moment tensor source
+is ignored.</dd>
+<dt><strong><code>stf_format</code></strong></dt>
+<dd>
+<p>Format of the source file. Select from <code>'xy'</code> or <code>'ll'</code>. Note that the source file format is different from that for the moment tensor. </p>
+<ul>
+<li>
+<p><code>’xy’</code>:    x,    y,     z,   <script type="math/tex">T_0</script> ,  <script type="math/tex">T_R</script> ,  <script type="math/tex">f_x</script>,   <script type="math/tex">f_y</script>,   <script type="math/tex">f_z</script>
+</p>
+</li>
+<li>
+<p><code>’ll’</code>:   lon,    lat ,  z,   <script type="math/tex">T_0</script>,   <script type="math/tex">T_R</script> ,  <script type="math/tex">f_x</script>,   <script type="math/tex">f_y</script> ,  <script type="math/tex">f_z</script>
+</p>
+</li>
+</ul>
+</dd>
+<dt><strong><code>stftype</code></strong></dt>
+<dd>Choice of the source time function. Same as the case with a moment
+tensor source.</dd>
+<dt><strong><code>fn_stf</code></strong></dt>
+<dd>Filename of the source list file.</dd>
+<dt><strong><code>sdep_fit</code></strong></dt>
+<dd>Flag to fit the source depth to a specified velocity discontinuity.
+Same as the case with a moment tensor source.</dd>
+</dl>
+</div>
+<h2 id="plane-wave-mode">Plane Wave Mode<a class="headerlink" href="#plane-wave-mode" title="Permanent link">&para;</a></h2>
+<p>A plane wave incident from the bottom can be used as an input source
+instead of the moment tensor or body force sources. In <code>OpenSWPC</code>, plane
+wave incidence is achieved by setting the velocity vector and stress
+tensor components based on the analytic solution of a plane wave
+propagating upward as the initial condition.</p>
+<p>The specification of the initial conditions includes the depth of the
+initial plane wave (<code>pw_ztop</code>) and its characteristic length (<code>pw_zlen</code>;
+corresponding to the wavelength), the strike and dip angle of the plane
+wave (<code>pw_strike</code>, <code>pw_dip</code>), and the polarization direction (rake
+angle) in the case of an S-wave (<code>pw_rake</code>). See the next figure for the geometry. </p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/pw_mode_coord.png" />
+Geometry of the plane wave specification. (Left) The specification of the uppermost plane and the polarization direction. (Right) The depth cross section of the initial plane wave.</p>
+</div>
+<p>The definitions of the
+strike, dip, and rake parameters follow those of the earthquake source
+fault geometry of Aki and Richards (2002[^Aki2002]). For three-dimensional space,
+<code>pw_strike=0</code> results in the plane dip toward the <script type="math/tex">y</script>-direction (east
+for <code>phi=0</code>). A rake angle of <code>pw_rake=0</code><script type="math/tex">{}^\circ</script> or
+<code>pw_rake=180</code><script type="math/tex">{}^\circ</script> will result in pure SH waves whose polarization
+is parallel to the free surface.</p>
+<p>The initial plane wave occupies a depth range of <code>pw_zlen</code> (km) starting
+at depths of <script type="math/tex">z=</script>
+<code>pw_ztop</code> at the center of the horizontal coordinate.
+The depth dependence of the wave amplitude is determined by the source
+time functions used in the moment rate function as a function of space. 
+Via the definition of the source time
+function, the integration of the initial plane wave along the
+propagation direction will be normalized to 1.</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>pw_mode</code></strong></dt>
+<dd>Flag to use the plane-wave mode. If it is <code>.true.</code>, all point-source
+locations (body force or moment tensor source) will be ignored.</dd>
+<dt><strong><code>pw_ztop</code></strong></dt>
+<dd>
+<script type="math/tex">z</script>-value of the top of the initial plane wave at <script type="math/tex">x=y=0</script>.</dd>
+<dt><strong><code>pw_zlen</code></strong></dt>
+<dd>Characteristic spatial scale of the initial plane wave.</dd>
+<dt><strong><code>pw_ps</code></strong></dt>
+<dd>Plane wave type. Choose from <code>’p’</code> or <code>’s’</code></dd>
+<dt><strong><code>pw_strike</code></strong></dt>
+<dd>Strike direction of initial plane wave in degrees measured from the <script type="math/tex">x</script>-axis.</dd>
+<dt><strong><code>pw_dip</code></strong></dt>
+<dd>Dip angle of the initial plane wave in degrees. The initial plane wave propagates vertically if this angle is zero.</dd>
+<dt><strong><code>pw_rake</code></strong></dt>
+<dd>Polarization direction of initial plane S-wave in degrees measured from the horizontal plane.</dd>
+<dt><strong><code>stftype</code></strong></dt>
+<dd>Source time function type. Same as the cases with the moment tensor
+or body force sources.</dd>
+</dl>
+</div>
+<p>The use of the PML absorbing boundary condition (<code>abc_type=’pml’</code>; see <a href="../0208_abc/">this section</a> for details) is
+strongly recommended for the case of plane wave incidence. The simple
+Cerjan's (<code>abc_type=’cerjan’</code>) condition always causes significant
+contamination by artificial reflections.</p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/planewave.png" />
+Snapshots of the absolute values of divergence (red) and rotation
+(green) for the case of vertical plane S-wave incidence with (a)
+Cerjan's condition and (b) PML boundary
+conditions.</p>
+</div>
+<p>Even when using the PML boundary, the tilted plane wave incidence (with
+nonzero <code>pw_dip</code> angle) causes some amount of artificial reflections. It
+is highly recommended that the boundary effect be confirmed with
+snapshot visualization when using this plane wave mode.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../0206_vmodel/" title="Velocity Model" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Velocity Model
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../0208_abc/" title="Absorbing Boundary Conditions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Absorbing Boundary Conditions
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy 2019 Takuto Maeda. All Rights Reserved
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/takuto-maeda" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+            <script src="../../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../mathjax-config.js"></script>
+      
+        <script src="../../../extra.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

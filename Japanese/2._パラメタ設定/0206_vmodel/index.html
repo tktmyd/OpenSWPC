@@ -1,0 +1,1719 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="OpenSWPC User's Guide">
+      
+      
+        <link rel="canonical" href="https://tktmyd.github.io/OpenSWPC/Japanese/2._パラメタ設定/0206_vmodel/">
+      
+      
+        <meta name="author" content="Takuto Maeda">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en, ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>速度構造の指定 - OpenSWPC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              OpenSWPC
+            </span>
+            <span class="md-header-nav__topic">
+              
+                速度構造の指定
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="OpenSWPC Users' Guide" class="md-tabs__link">
+        OpenSWPC Users' Guide
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../English/" title="English" class="md-tabs__link">
+          English
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" title="Japanese" class="md-tabs__link md-tabs__link--active">
+          Japanese
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    OpenSWPC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="OpenSWPC Users' Guide" class="md-nav__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      English
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        English
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/" title="OpenSWPC Users' Guide" class="md-nav__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/8._Revision_History/" title="Major Revision History" class="md-nav__link">
+      Major Revision History
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/9._License/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      1. SetUp
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        1. SetUp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/1._SetUp/1-1_env/" title="System requirements" class="md-nav__link">
+      System requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/1._SetUp/1-2_tree/" title="Code directory tree" class="md-nav__link">
+      Code directory tree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/1._SetUp/1-3_compile/" title="Compilation and Execution" class="md-nav__link">
+      Compilation and Execution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/1._SetUp/1-4_dataset/" title="Preparing the Dataset" class="md-nav__link">
+      Preparing the Dataset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/1._SetUp/1-5_parallel/" title="Execution" class="md-nav__link">
+      Execution
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      2. Parameter Settings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        2. Parameter Settings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0201_description/" title="Notation of the Parameter File" class="md-nav__link">
+      Notation of the Parameter File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0202_env/" title="Controlling Parameters" class="md-nav__link">
+      Controlling Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0203_coord/" title="Coordinates and Parallel Computation" class="md-nav__link">
+      Coordinates and Parallel Computation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0204_visco/" title="Viscoelastic Bodies" class="md-nav__link">
+      Viscoelastic Bodies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0205_output/" title="Simulation Data Output" class="md-nav__link">
+      Simulation Data Output
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0206_vmodel/" title="Velocity Model" class="md-nav__link">
+      Velocity Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0207_source/" title="Earthquake Source Specification" class="md-nav__link">
+      Earthquake Source Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0208_abc/" title="Absorbing Boundary Conditions" class="md-nav__link">
+      Absorbing Boundary Conditions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0209_checkpoint/" title="Checkpointing and Restarting" class="md-nav__link">
+      Checkpointing and Restarting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0210_reciprocity/" title="Reciprocity Mode" class="md-nav__link">
+      Reciprocity Mode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0211_2dcode/" title="About Two-Dimensional Codes" class="md-nav__link">
+      About Two-Dimensional Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      3. Related Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        3. Related Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/3._Related_Tools/0301_snapshot/" title="Snapshot data handling" class="md-nav__link">
+      Snapshot data handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/3._Related_Tools/0302_vmodel/" title="Velocity Structure" class="md-nav__link">
+      Velocity Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/3._Related_Tools/0303_parameter/" title="Programs for Supporting Parameter Settings" class="md-nav__link">
+      Programs for Supporting Parameter Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/3._Related_Tools/0304_rmedia/" title="Generation of Random Media" class="md-nav__link">
+      Generation of Random Media
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/3._Related_Tools/0305_misc/" title="Miscellaneous Tools" class="md-nav__link">
+      Miscellaneous Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      4. Additional Materials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        4. Additional Materials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/4._Additional_Materials/0401_modelset/" title="Hints for Parameter Settings" class="md-nav__link">
+      Hints for Parameter Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/4._Additional_Materials/0402_modification/" title="Hints for Modifying the Code" class="md-nav__link">
+      Hints for Modifying the Code
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Japanese
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Japanese
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="OpenSWPC ユーザーズガイド" class="md-nav__link">
+      OpenSWPC ユーザーズガイド
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8._Revision_History/" title="主な改版履歴" class="md-nav__link">
+      主な改版履歴
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../9._License/" title="ライセンス" class="md-nav__link">
+      ライセンス
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      1. 準備
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        1. 準備
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._準備/0101_env/" title="動作環境" class="md-nav__link">
+      動作環境
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._準備/0102_tree/" title="ディレクトリ構成" class="md-nav__link">
+      ディレクトリ構成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._準備/0103_compile/" title="コンパイル" class="md-nav__link">
+      コンパイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._準備/0104_dataset/" title="データセットの準備" class="md-nav__link">
+      データセットの準備
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._準備/0105_parallel/" title="並列計算の実行例" class="md-nav__link">
+      並列計算の実行例
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5" checked>
+    
+    <label class="md-nav__link" for="nav-3-5">
+      2. パラメタ設定
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        2. パラメタ設定
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0201_description/" title="パラメタファイルの記法" class="md-nav__link">
+      パラメタファイルの記法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0202_env/" title="動作環境の制御" class="md-nav__link">
+      動作環境の制御
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0203_coord/" title="座標系と並列計算" class="md-nav__link">
+      座標系と並列計算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0204_visco/" title="粘弾性体" class="md-nav__link">
+      粘弾性体
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0205_output/" title="出力ファイルの設定" class="md-nav__link">
+      出力ファイルの設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        速度構造の指定
+      </label>
+    
+    <a href="./" title="速度構造の指定" class="md-nav__link md-nav__link--active">
+      速度構造の指定
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="構造モデルの選択" class="md-nav__link">
+    構造モデルの選択
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="空気および海水層の取り扱い" class="md-nav__link">
+    空気および海水層の取り扱い
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="ランダム媒質の重畳" class="md-nav__link">
+    ランダム媒質の重畳
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="一様均質＋ランダム媒質" class="md-nav__link">
+    一様均質＋ランダム媒質
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="水平成層＋ランダム媒質" class="md-nav__link">
+    水平成層＋ランダム媒質
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3次元ランダム不均質構造" class="md-nav__link">
+    3次元ランダム不均質構造
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="速度ゆらぎの打ち切り" class="md-nav__link">
+    速度ゆらぎの打ち切り
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0207_source/" title="震源の指定" class="md-nav__link">
+      震源の指定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0208_abc/" title="吸収境界条件" class="md-nav__link">
+      吸収境界条件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0209_checkpoint/" title="チェックポイント・リスタート" class="md-nav__link">
+      チェックポイント・リスタート
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0210_reciprocity/" title="相反定理モード" class="md-nav__link">
+      相反定理モード
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0211_2dcode/" title="2次元コード固有の設定" class="md-nav__link">
+      2次元コード固有の設定
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      3. 関係ツール
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        3. 関係ツール
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._関係ツール/0301_snapshot/" title="スナップショット" class="md-nav__link">
+      スナップショット
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._関係ツール/0302_vmodel/" title="構造モデルの確認" class="md-nav__link">
+      構造モデルの確認
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._関係ツール/0303_parameter/" title="パラメタ作成支援" class="md-nav__link">
+      パラメタ作成支援
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._関係ツール/0304_rmedia/" title="ランダム媒質生成" class="md-nav__link">
+      ランダム媒質生成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._関係ツール/0305_misc/" title="その他のツール" class="md-nav__link">
+      その他のツール
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      4. その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        4. その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4._その他/0401_modelset/" title="計算モデル設定のヒント" class="md-nav__link">
+      計算モデル設定のヒント
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4._その他/0402_modification/" title="コード改造のヒント" class="md-nav__link">
+      コード改造のヒント
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="構造モデルの選択" class="md-nav__link">
+    構造モデルの選択
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="空気および海水層の取り扱い" class="md-nav__link">
+    空気および海水層の取り扱い
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="ランダム媒質の重畳" class="md-nav__link">
+    ランダム媒質の重畳
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="一様均質＋ランダム媒質" class="md-nav__link">
+    一様均質＋ランダム媒質
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="水平成層＋ランダム媒質" class="md-nav__link">
+    水平成層＋ランダム媒質
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" title="3次元ランダム不均質構造" class="md-nav__link">
+    3次元ランダム不均質構造
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="速度ゆらぎの打ち切り" class="md-nav__link">
+    速度ゆらぎの打ち切り
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">速度構造の指定<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">構造モデルの選択<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>OpenSWPC</code>の入力速度構造は層構造モデルを基本としている．一つ一つの層は，深さ（もしくは高さ）の変化を持つ<script type="math/tex">x</script>--<script type="math/tex">y</script>（もしくは緯度経度）の面であり，これを地震波速度・密度ならびに内部減衰の等値面として取り扱う．
+変数<code>vmodel_type</code>の設定によって一様構造，水平成層構造，あるいは<code>NetCDF</code>バイナリ入力種別を選択できる．</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>vmodel_type</code></strong></dt>
+<dd>
+<p>速度構造モデルタイプの指定．以下のいずれかを選択する．</p>
+<dl>
+<dt><code>’uni’</code></dt>
+<dd>
+<p>一様均質構造．以下のパラメタも指定すること．</p>
+<ul>
+<li><code>vp0</code> : 一様構造のP波速度</li>
+<li><code>vs0</code> : 一様構造のS波速度</li>
+<li><code>rho0</code> : 一様構造の質量密度</li>
+<li><code>qp0</code>  :  一様構造の QP</li>
+<li><code>qs0</code>  :  一様構造の QS</li>
+<li><code>topo0</code> : 一様構造の地表面深さ．<code>0</code>以上の場合には<script type="math/tex">z=0</script>から<code>topo0</code>まで海水で満たされる．</li>
+</ul>
+</dd>
+<dt><code>’lhm’</code></dt>
+<dd>
+<p>水平成層構造（Layered Homogeneous Medium)．境界面深さと物性値のテーブルを別途指定する．</p>
+<ul>
+<li><code>fn_lhm</code>: 成層構造指定ファイル．1行に層の深さ・密度・P波速度・S波速度・QP・QSを空白区切りで記入する．<code>#</code>はコメント行として扱われる．指定された深さ以深の構造がその行の物性値で満たされる．以下の例を参照のこと．</li>
+</ul>
+</dd>
+</dl>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp"># depth  rho(g/cm^3)  vp(km/s)   vs(km/s)     Qp      Qs</span>
+<span class="cp"># -------------------------------------------------------</span>
+  <span class="mi">0</span>        <span class="mf">2.300</span>      <span class="mf">5.50</span>      <span class="mf">3.14</span>     <span class="mi">600</span>     <span class="mi">300</span>
+  <span class="mi">3</span>        <span class="mf">2.400</span>      <span class="mf">6.00</span>      <span class="mf">3.55</span>     <span class="mi">600</span>     <span class="mi">300</span>
+ <span class="mi">18</span>        <span class="mf">2.800</span>      <span class="mf">6.70</span>      <span class="mf">3.83</span>     <span class="mi">600</span>     <span class="mi">300</span>
+ <span class="mi">33</span>        <span class="mf">3.200</span>      <span class="mf">7.80</span>      <span class="mf">4.46</span>     <span class="mi">600</span>     <span class="mi">300</span>
+<span class="mi">100</span>        <span class="mf">3.300</span>      <span class="mf">8.00</span>      <span class="mf">4.57</span>     <span class="mi">600</span>     <span class="mi">300</span>
+<span class="mi">225</span>        <span class="mf">3.400</span>      <span class="mf">8.40</span>      <span class="mf">4.80</span>     <span class="mi">600</span>     <span class="mi">300</span>
+<span class="mi">325</span>        <span class="mf">3.500</span>      <span class="mf">8.60</span>      <span class="mf">4.91</span>     <span class="mi">600</span>     <span class="mi">300</span>
+<span class="mi">425</span>        <span class="mf">3.700</span>      <span class="mf">9.30</span>      <span class="mf">5.31</span>     <span class="mi">600</span>     <span class="mi">300</span>
+</pre></div>
+</td></tr></table>
+
+<dl>
+<dt><code>’grd’</code></dt>
+<dd>
+<p><code>NetCDF</code> ファイル群よる構造入力．コンパイル時にプリプロセッサオプション<code>-D_NETCDF</code>の指定が必要である．以下のパラメタも指定すること．</p>
+<ul>
+<li>
+<p><code>dir_grd</code>: grdファイル格納ディレクトリ．</p>
+</li>
+<li>
+<p><code>fn_grdslt</code>: grdファイル名と物性値のリストファイル．以下の例を参照．各層毎に，物性値（密度・地震波速度・Q値）を指定する．また，<code>sw</code>で特定の境界面のgrdファイルを指定することができる．この<code>sw</code>震源の深さをプレート境界に一致させる（オプション<code>sdep_fit</code>）際に用いられる．最上面は地表面として取り扱われる．それより上層については，<script type="math/tex">z\le 0</script>は海水層，それ以外は空気として扱われる．</p>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp"># grd filename          rho    vp    vs    QP   QS  sw</span>
+<span class="cp"># -------------------------------------------------------</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_01_TAB_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">1.80</span>  <span class="mf">1.70</span>  <span class="mf">0.35</span>   <span class="mi">119</span>    <span class="mi">70</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_02_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">1.95</span>  <span class="mf">1.80</span>  <span class="mf">0.50</span>   <span class="mi">170</span>   <span class="mi">100</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_03_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.00</span>  <span class="mf">2.00</span>  <span class="mf">0.60</span>   <span class="mi">204</span>   <span class="mi">120</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_04_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.05</span>  <span class="mf">2.10</span>  <span class="mf">0.70</span>   <span class="mi">238</span>   <span class="mi">140</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_05_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.07</span>  <span class="mf">2.20</span>  <span class="mf">0.80</span>   <span class="mi">272</span>   <span class="mi">160</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_06_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.10</span>  <span class="mf">2.30</span>  <span class="mf">0.90</span>   <span class="mi">306</span>   <span class="mi">180</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_07_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.15</span>  <span class="mf">2.40</span>  <span class="mf">1.00</span>   <span class="mi">340</span>   <span class="mi">200</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_08_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.20</span>  <span class="mf">2.70</span>  <span class="mf">1.30</span>   <span class="mi">442</span>   <span class="mi">260</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_09_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.25</span>  <span class="mf">3.00</span>  <span class="mf">1.50</span>   <span class="mi">510</span>   <span class="mi">300</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_10_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.30</span>  <span class="mf">3.20</span>  <span class="mf">1.70</span>   <span class="mi">578</span>   <span class="mi">340</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_11_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.35</span>  <span class="mf">3.50</span>  <span class="mf">2.00</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_12_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.45</span>  <span class="mf">4.20</span>  <span class="mf">2.40</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_13_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.60</span>  <span class="mf">5.00</span>  <span class="mf">2.90</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_14_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.65</span>  <span class="mf">5.50</span>  <span class="mf">3.20</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_15_UPC_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.70</span>  <span class="mf">5.80</span>  <span class="mf">3.40</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_16_LWC_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.80</span>  <span class="mf">6.40</span>  <span class="mf">3.80</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_17_CTM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">3.20</span>  <span class="mf">7.50</span>  <span class="mf">4.50</span>   <span class="mi">850</span>   <span class="mi">500</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_18_PH2_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.40</span>  <span class="mf">5.00</span>  <span class="mf">2.90</span>   <span class="mi">340</span>   <span class="mi">200</span>  <span class="mi">1</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_19_PH3_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.90</span>  <span class="mf">6.80</span>  <span class="mf">4.00</span>   <span class="mi">510</span>   <span class="mi">300</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_20_PHM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">3.20</span>  <span class="mf">8.00</span>  <span class="mf">4.70</span>   <span class="mi">850</span>   <span class="mi">500</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_21_PA2_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.60</span>  <span class="mf">5.40</span>  <span class="mf">2.80</span>   <span class="mi">340</span>   <span class="mi">200</span>  <span class="mi">2</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_22_PA3_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.80</span>  <span class="mf">6.50</span>  <span class="mf">3.50</span>   <span class="mi">510</span>   <span class="mi">300</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_23_PAM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">3.40</span>  <span class="mf">8.10</span>  <span class="mf">4.60</span>   <span class="mi">850</span>   <span class="mi">500</span>  <span class="mi">0</span> 
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>
+<p><code>node_grd</code>: データ読み込み担当ノード．すべての層構造ファイルはここで指定されたノードから読み込まれ，MPIによって全ノードにデータ転送される．</p>
+</li>
+<li>
+<p><code>is_ocean</code> : 海水モード．<code>.true.</code>（デフォルト）の場合<script type="math/tex">z=0</script>より地表面までは海水で満たされる．<code>.false.</code>の場合には海底面の上はすべて空気となり，海底が自由表面として取り扱われる．</p>
+</li>
+</ul>
+</dd>
+<dt><code>’user’</code></dt>
+<dd><code>src/swpc_*/m_vmodel_user.F90</code> 内のサブルーチンでユーザーが定義する速度構造が読み込まれる．このF90ファイルを<strong>変更した場合には再コンパイルが必要</strong>となる．サブルーチンの引数についてはファイル内コメントを参照のこと．</dd>
+</dl>
+</dd>
+<dt><strong><code>vcut</code></strong></dt>
+<dd>カットオフ速度．<code>’lhm’</code>ならびに<code>’grd’</code>構造で，この値よりも小さな速度値が与えられた場合には，それを強制的に<code>vcut</code>に置き換える．低速度域を排除して波長とグリッドサイズの比を一定以上に保つために用いられる．この値が0の場合には置き換えは実施されない．また，海水層（<script type="math/tex">\mu=0</script>）の速度には適用されない．</dd>
+</dl>
+</div>
+<h2 id="_3">空気および海水層の取り扱い<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><code>OpenSWPC</code> では，空気層は密度 <script type="math/tex">\rho=0.001</script> [g/cm<script type="math/tex">{}^3</script>]，地震波速度<script type="math/tex">V_P=V_S=0</script>
+[km/s]，内部減衰<script type="math/tex">Q_P = Q_S = 10^{10}</script>を，海水層では<script type="math/tex">\rho=1.0</script>
+[g/cm<script type="math/tex">{}^3</script>], <script type="math/tex">V_P=1.5</script> [km/s], <script type="math/tex">V_S=0.0</script> [km/s], <script type="math/tex">Q_P = Q_S = 10^6</script>をそれぞれ仮定している．
+空気層は事実上真空として扱えるほどに小さな密度を持ち，かつ地震波速度が0であるため，空中音波は伝播しない．
+従って，空気層中の<script type="math/tex">Q</script>値は結果に影響しない．
+ただし，計算コード中に密度の逆数を求める演算があるため，<strong>空気層の密度はゼロにしてはならない</strong>．
+海水層については平均的な海中音波一定速度をP波速度として利用している．
+海中音波の減衰は非常に小さいことが知られており，事実上無減衰になるようなQ値を導入している．</p>
+<p>地表ならびに海底面では，差分式を2次精度変更する境界条件が適用される（e.g., Okamoto and Takenaka, 2005<sup id="fnref:OT2005"><a class="footnote-ref" href="#fn:OT2005">1</a></sup>; Maeda and Furumura, 2003<sup id="fnref:MF2003"><a class="footnote-ref" href="#fn:MF2003">2</a></sup>）．海底ならびに地表の境界は，<script type="math/tex">\mu</script>と<script type="math/tex">\lambda</script>が有限の値から0になる，という条件を用いて自動的に抽出される．</p>
+<h2 id="_4">ランダム媒質の重畳<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>速度構造<code>’uni’</code>, <code>’lhm’</code>, <code>’grd’</code>それぞれに対して，平均速度を成層構造であたえ，それに別途生成したランダムな短波長速度ゆらぎを重畳させることができる．ランダムな速度ゆらぎ<script type="math/tex">\xi</script>を事前に生成しておき，別途定義される平均的速度構造<script type="math/tex">V_{P0}</script>,
+<script type="math/tex">V_{S0}</script>, <script type="math/tex">\rho_0</script>に対して， 
+\begin{align}
+  V_P = V_{P0} \left( 1 + \xi \right) , \, V_S = V_{S0} \left( 1 + \xi \right) , \,
+  \rho = \rho_0 \left( 1 + \nu \xi \right)
+\end{align}
+のようにゆらぎを与える．ただし，ここでは<script type="math/tex">\nu=0.8</script>とするBirch則を採用している（Sato et al., 2012<sup id="fnref:SFM2012"><a class="footnote-ref" href="#fn:SFM2012">3</a></sup>）.</p>
+<p>速度構造の指定法は，背景となる平均速度モデルに応じて，<code>vmodel_type=’uni_rmed’</code>, <code>’lhm_rmed’</code>, <code>’grd_rmed’</code>の3種類が提供されている．また，ランダム媒質の生成のために<a href="../../3._関係ツール/0304_rmedia/">別ツール</a> が提供される．</p>
+<p>以下で解説する3モデルに共通のパラメタとして，以下のパラメタを用いる．</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>dir_rmed</code></strong></dt>
+<dd>ランダム媒質データ格納ディレクトリ</dd>
+</dl>
+<p>ランダム媒質は3次元もしくは2次元の<code>NetCDF</code>ファイルとして与えられ，グリッド毎の速度ゆらぎ率<script type="math/tex">\xi(I,J,K)</script>が定義されている．並列計算のためにファイルを分割する必要は無く，計算の各ノードが，自ノードの計算担当領域の<code>(i,j,k)</code>範囲に相当するデータを自動的に抽出する．計算サイズ<code>Nx,Ny,Nz</code>がランダム媒質ファイルの次元長よりも大きい場合には，周期的境界条件によって同じランダム媒質を繰り返してモデル領域全体を埋める．実行プログラムは，ランダム媒質の空間グリッドサイズとシミュレーションのグリッドサイズが一致しているかどうか確認しない．計算の空間格子サイズを変更した場合，ランダム媒質も作成し直す必要がある．
+なお，2次元計算のコードに3次元のランダム媒質バイナリを用いることは可能である（その場合<code>k=1</code>の断面が利用される）が，その逆は許されない．</p>
+</div>
+<h3 id="_5">一様均質＋ランダム媒質<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>vmodel=uni_rmed</code>を用いる．<code>vmodel=’uni’</code>のパラメタに加えて，以下が必要となる．</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>fn_rmed0</code></strong></dt>
+<dd>ランダム媒質ファイル名</dd>
+</dl>
+<p>このモデルでは，平均速度に<code>fn_rmed0</code>で与えられたゆらぎを重畳させる．ファイルが存在しない場合にはゆらぎが0であると見なす．</p>
+</div>
+<h3 id="_6">水平成層＋ランダム媒質<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><code>vmodel=lhm_rmed</code>では，<code>vmodel=’lhm’</code>の成層構造の各層にランダム媒質を重畳させる．その際，各層に異なるランダム媒質を重畳させることも可能である．このモデルでは，<code>fn_lhm</code>のかわりに以下のパラメタを用いる：</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>fn_lhm_rmed</code></strong></dt>
+<dd>構造リスト</dd>
+</dl>
+<p>構造リストは<code>fn_lhm</code>に準じたフォーマットを取るが，その最右欄に，以下の例のように各層のランダム媒質ファイル名を記載する．</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp"># depth  rho(g/cm^3)  vp(km/s)   vs(km/s)     Qp      Qs     fn_rmed</span>
+<span class="cp"># ----------------------------------------------------------------------</span>
+      <span class="mi">0</span>        <span class="mf">2.300</span>      <span class="mf">5.50</span>      <span class="mf">3.14</span>     <span class="mi">600</span>     <span class="mi">300</span>     <span class="n">rmedia1</span><span class="p">.</span><span class="n">nc</span>
+      <span class="mi">3</span>        <span class="mf">2.400</span>      <span class="mf">6.00</span>      <span class="mf">3.55</span>     <span class="mi">600</span>     <span class="mi">300</span>     <span class="n">rmedia1</span><span class="p">.</span><span class="n">nc</span>
+     <span class="mi">18</span>        <span class="mf">2.800</span>      <span class="mf">6.70</span>      <span class="mf">3.83</span>     <span class="mi">600</span>     <span class="mi">300</span>     <span class="n">rmedia2</span><span class="p">.</span><span class="n">nc</span>
+     <span class="mi">33</span>        <span class="mf">3.200</span>      <span class="mf">7.80</span>      <span class="mf">4.46</span>     <span class="mi">600</span>     <span class="mi">300</span>     <span class="n">rmedia2</span><span class="p">.</span><span class="n">nc</span>
+    <span class="mi">100</span>        <span class="mf">3.300</span>      <span class="mf">8.00</span>      <span class="mf">4.57</span>     <span class="mi">600</span>     <span class="mi">300</span>     <span class="o">-</span>
+    <span class="mi">225</span>        <span class="mf">3.400</span>      <span class="mf">8.40</span>      <span class="mf">4.80</span>     <span class="mi">600</span>     <span class="mi">300</span>     <span class="o">-</span>
+    <span class="mi">325</span>        <span class="mf">3.500</span>      <span class="mf">8.60</span>      <span class="mf">4.91</span>     <span class="mi">600</span>     <span class="mi">300</span>     <span class="o">-</span>
+    <span class="mi">425</span>        <span class="mf">3.700</span>      <span class="mf">9.30</span>      <span class="mf">5.31</span>     <span class="mi">600</span>     <span class="mi">300</span>     <span class="o">-</span>
+</pre></div>
+</td></tr></table>
+
+<p>この例では，0 kmと3 kmの層に<code>rmedia1.nc</code>, 18 kmと33 kmの層に<code>rmedia2.nc</code>を配置する．それより深い部分についてはダミー文字<code>"-"</code>が書かれている．該当する名前のファイルが存在しなければ，これらの領域には速度ゆらぎは重畳されない．
+ランダム媒質ファイルは<code>dir_rmed</code>から探される．
+パラメタ<code>dir_rmed</code>を用いずに<code>fn_lhm</code>の欄に直接ディレクトリ名を書いてもかまわないが，その場合はかならずファイル名全体をクォーテーションで括ること．
+ゆらぎ与えない場合にも，ランダム媒質ファイルの欄には何らかの文字が書かれていなければならない．ファイル名の欄が空白だとエラーになる．</p>
+</div>
+<h3 id="3">3次元ランダム不均質構造<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<p><code>vmodel=grd_rmed</code>では，<code>vmodel=’grd’</code>の成層構造の各層にランダム媒質を重畳させる．各層に異なるランダム媒質を重畳させることも可能であり，かつランダム媒質の<script type="math/tex">k</script>（鉛直）方向の基準位置を任意の層境界に設定することが可能である．
+このモデルでは，<code>fn_grd</code>のかわりに以下のパラメタを用いる．</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>fn_grdlst_rmed</code></strong></dt>
+<dd>構造リスト</dd>
+</dl>
+<p>構造リストは<code>fn_grdlst</code>に準じたフォーマットを取るが，以下の例のように，右欄にランダム媒質ファイル名と基準層の番号を記述する．</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp"># grd filename          rho    vp    vs   QP   QS  sw  fn_rmed      ref</span>
+<span class="cp"># -----------------------------------------------------------------------</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_01_TAB_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">1.80</span>  <span class="mf">1.70</span>  <span class="mf">0.35</span>   <span class="mi">119</span>    <span class="mi">70</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_02_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">1.95</span>  <span class="mf">1.80</span>  <span class="mf">0.50</span>   <span class="mi">170</span>   <span class="mi">100</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_03_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.00</span>  <span class="mf">2.00</span>  <span class="mf">0.60</span>   <span class="mi">204</span>   <span class="mi">120</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_04_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.05</span>  <span class="mf">2.10</span>  <span class="mf">0.70</span>   <span class="mi">238</span>   <span class="mi">140</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_05_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.07</span>  <span class="mf">2.20</span>  <span class="mf">0.80</span>   <span class="mi">272</span>   <span class="mi">160</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_06_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.10</span>  <span class="mf">2.30</span>  <span class="mf">0.90</span>   <span class="mi">306</span>   <span class="mi">180</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_07_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.15</span>  <span class="mf">2.40</span>  <span class="mf">1.00</span>   <span class="mi">340</span>   <span class="mi">200</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_08_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.20</span>  <span class="mf">2.70</span>  <span class="mf">1.30</span>   <span class="mi">442</span>   <span class="mi">260</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_09_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.25</span>  <span class="mf">3.00</span>  <span class="mf">1.50</span>   <span class="mi">510</span>   <span class="mi">300</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_10_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.30</span>  <span class="mf">3.20</span>  <span class="mf">1.70</span>   <span class="mi">578</span>   <span class="mi">340</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_11_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.35</span>  <span class="mf">3.50</span>  <span class="mf">2.00</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_12_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.45</span>  <span class="mf">4.20</span>  <span class="mf">2.40</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_13_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.60</span>  <span class="mf">5.00</span>  <span class="mf">2.90</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_14_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.65</span>  <span class="mf">5.50</span>  <span class="mf">3.20</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_15_UPC_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.70</span>  <span class="mf">5.80</span>  <span class="mf">3.40</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_16_LWC_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.80</span>  <span class="mf">6.40</span>  <span class="mf">3.80</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_3</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_17_CTM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">3.20</span>  <span class="mf">7.50</span>  <span class="mf">4.50</span>   <span class="mi">850</span>   <span class="mi">500</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_3</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_18_PH2_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.40</span>  <span class="mf">5.00</span>  <span class="mf">2.90</span>   <span class="mi">340</span>   <span class="mi">200</span>  <span class="mi">1</span> <span class="err">&#39;</span><span class="n">rmed3d_2</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">18</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_19_PH3_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.90</span>  <span class="mf">6.80</span>  <span class="mf">4.00</span>   <span class="mi">510</span>   <span class="mi">300</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_2</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">18</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_20_PHM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">3.20</span>  <span class="mf">8.00</span>  <span class="mf">4.70</span>   <span class="mi">850</span>   <span class="mi">500</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_3</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">18</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_21_PA2_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.60</span>  <span class="mf">5.40</span>  <span class="mf">2.80</span>   <span class="mi">340</span>   <span class="mi">200</span>  <span class="mi">2</span> <span class="err">&#39;</span><span class="n">rmed3d_2</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">21</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_22_PA3_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.80</span>  <span class="mf">6.50</span>  <span class="mf">3.50</span>   <span class="mi">510</span>   <span class="mi">300</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_2</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">21</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_23_PAM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">3.40</span>  <span class="mf">8.10</span>  <span class="mf">4.60</span>   <span class="mi">850</span>   <span class="mi">500</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_3</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">21</span>
+</pre></div>
+</td></tr></table>
+
+<p>ランダム媒質ファイル名の記載方法については<code>lhm_rmed</code>の場合と同様である．</p>
+<p>最右欄の数字でランダム媒質層の鉛直方向の基準となる面を指定する．
+この値が0であれば，<code>uni_rmed</code>や<code>lhm_rmed</code>などと同様にモデルの鉛直方向のグリッド位置のランダム媒質がそのまま用いられる．ここに非ゼロの値<code>NR</code>が指定されると，<code>NR</code>番目の層の上面位置からの相対グリッド位置のランダム媒質が用いられるようになる．たとえば上記の例では，第18層から20層までは18層目が，21から23層は21層のそれぞれプレート上面が基準値になっている．これにより，プレート内の不均質構造は水平面ではなく，プレート正面に沿った斜めのゆらぎ構造を導入することができる．</p>
+</div>
+<h3 id="_7">速度ゆらぎの打ち切り<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>速度ゆらぎのパラメタ<script type="math/tex">\epsilon</script>が大きくなると，局所的に非常に地震波速度が大きくあるいは小さくなり，以下の3ケースで計算が不可能になることがある．</p>
+<ol>
+<li>
+<p>
+<script type="math/tex">\xi>0</script>の場合に<script type="math/tex">V=(1+\xi)V_0</script>が差分法の安定条件から許容される最大速度を超える．</p>
+</li>
+<li>
+<p>
+<script type="math/tex">\xi<-1.0</script>の場合，地震波速度が物理的にありえない負の値を取る．</p>
+</li>
+<li>
+<p>
+<script type="math/tex">\xi<-1.25</script>の場合，密度が物理的にありえない負の値を取る．</p>
+</li>
+</ol>
+<p>そこで，<code>OpenSWPC</code>では，ランダム媒質を頂上させた結果の速度を <code>vcut</code><script type="math/tex">\le v \le 0.95 \times v_\text{max}</script> に制限する．ここで<code>vcut</code>は低速度打ち切りのための入力パラメタ，<script type="math/tex">v_\text{max}</script>は安定条件から許容される最大速度（自動的に計算）である．さらに以下のパラメタを指定することで，密度が負になることを防止している．</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>rhomin</code></strong></dt>
+<dd>最低密度（デフォルトは1.0 g/cm<script type="math/tex">{}^3</script>）</dd>
+</dl>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:OT2005">
+<p>Okamoto, T., and H. Takenaka (2005). Fluid-solid boundary implementation in the velocity-stress finite- difference method, <em>Zisin 2</em>, <em>57</em>, 355–364, doi:10.4294/zisin1948.57.3_355. (in Japanese with English Abstract) <a href="https://doi.org/10.4294/zisin1948.57.3_355">(article link)</a>&#160;<a class="footnote-backref" href="#fnref:OT2005" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:MF2003">
+<p>Maeda, T., and T. Furumura (2013), FDM simulation of seismic waves, ocean acoustic waves, and tsunamis based on tsunami-coupled equations of motion, <em>Pure Appl. Geophys.</em>, <em>170</em>(1-2), 109–127, doi:10.1007/s00024-011-0430-z. <a href="https://doi.org/10.1007/s00024-011-0430-z">(article link)</a>&#160;<a class="footnote-backref" href="#fnref:MF2003" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:SFM2012">
+<p>Sato, H., M. C. Fehler, and T. Maeda (2012), <em>Seismic Wave Propagation and Scattering in the Heterogeneous Earth: Second Edition</em>, Springer Berlin Heidelberg, Berlin, Heidelberg, doi:10.1007/978-3-642-23029-5.&#160;<a class="footnote-backref" href="#fnref:SFM2012" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../0205_output/" title="出力ファイルの設定" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                出力ファイルの設定
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../0207_source/" title="震源の指定" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                震源の指定
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy 2019 Takuto Maeda. All Rights Reserved
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/takuto-maeda" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+            <script src="../../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../mathjax-config.js"></script>
+      
+        <script src="../../../extra.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

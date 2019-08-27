@@ -1,0 +1,1446 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="OpenSWPC User's Guide">
+      
+      
+        <link rel="canonical" href="https://tktmyd.github.io/OpenSWPC/Japanese/2._パラメタ設定/0203_coord/">
+      
+      
+        <meta name="author" content="Takuto Maeda">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en, ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>座標系と並列計算 - OpenSWPC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              OpenSWPC
+            </span>
+            <span class="md-header-nav__topic">
+              
+                座標系と並列計算
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="OpenSWPC Users' Guide" class="md-tabs__link">
+        OpenSWPC Users' Guide
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../English/" title="English" class="md-tabs__link">
+          English
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" title="Japanese" class="md-tabs__link md-tabs__link--active">
+          Japanese
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    OpenSWPC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="OpenSWPC Users' Guide" class="md-nav__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      English
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        English
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/" title="OpenSWPC Users' Guide" class="md-nav__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/8._Revision_History/" title="Major Revision History" class="md-nav__link">
+      Major Revision History
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/9._License/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      1. SetUp
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        1. SetUp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/1._SetUp/1-1_env/" title="System requirements" class="md-nav__link">
+      System requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/1._SetUp/1-2_tree/" title="Code directory tree" class="md-nav__link">
+      Code directory tree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/1._SetUp/1-3_compile/" title="Compilation and Execution" class="md-nav__link">
+      Compilation and Execution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/1._SetUp/1-4_dataset/" title="Preparing the Dataset" class="md-nav__link">
+      Preparing the Dataset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/1._SetUp/1-5_parallel/" title="Execution" class="md-nav__link">
+      Execution
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      2. Parameter Settings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        2. Parameter Settings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0201_description/" title="Notation of the Parameter File" class="md-nav__link">
+      Notation of the Parameter File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0202_env/" title="Controlling Parameters" class="md-nav__link">
+      Controlling Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0203_coord/" title="Coordinates and Parallel Computation" class="md-nav__link">
+      Coordinates and Parallel Computation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0204_visco/" title="Viscoelastic Bodies" class="md-nav__link">
+      Viscoelastic Bodies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0205_output/" title="Simulation Data Output" class="md-nav__link">
+      Simulation Data Output
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0206_vmodel/" title="Velocity Model" class="md-nav__link">
+      Velocity Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0207_source/" title="Earthquake Source Specification" class="md-nav__link">
+      Earthquake Source Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0208_abc/" title="Absorbing Boundary Conditions" class="md-nav__link">
+      Absorbing Boundary Conditions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0209_checkpoint/" title="Checkpointing and Restarting" class="md-nav__link">
+      Checkpointing and Restarting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0210_reciprocity/" title="Reciprocity Mode" class="md-nav__link">
+      Reciprocity Mode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/2._Parameter_Settings/0211_2dcode/" title="About Two-Dimensional Codes" class="md-nav__link">
+      About Two-Dimensional Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      3. Related Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        3. Related Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/3._Related_Tools/0301_snapshot/" title="Snapshot data handling" class="md-nav__link">
+      Snapshot data handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/3._Related_Tools/0302_vmodel/" title="Velocity Structure" class="md-nav__link">
+      Velocity Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/3._Related_Tools/0303_parameter/" title="Programs for Supporting Parameter Settings" class="md-nav__link">
+      Programs for Supporting Parameter Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/3._Related_Tools/0304_rmedia/" title="Generation of Random Media" class="md-nav__link">
+      Generation of Random Media
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/3._Related_Tools/0305_misc/" title="Miscellaneous Tools" class="md-nav__link">
+      Miscellaneous Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      4. Additional Materials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        4. Additional Materials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/4._Additional_Materials/0401_modelset/" title="Hints for Parameter Settings" class="md-nav__link">
+      Hints for Parameter Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../English/4._Additional_Materials/0402_modification/" title="Hints for Modifying the Code" class="md-nav__link">
+      Hints for Modifying the Code
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Japanese
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Japanese
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="OpenSWPC ユーザーズガイド" class="md-nav__link">
+      OpenSWPC ユーザーズガイド
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8._Revision_History/" title="主な改版履歴" class="md-nav__link">
+      主な改版履歴
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../9._License/" title="ライセンス" class="md-nav__link">
+      ライセンス
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      1. 準備
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        1. 準備
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._準備/0101_env/" title="動作環境" class="md-nav__link">
+      動作環境
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._準備/0102_tree/" title="ディレクトリ構成" class="md-nav__link">
+      ディレクトリ構成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._準備/0103_compile/" title="コンパイル" class="md-nav__link">
+      コンパイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._準備/0104_dataset/" title="データセットの準備" class="md-nav__link">
+      データセットの準備
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._準備/0105_parallel/" title="並列計算の実行例" class="md-nav__link">
+      並列計算の実行例
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5" checked>
+    
+    <label class="md-nav__link" for="nav-3-5">
+      2. パラメタ設定
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        2. パラメタ設定
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0201_description/" title="パラメタファイルの記法" class="md-nav__link">
+      パラメタファイルの記法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0202_env/" title="動作環境の制御" class="md-nav__link">
+      動作環境の制御
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        座標系と並列計算
+      </label>
+    
+    <a href="./" title="座標系と並列計算" class="md-nav__link md-nav__link--active">
+      座標系と並列計算
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="スタガードグリッド" class="md-nav__link">
+    スタガードグリッド
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="安定条件と波長条件" class="md-nav__link">
+    安定条件と波長条件
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0204_visco/" title="粘弾性体" class="md-nav__link">
+      粘弾性体
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0205_output/" title="出力ファイルの設定" class="md-nav__link">
+      出力ファイルの設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0206_vmodel/" title="速度構造の指定" class="md-nav__link">
+      速度構造の指定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0207_source/" title="震源の指定" class="md-nav__link">
+      震源の指定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0208_abc/" title="吸収境界条件" class="md-nav__link">
+      吸収境界条件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0209_checkpoint/" title="チェックポイント・リスタート" class="md-nav__link">
+      チェックポイント・リスタート
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0210_reciprocity/" title="相反定理モード" class="md-nav__link">
+      相反定理モード
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0211_2dcode/" title="2次元コード固有の設定" class="md-nav__link">
+      2次元コード固有の設定
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      3. 関係ツール
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        3. 関係ツール
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._関係ツール/0301_snapshot/" title="スナップショット" class="md-nav__link">
+      スナップショット
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._関係ツール/0302_vmodel/" title="構造モデルの確認" class="md-nav__link">
+      構造モデルの確認
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._関係ツール/0303_parameter/" title="パラメタ作成支援" class="md-nav__link">
+      パラメタ作成支援
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._関係ツール/0304_rmedia/" title="ランダム媒質生成" class="md-nav__link">
+      ランダム媒質生成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._関係ツール/0305_misc/" title="その他のツール" class="md-nav__link">
+      その他のツール
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      4. その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        4. その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4._その他/0401_modelset/" title="計算モデル設定のヒント" class="md-nav__link">
+      計算モデル設定のヒント
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4._その他/0402_modification/" title="コード改造のヒント" class="md-nav__link">
+      コード改造のヒント
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="スタガードグリッド" class="md-nav__link">
+    スタガードグリッド
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="安定条件と波長条件" class="md-nav__link">
+    安定条件と波長条件
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">座標系と並列計算<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p><code>OpenSWPC</code> は3次元計算の場合は水平2次元分割を，2次元計算の場合には水平1次元分割を用いて並列計算を行う．
+3次元計算の場合の空間MPI分割の様子を下図に示す．2次元計算の場合には，XZ (<code>I-K</code>)断面が利用される．</p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/parallel_partition.png" />
+(a) ３次元空間のモデル分割の模式図．(b) 隣接ノード間の通信の模式図．（Modified from Maeda et al., 2013<sup id="fnref:Maeda2013"><a class="footnote-ref" href="#fn:Maeda2013">1</a></sup>）．</p>
+</div>
+<p>本コードは，<code>xbeg--xend</code>, <code>ybeg--yend</code>, <code>zbeg--zend</code>の領域を，空間刻み<code>dx</code>, <code>dy</code>,
+<code>dz</code>で各方向<code>nx</code>, <code>ny</code>,
+<code>nz</code>個のグリッドに離散化する．
+<script type="math/tex">z</script>方向は下が正の座標系を取る．水面が<script type="math/tex">z=0</script>であることが想定されているため，地表境界条件を満たすため<code>zbeg</code>は負の値から始めることが推奨される．</p>
+<p>実空間モデルでの計算の場合には，中心緯度<code>clon</code>, <code>clat</code>を基準点として
+Gauss-Krüger投影（Kawase et al., 2011 <sup id="fnref:Kawase2011"><a class="footnote-ref" href="#fn:Kawase2011">2</a></sup>）により計算座標系（デカルト座標系）の<script type="math/tex">xy</script>面を地理座標系に関連づける．具体的には以下のような手法により地理座標を取得する．</p>
+<ol>
+<li>
+<p>回転角phiとx,yのパラメタから，デカルト座標系における等間隔グリッド位置を生成する．</p>
+</li>
+<li>
+<p>1.で生成したグリッド一つ一つの位置を，<code>clon</code>, <code>clat</code>を中心位置としたGauss-Krüger変換によって緯度経度に変換する．</p>
+</li>
+<li>
+<p>各グリッド位置の緯度経度における標高ないしは境界面深さを，入力速度構造データから双3次補間によって推定する．</p>
+</li>
+</ol>
+<p>領域の指定範囲が入力構造ファイルの外にはみ出してしまった場合には，構造ファイルの最外側グリッドでの値が補外される．</p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/fdm_coordinate.png" />
+地理座標系と計算座標系（水平断面）との関係．</p>
+</div>
+<h2 id="_2">スタガードグリッド<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>直交座標系<script type="math/tex">O(xyz)</script>と離散化グリッドとの間は下図のように関係付けられる．</p>
+<div class="admonition quote">
+<p class="admonition-title">3次元のスタガードグリッド配置</p>
+<p><img alt="" src="../../../fig/voxel_staggered.png" />
+<code>xbeg=ybeg=zbeg=0</code>の場合．</p>
+</div>
+<p>図に含まれるグリッドが，プログラム上では同一の配列インデックス<code>(I, J, K)</code>をもつ．この単位4面体をボクセル，と呼ぶ．
+ある<script type="math/tex">x</script>が属するボクセル位置は 
+\begin{align}
+I = \left \lceil \frac{ x-x_{\text{beg}} }{ \Delta  x } \right \rceil, 
+\end{align}
+で，逆にボクセル位置<script type="math/tex">I</script>が与えられたときのボクセル中心の座標位置は</p>
+<p>\begin{align}
+x = x_{\text{beg}} + \left( I - \frac{1}{2} \right) \Delta x
+\end{align}
+でそれぞれ与えられる．ただし<script type="math/tex">\lceil \cdot \rceil</script>は天井関数，<script type="math/tex">x_{\text{beg}}</script>は座標系のとる最小値であり，<script type="math/tex">x= x_{\text{beg}}</script>はボクセル<script type="math/tex">I=1</script>に属するようにとられている．</p>
+<p>範囲 </p>
+<script type="math/tex; mode=display">\begin{align}
+\begin{split}
+x_\text{beg} + (I-1)\Delta x < x \le x_\text{beg} +  I \Delta x, 
+\\
+y_\text{beg} + (J-1)\Delta y < y \le y_\text{beg} + J \Delta y, 
+\\
+z_\text{beg} + (K-1)\Delta z < z \le z_\text{beg} + K \Delta z 
+\end{split}
+\end{align}</script>
+<p>で定義されるボクセルの中心に法線応力成分が，辺上に剪断応力成分が，そしてボクセル面上に速度成分がそれぞれ配置される．</p>
+<p>密度・速度などの媒質定数はすべてボクセル中心 
+\begin{align}
+x_\text{beg} + (I-1/2) \Delta x,
+\quad
+y_\text{beg} + (J-1/2) \Delta y, \quad
+z_\text{beg} + (K-1/2) \Delta z 
+\end{align}
+の位置で与える．計算中に適宜平均化操作が行われ，それぞれのグリッドでの媒質パラメタが評価される．</p>
+<h2 id="_3">安定条件と波長条件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>空間グリッドサイズ <script type="math/tex">\Delta x</script>, <script type="math/tex">\Delta y</script>, <script type="math/tex">\Delta z</script> と時間ステップ間隔
+<script type="math/tex">\Delta t</script>
+は，差分法の安定条件を満たさなければいけない．<script type="math/tex">N_D</script>次元空間の，空間差分次数<script type="math/tex">P</script>次の安定条件は</p>
+<p>\begin{align}
+  \Delta t &lt; \frac{ 1 }{ V_{\max} } \left( \sum_{i=1}^{N_D} \frac{1}{\Delta x_i^2} \right)^{-1/2} \left( \sum_{p=1}^{P/2} C_p\right) ^{-1}
+\end{align}
+のように与えられる．</p>
+<p>ここで<script type="math/tex">V_{\max}%_</script> 
+は媒質中もっとも速い地震波速度，<script type="math/tex">C_p%_</script>は差分演算の係数，<script type="math/tex">\Delta x_i%_</script>は<script type="math/tex">i</script>方向の空間グリッドサイズである．
+空間4次の差分公式の場合，係数<script type="math/tex">C_p</script>は<script type="math/tex">C_1 = 9/8</script>, <script type="math/tex">C_2 = 1/24</script>である．
+たとえば，3次元空間4次の差分法で，空間グリッドサイズが等方的（<script type="math/tex">\Delta x = \Delta y =\Delta z = h</script>）な場合，この安定条件は</p>
+<script type="math/tex; mode=display">\begin{align}
+  \Delta t < \frac{6}{7} \dfrac{1}{V_{\max} \sqrt{ \dfrac{1}{\Delta x^2} + \dfrac{1}{\Delta y^2} +\dfrac{1}{\Delta z^2}}} = \frac{6 h}{7 \sqrt{3} V_{\max}} \simeq 0.495 \frac{h}{V_{\max}}. 
+\end{align}</script>
+<p>のように簡略化される．これは，直感的には<strong>『1時間ステップに地震波が伝播する距離は，空間グリッド間隔よりも（充分に）小さい』</strong>ことが要請されていると考えて良い．この条件が満たされないと，差分法による時間発展計算そのものが不安定になり，すぐさま発散してしまう．</p>
+<p>安定条件に加え，<strong>地震波の波長よりも空間グリッドサイズが充分に小さい</strong>（1波長あたり5-10グリッド）ことも要求される．こちらの波長条件はたとえ満たされなくても計算そのものは実行可能であるが，波長あたりのグリッド数が足りない場合には，地震波速度が波長（あるいは周波数）に依存する数値分散現象が起こる．数値分散の結果，差分法によって計算される地震波の速度は常に仮定した速度より遅くなるため，この人工的な分散による後続波が現れてしまう．数値分散を避けるためには空間グリッドサイズを小さくする必要があるが，同時に，安定条件を満たすために時間ステップ間隔も小さくしなければならない．</p>
+<p>これら安定条件と波長条件は，差分法プログラム実行開始時に標準エラー出力に
+Stability Condition <code>c</code> および Wavelength Condition <code>r</code>
+として表示される．それぞれ，安定条件と時間刻みの比および構造中の最小波長と空間グリッドサイズの比を意味している．</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>nproc_x</code></strong>, <strong><code>nproc_y</code></strong></dt>
+<dd>
+<script type="math/tex">x</script>, <script type="math/tex">y</script>方向のMPI分割数．全並列数は <code>nproc_x * nproc_y</code>になる．この全並列数が実行時に<code>mpirun</code>等で指定されるプロセス数と一致している必要がある．分割数は1でも良い．どちらも1の場合には事実上の非並列計算になる．</dd>
+<dt><strong><code>nx</code></strong>, <strong><code>ny</code></strong>, <strong><code>nz</code></strong></dt>
+<dd>空間次元各方向のグリッド数． なお，水平方向のグリッド数<code>nx</code>,<code>ny</code>は必ずしも<code>nproc_x</code>, <code>nproc_y</code>の倍数でなくとも良い．余りが発生する場合には，端を担当するノードのグリッド数で自動的に調節される．</dd>
+<dt><strong><code>dx</code></strong>, <strong><code>dy</code></strong>, <strong><code>dz</code></strong></dt>
+<dd>空間グリッド間隔 [km]．全空間サイズは <code>nx * dx</code>などとなる．各方向のグリッドサイズは等しくなくとも良い．</dd>
+<dt><code>nt</code></dt>
+<dd>時間グリッド数．</dd>
+<dt><code>dt</code></dt>
+<dd>時間グリッド間隔 [s]．全時間長は <code>nt * dt</code>である．</dd>
+<dt><code>xbeg</code>, <code>ybeg</code>, <code>zbeg</code></dt>
+<dd>各空間方向の最小値．地図投影法上は，基準緯度経度が中心になるような値となっているのが最も歪みが少ない．<code>xbeg</code>と<code>ybeg</code>が省略された場合には，<code>xbeg = - nx * dx / 2</code>, <code>ybeg = - ny * dy / 2</code> と自動設定される．<code>zbeg</code>が省略された場合には，<code>K=30</code>が地表面となるように自動設定される．</dd>
+<dt><code>tbeg</code></dt>
+<dd>時間の最小値．通常は0で良いが，特定の時刻から始めることもできる．</dd>
+<dt><code>clon</code>, <code>clat</code></dt>
+<dd>座標系中心経度・中心緯度（度）．本座標位置を中心としたGauss-Krüger変換によって座標投影が行われる．</dd>
+<dt><code>phi</code></dt>
+<dd>地理座標系に対する計算座標系の回転角度．<code>phi=0</code>の場合は<script type="math/tex">x</script>軸が北，<script type="math/tex">y</script>軸が東を向いている．通常はゼロで良いが，斜めの座標系を用いることもできる．ただし，<code>phi</code>がゼロでない場合には，出力波形やスナップショットの<script type="math/tex">x</script>,<script type="math/tex">y</script>成分も角度が<code>phi</code>だけ傾いているので注意が必要である．</dd>
+</dl>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Maeda2013">
+<p>Maeda, T., Furumura, T., Noguchi, S., Takemura, S., Sakai, S., Shinohara, M., Iwai, K., &amp; Lee, S.-J. (2013). Seismic and tsunami wave propagation of the 2011 Off the Pacific Coast of Tohoku Earthquake as inferred from the tsunami-coupled finite difference simulation, <em>Bulletin of the Seismological Society of America</em>, 103, 1456–1472, doi:10.1785/0120120118. <a href="https://doi.org/10.1785/0120120118">(article link)</a>&#160;<a class="footnote-backref" href="#fnref:Maeda2013" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Kawase2011">
+<p>Kawase, K. (2011), A general formula for calculating meridian arc length and its application to coordinate conversion in the Gauss-Krüger projection, <em>Bulletin of the Geospatial Information Authority of Japan</em>, <em>59</em>, 1–13. <a href="http://www.gsi.go.jp/common/000062452.pdf">(article link)</a>&#160;<a class="footnote-backref" href="#fnref:Kawase2011" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../0202_env/" title="動作環境の制御" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                動作環境の制御
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../0204_visco/" title="粘弾性体" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                粘弾性体
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy 2019 Takuto Maeda. All Rights Reserved
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/takuto-maeda" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+            <script src="../../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../mathjax-config.js"></script>
+      
+        <script src="../../../extra.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1493 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="OpenSWPC User's Guide">
+      
+      
+        <link rel="canonical" href="https://tktmyd.github.io/OpenSWPC/English/2._Parameter_Settings/0203_coord/">
+      
+      
+        <meta name="author" content="Takuto Maeda">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en, ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Coordinates and Parallel Computation - OpenSWPC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#coordinates-and-parallel-computation" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              OpenSWPC
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Coordinates and Parallel Computation
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="OpenSWPC Users' Guide" class="md-tabs__link">
+        OpenSWPC Users' Guide
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" title="English" class="md-tabs__link md-tabs__link--active">
+          English
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../Japanese/" title="Japanese" class="md-tabs__link">
+          Japanese
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    OpenSWPC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="OpenSWPC Users' Guide" class="md-nav__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      English
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        English
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="OpenSWPC Users' Guide" class="md-nav__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8._Revision_History/" title="Major Revision History" class="md-nav__link">
+      Major Revision History
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../9._License/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      1. SetUp
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        1. SetUp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-1_env/" title="System requirements" class="md-nav__link">
+      System requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-2_tree/" title="Code directory tree" class="md-nav__link">
+      Code directory tree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-3_compile/" title="Compilation and Execution" class="md-nav__link">
+      Compilation and Execution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-4_dataset/" title="Preparing the Dataset" class="md-nav__link">
+      Preparing the Dataset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-5_parallel/" title="Execution" class="md-nav__link">
+      Execution
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
+    
+    <label class="md-nav__link" for="nav-2-5">
+      2. Parameter Settings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        2. Parameter Settings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0201_description/" title="Notation of the Parameter File" class="md-nav__link">
+      Notation of the Parameter File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0202_env/" title="Controlling Parameters" class="md-nav__link">
+      Controlling Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Coordinates and Parallel Computation
+      </label>
+    
+    <a href="./" title="Coordinates and Parallel Computation" class="md-nav__link md-nav__link--active">
+      Coordinates and Parallel Computation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#staggered-grid" title="Staggered Grid" class="md-nav__link">
+    Staggered Grid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stability-and-wavelength-conditions" title="Stability and Wavelength Conditions" class="md-nav__link">
+    Stability and Wavelength Conditions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0204_visco/" title="Viscoelastic Bodies" class="md-nav__link">
+      Viscoelastic Bodies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0205_output/" title="Simulation Data Output" class="md-nav__link">
+      Simulation Data Output
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0206_vmodel/" title="Velocity Model" class="md-nav__link">
+      Velocity Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0207_source/" title="Earthquake Source Specification" class="md-nav__link">
+      Earthquake Source Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0208_abc/" title="Absorbing Boundary Conditions" class="md-nav__link">
+      Absorbing Boundary Conditions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0209_checkpoint/" title="Checkpointing and Restarting" class="md-nav__link">
+      Checkpointing and Restarting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0210_reciprocity/" title="Reciprocity Mode" class="md-nav__link">
+      Reciprocity Mode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0211_2dcode/" title="About Two-Dimensional Codes" class="md-nav__link">
+      About Two-Dimensional Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      3. Related Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        3. Related Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0301_snapshot/" title="Snapshot data handling" class="md-nav__link">
+      Snapshot data handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0302_vmodel/" title="Velocity Structure" class="md-nav__link">
+      Velocity Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0303_parameter/" title="Programs for Supporting Parameter Settings" class="md-nav__link">
+      Programs for Supporting Parameter Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0304_rmedia/" title="Generation of Random Media" class="md-nav__link">
+      Generation of Random Media
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0305_misc/" title="Miscellaneous Tools" class="md-nav__link">
+      Miscellaneous Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      4. Additional Materials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        4. Additional Materials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4._Additional_Materials/0401_modelset/" title="Hints for Parameter Settings" class="md-nav__link">
+      Hints for Parameter Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4._Additional_Materials/0402_modification/" title="Hints for Modifying the Code" class="md-nav__link">
+      Hints for Modifying the Code
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Japanese
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Japanese
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/" title="OpenSWPC ユーザーズガイド" class="md-nav__link">
+      OpenSWPC ユーザーズガイド
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/8._Revision_History/" title="主な改版履歴" class="md-nav__link">
+      主な改版履歴
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/9._License/" title="ライセンス" class="md-nav__link">
+      ライセンス
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      1. 準備
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        1. 準備
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0101_env/" title="動作環境" class="md-nav__link">
+      動作環境
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0102_tree/" title="ディレクトリ構成" class="md-nav__link">
+      ディレクトリ構成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0103_compile/" title="コンパイル" class="md-nav__link">
+      コンパイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0104_dataset/" title="データセットの準備" class="md-nav__link">
+      データセットの準備
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0105_parallel/" title="並列計算の実行例" class="md-nav__link">
+      並列計算の実行例
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      2. パラメタ設定
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        2. パラメタ設定
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0201_description/" title="パラメタファイルの記法" class="md-nav__link">
+      パラメタファイルの記法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0202_env/" title="動作環境の制御" class="md-nav__link">
+      動作環境の制御
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0203_coord/" title="座標系と並列計算" class="md-nav__link">
+      座標系と並列計算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0204_visco/" title="粘弾性体" class="md-nav__link">
+      粘弾性体
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0205_output/" title="出力ファイルの設定" class="md-nav__link">
+      出力ファイルの設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0206_vmodel/" title="速度構造の指定" class="md-nav__link">
+      速度構造の指定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0207_source/" title="震源の指定" class="md-nav__link">
+      震源の指定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0208_abc/" title="吸収境界条件" class="md-nav__link">
+      吸収境界条件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0209_checkpoint/" title="チェックポイント・リスタート" class="md-nav__link">
+      チェックポイント・リスタート
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0210_reciprocity/" title="相反定理モード" class="md-nav__link">
+      相反定理モード
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0211_2dcode/" title="2次元コード固有の設定" class="md-nav__link">
+      2次元コード固有の設定
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      3. 関係ツール
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        3. 関係ツール
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0301_snapshot/" title="スナップショット" class="md-nav__link">
+      スナップショット
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0302_vmodel/" title="構造モデルの確認" class="md-nav__link">
+      構造モデルの確認
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0303_parameter/" title="パラメタ作成支援" class="md-nav__link">
+      パラメタ作成支援
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0304_rmedia/" title="ランダム媒質生成" class="md-nav__link">
+      ランダム媒質生成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0305_misc/" title="その他のツール" class="md-nav__link">
+      その他のツール
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      4. その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        4. その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/4._その他/0401_modelset/" title="計算モデル設定のヒント" class="md-nav__link">
+      計算モデル設定のヒント
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/4._その他/0402_modification/" title="コード改造のヒント" class="md-nav__link">
+      コード改造のヒント
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#staggered-grid" title="Staggered Grid" class="md-nav__link">
+    Staggered Grid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stability-and-wavelength-conditions" title="Stability and Wavelength Conditions" class="md-nav__link">
+    Stability and Wavelength Conditions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="coordinates-and-parallel-computation">Coordinates and Parallel Computation<a class="headerlink" href="#coordinates-and-parallel-computation" title="Permanent link">&para;</a></h1>
+<p>For parallel computation, <code>OpenSWPC</code> performs 2D model partitioning for
+a 3D code (see figure below) and 1D partitioning for a 2D code, in the
+horizontal direction in both cases. The computation is performed in
+Cartesian coordinates. We adopt the computational coordinate system
+depicted in the Figure. </p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/parallel_partition.png" />
+(a) Partitioning of the computational domain for MPI. (b) Schematic of the data exchange by the MPI protocol（Modified from Maeda et al., 2013<sup id="fnref:Maeda2013"><a class="footnote-ref" href="#fn:Maeda2013">1</a></sup>）．</p>
+</div>
+<p>By default, the coordinate axes <script type="math/tex">x</script>, <script type="math/tex">y</script>, and <script type="math/tex">z</script> represent the north, east, and depth directions, respectively.
+They cover the region of <code>xbeg</code> <script type="math/tex">\le x \le</script>
+<code>xend</code>, <code>ybeg</code> <script type="math/tex">\le y \le</script>
+<code>yend</code>, and <code>zbeg</code> <script type="math/tex">\le z \le</script>
+<code>zend</code>. Note that the <script type="math/tex">z</script>-axis is defined as positive downward. Because the free surface is usually defined at <script type="math/tex">z=0</script>, it is recommended to let <code>zbeg</code> be a negative value to include the free surface in the model.</p>
+<p>The volume is discretized into <code>nx</code>, <code>ny</code>, and <code>nz</code> grids with spatial grid widths of <code>dx</code>, <code>dy</code>, and <code>dz</code>, respectively, in each direction. 
+The parameter file must provide definitions of <code>xbeg</code>, <code>ybeg</code>, and <code>zbeg</code> and <code>nx</code>, <code>ny</code>, and <code>nz</code>; other parameters (<code>xend</code>, <code>yend</code>, and <code>zend</code>) are automatically computed from them. 
+The center of the Cartesian coordinate (<script type="math/tex">x = 0</script>, <script type="math/tex">y = 0</script>) corresponds to the center longitude (<code>clon</code>) and latitude (<code>clat</code>). The geographical coordinate is projected onto the Cartesian coordinate by the Gauss--Krüger transform
+as follows (see Figure below):</p>
+<ol>
+<li>
+<p>First generate an evenly spaced grid in Cartesian coordinates from
+    the input parameters phi and those related to the x, y coordinates.</p>
+</li>
+<li>
+<p>Project the grid location onto the geographical coordinate by using
+    the Gauss--Krüger transform with a center location of (<code>clon</code>,
+    <code>clat</code>).</p>
+</li>
+<li>
+<p>Obtain the medium parameter at the grid location via a bicubic
+    interpolation of the input velocity structure model.</p>
+</li>
+</ol>
+<p>If the specified area exceeds that of the input velocity model, the
+outermost value of the velocity structure is used for the extrapolation.</p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/fdm_coordinate.png" />
+Relation between computational coordinate and geographical coordinate systems.</p>
+</div>
+<h2 id="staggered-grid">Staggered Grid<a class="headerlink" href="#staggered-grid" title="Permanent link">&para;</a></h2>
+<p><code>OpenSWPC</code> adopts the staggered-grid coordinate system shown in the following figure. </p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/voxel_staggered.png" />
+Staggered grid layout in 3D space for the case of <code>xbeg=ybeg=zbeg=0</code></p>
+</div>
+<p>The unit volume shown in the figure is defined as a "voxel" at the grid indices (<code>I,J,K</code>). A grid location <script type="math/tex">x</script>
+belongs to the voxel number</p>
+<script type="math/tex; mode=display">\begin{align}
+I = \left \lceil \frac{ x-x_{\text{beg}} }{ \Delta  x } \right \rceil, 
+\end{align}</script>
+<p>and if the voxel number <code>I</code> is given, its center coordinate location is</p>
+<script type="math/tex; mode=display">\begin{align}
+x = x_{\text{beg}} + \left( I - \frac{1}{2} \right) \Delta x
+\end{align}</script>
+<p>where <script type="math/tex">\lceil \cdot \rceil</script> is a ceiling function and <script type="math/tex">x_{\text{beg}}</script>
+is the minimum value of the <script type="math/tex">x</script>-coordinate. Note that <script type="math/tex">x_{\text{beg}}</script>
+is set to belong to the voxel <code>I=1</code>.</p>
+<p>A voxel has a volume of</p>
+<script type="math/tex; mode=display">\begin{align}
+\begin{split}
+x_\text{beg} + (I-1)\Delta x < x \le x_\text{beg} +  I \Delta x, 
+\\
+y_\text{beg} + (J-1)\Delta y < y \le y_\text{beg} + J \Delta y, 
+\\
+z_\text{beg} + (K-1)\Delta z < z \le z_\text{beg} + K \Delta z 
+\end{split}
+\end{align}</script>
+<p>The normal stress tensor components are defined at the center of the voxel, the shear stress is defined on the edge, and velocity vector components are defined on its surface. </p>
+<p>Medium parameters are defined at the
+center of the voxel at</p>
+<script type="math/tex; mode=display">\begin{align}
+x_\text{beg} + (I-1/2) \Delta x,
+\quad
+y_\text{beg} + (J-1/2) \Delta y, \quad
+z_\text{beg} + (K-1/2) \Delta z 
+\end{align}</script>
+<p>If necessary, averaging will be performed
+between neighboring voxels.</p>
+<h2 id="stability-and-wavelength-conditions">Stability and Wavelength Conditions<a class="headerlink" href="#stability-and-wavelength-conditions" title="Permanent link">&para;</a></h2>
+<p>The spatial grid width, <script type="math/tex">\Delta x</script>, <script type="math/tex">\Delta y</script>, and <script type="math/tex">\Delta z</script>, and the
+time step width, <script type="math/tex">\Delta t</script>, must satisfy the stability condition. The
+stability condition in <script type="math/tex">N_D</script>-dimensional space for the order of the
+finite difference method <script type="math/tex">P</script> is given by</p>
+<script type="math/tex; mode=display">\begin{align}
+  \Delta t < \frac{ 1 }{ V_{\max} } \left( \sum_{i=1}^{N_D} \frac{1}{\Delta x_i^2} \right)^{-1/2} \left( \sum_{p=1}^{P/2} C_p\right) ^{-1}
+\end{align}</script>
+<p>where <script type="math/tex">V_{\max}</script> is the maximum velocity of the medium, <script type="math/tex">C_p</script> are the
+coefficients of the finite difference formula, and <script type="math/tex">\Delta x_i</script> is the
+spatial grid width in the <script type="math/tex">i</script>-th direction. For the fourth-order formula
+of the finite difference method, which is used in the code, the
+coefficients are <script type="math/tex">C_1 = 9/8</script> and <script type="math/tex">C_2 = 1/24</script>. For example, for the
+fourth-order finite difference with isotropic grid sizes
+(<script type="math/tex">\Delta x = \Delta y =\Delta z = h</script>) in three-dimensional space, the
+stability condition is reduced to</p>
+<script type="math/tex; mode=display">\begin{align}
+  \Delta t < \frac{6}{7} \dfrac{1}{V_{\max} \sqrt{ \dfrac{1}{\Delta x^2} + \dfrac{1}{\Delta y^2} +\dfrac{1}{\Delta z^2}}} = \frac{6 h}{7 \sqrt{3} V_{\max}} \simeq 0.495 \frac{h}{V_{\max}}. 
+\end{align}</script>
+<p>This condition can be interpreted as <strong>"the distance that the seismic wave
+propagates within a single time step must be much smaller than the
+spatial grid width."</strong> The numerical simulation will diverge immediately
+if this condition is not satisfied.</p>
+<p>In addition, <strong>the minimum wavelength of the simulated seismic waves
+should be much longer than the spatial grid width</strong>. If the wavelength
+becomes relatively small compared to this condition, a fictitious
+numerical dispersion will appear and result into inaccurate later
+phases. Usually, the wavelength is taken to be longer than 5--10 times
+the spatial grid width to avoid this effect. Therefore, the minimum
+velocity (usually the S-wave velocity) in the velocity model should be
+selected carefully. One may specify a smaller spatial grid size to avoid
+this problem; however, in this case, the time-step size must also be
+shortened to satisfy the stability condition.</p>
+<p>これら安定条件と波長条件は，差分法プログラム実行開始時に標準エラー出力に
+Stability Condition <code>c</code> および Wavelength Condition <code>r</code>
+として表示される．それぞれ，安定条件と時間刻みの比および構造中の最小波長と空間グリッドサイズの比を意味している．</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>nproc_x</code></strong>, <strong><code>nproc_y</code></strong></dt>
+<dd>Number of partitions in the <script type="math/tex">x</script>- and <script type="math/tex">y</script>-directions. 
+The total number of partitions will be <code>nproc_x</code> <script type="math/tex">\times</script>
+<code>nproc_y</code> for the 3D case and <code>nproc_x</code> for the
+2D case. 
+This total number of partitions must be equal to the number of processes given in <code>mpirun</code>. 
+These numbers can be 1. 
+If <code>nproc_x=nproc_y=1</code>, this will become a serial (non-parallel) computation in practice.</dd>
+<dt><strong><code>nx</code></strong>, <strong><code>ny</code></strong>, <strong><code>nz</code></strong></dt>
+<dd>Total number of spatial grids in each direction. <code>nx</code> and <code>ny</code> do not need to be multiples of <code>nproc_x</code> and <code>nproc_y</code>, respectively.</dd>
+<dt><strong><code>dx</code></strong>, <strong><code>dy</code></strong>, <strong><code>dz</code></strong></dt>
+<dd>Spatial grid width in each direction in units of km. The total computational size in the physical domain will be <code>nx</code><script type="math/tex">\times</script>
+<code>dx</code>, <code>ny</code><script type="math/tex">\times</script>
+<code>dy</code>, and <code>nz</code><script type="math/tex">\times</script>
+<code>dz</code>. 
+The grid widths in different directions do not necessarily need to be equal.</dd>
+<dt><code>nt</code></dt>
+<dd>Number of time steps.</dd>
+<dt><code>dt</code></dt>
+<dd>Length of the time step in seconds. The total physical simulation time will be <code>nt</code><script type="math/tex">\times</script>
+<code>dt</code>.</dd>
+<dt><code>xbeg</code>, <code>ybeg</code>, <code>zbeg</code></dt>
+<dd>Minimum value of the coordinates. If specifications of <code>xbeg</code> or <code>ybeg</code> are omitted, they will automatically be set to xbeg = - nx <script type="math/tex">\times</script> dx / 2 and ybeg = - ny <script type="math/tex">\times</script> dy / 2. 
+This setting is recommended to minimize distortion due to the map projection. The default value of <code>zbeg</code> is <code>-30</code><script type="math/tex">\times</script>
+<code>dz</code>.</dd>
+<dt><code>tbeg</code></dt>
+<dd>Starting time. Usually it is set to zero but can be changed if necessary.</dd>
+<dt><code>clon</code>, <code>clat</code></dt>
+<dd>Center longitude and latitude in degrees. The map projection will be
+performed with this location as a reference point.</dd>
+<dt><code>phi</code></dt>
+<dd>Horizontal rotation angle of the computational coordinate (see figure). 
+If <code>phi</code>=0, the <script type="math/tex">x</script>- and <script type="math/tex">y</script>-axes correspond to the north and east directions, respectively. Note that
+the output files (snapshot and waveform) will be rotated if this
+value is nonzero.</dd>
+</dl>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Maeda2013">
+<p>Maeda, T., Furumura, T., Noguchi, S., Takemura, S., Sakai, S., Shinohara, M., Iwai, K., &amp; Lee, S.-J. (2013). Seismic and tsunami wave propagation of the 2011 Off the Pacific Coast of Tohoku Earthquake as inferred from the tsunami-coupled finite difference simulation, <em>Bulletin of the Seismological Society of America</em>, 103, 1456–1472, doi:10.1785/0120120118. <a href="https://doi.org/10.1785/0120120118">(article link)</a>&#160;<a class="footnote-backref" href="#fnref:Maeda2013" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Kawase2011">
+<p>Kawase, K. (2011), A general formula for calculating meridian arc length and its application to coordinate conversion in the Gauss-Krüger projection, <em>Bulletin of the Geospatial Information Authority of Japan</em>, <em>59</em>, 1–13. <a href="http://www.gsi.go.jp/common/000062452.pdf">(article link)</a>&#160;<a class="footnote-backref" href="#fnref:Kawase2011" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../0202_env/" title="Controlling Parameters" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Controlling Parameters
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../0204_visco/" title="Viscoelastic Bodies" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Viscoelastic Bodies
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy 2019 Takuto Maeda. All Rights Reserved
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/takuto-maeda" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+            <script src="../../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../mathjax-config.js"></script>
+      
+        <script src="../../../extra.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1379 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="OpenSWPC User's Guide">
+      
+      
+        <link rel="canonical" href="https://tktmyd.github.io/OpenSWPC/English/2._Parameter_Settings/0204_visco/">
+      
+      
+        <meta name="author" content="Takuto Maeda">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en, ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Viscoelastic Bodies - OpenSWPC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../../css/custom.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="teal">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#viscoelastic-bodies" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              OpenSWPC
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Viscoelastic Bodies
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="OpenSWPC Users' Guide" class="md-tabs__link">
+        OpenSWPC Users' Guide
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../" title="English" class="md-tabs__link md-tabs__link--active">
+          English
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../Japanese/" title="Japanese" class="md-tabs__link">
+          Japanese
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    OpenSWPC
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="OpenSWPC Users' Guide" class="md-nav__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      English
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        English
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="OpenSWPC Users' Guide" class="md-nav__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../8._Revision_History/" title="Major Revision History" class="md-nav__link">
+      Major Revision History
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../9._License/" title="License" class="md-nav__link">
+      License
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      1. SetUp
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        1. SetUp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-1_env/" title="System requirements" class="md-nav__link">
+      System requirements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-2_tree/" title="Code directory tree" class="md-nav__link">
+      Code directory tree
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-3_compile/" title="Compilation and Execution" class="md-nav__link">
+      Compilation and Execution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-4_dataset/" title="Preparing the Dataset" class="md-nav__link">
+      Preparing the Dataset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../1._SetUp/1-5_parallel/" title="Execution" class="md-nav__link">
+      Execution
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
+    
+    <label class="md-nav__link" for="nav-2-5">
+      2. Parameter Settings
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        2. Parameter Settings
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0201_description/" title="Notation of the Parameter File" class="md-nav__link">
+      Notation of the Parameter File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0202_env/" title="Controlling Parameters" class="md-nav__link">
+      Controlling Parameters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0203_coord/" title="Coordinates and Parallel Computation" class="md-nav__link">
+      Coordinates and Parallel Computation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Viscoelastic Bodies" class="md-nav__link md-nav__link--active">
+      Viscoelastic Bodies
+    </a>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0205_output/" title="Simulation Data Output" class="md-nav__link">
+      Simulation Data Output
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0206_vmodel/" title="Velocity Model" class="md-nav__link">
+      Velocity Model
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0207_source/" title="Earthquake Source Specification" class="md-nav__link">
+      Earthquake Source Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0208_abc/" title="Absorbing Boundary Conditions" class="md-nav__link">
+      Absorbing Boundary Conditions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0209_checkpoint/" title="Checkpointing and Restarting" class="md-nav__link">
+      Checkpointing and Restarting
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0210_reciprocity/" title="Reciprocity Mode" class="md-nav__link">
+      Reciprocity Mode
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../0211_2dcode/" title="About Two-Dimensional Codes" class="md-nav__link">
+      About Two-Dimensional Codes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      3. Related Tools
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        3. Related Tools
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0301_snapshot/" title="Snapshot data handling" class="md-nav__link">
+      Snapshot data handling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0302_vmodel/" title="Velocity Structure" class="md-nav__link">
+      Velocity Structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0303_parameter/" title="Programs for Supporting Parameter Settings" class="md-nav__link">
+      Programs for Supporting Parameter Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0304_rmedia/" title="Generation of Random Media" class="md-nav__link">
+      Generation of Random Media
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3._Related_Tools/0305_misc/" title="Miscellaneous Tools" class="md-nav__link">
+      Miscellaneous Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7">
+    
+    <label class="md-nav__link" for="nav-2-7">
+      4. Additional Materials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-7">
+        4. Additional Materials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4._Additional_Materials/0401_modelset/" title="Hints for Parameter Settings" class="md-nav__link">
+      Hints for Parameter Settings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../4._Additional_Materials/0402_modification/" title="Hints for Modifying the Code" class="md-nav__link">
+      Hints for Modifying the Code
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Japanese
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Japanese
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/" title="OpenSWPC ユーザーズガイド" class="md-nav__link">
+      OpenSWPC ユーザーズガイド
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/8._Revision_History/" title="主な改版履歴" class="md-nav__link">
+      主な改版履歴
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/9._License/" title="ライセンス" class="md-nav__link">
+      ライセンス
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      1. 準備
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        1. 準備
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0101_env/" title="動作環境" class="md-nav__link">
+      動作環境
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0102_tree/" title="ディレクトリ構成" class="md-nav__link">
+      ディレクトリ構成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0103_compile/" title="コンパイル" class="md-nav__link">
+      コンパイル
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0104_dataset/" title="データセットの準備" class="md-nav__link">
+      データセットの準備
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/1._準備/0105_parallel/" title="並列計算の実行例" class="md-nav__link">
+      並列計算の実行例
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      2. パラメタ設定
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        2. パラメタ設定
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0201_description/" title="パラメタファイルの記法" class="md-nav__link">
+      パラメタファイルの記法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0202_env/" title="動作環境の制御" class="md-nav__link">
+      動作環境の制御
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0203_coord/" title="座標系と並列計算" class="md-nav__link">
+      座標系と並列計算
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0204_visco/" title="粘弾性体" class="md-nav__link">
+      粘弾性体
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0205_output/" title="出力ファイルの設定" class="md-nav__link">
+      出力ファイルの設定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0206_vmodel/" title="速度構造の指定" class="md-nav__link">
+      速度構造の指定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0207_source/" title="震源の指定" class="md-nav__link">
+      震源の指定
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0208_abc/" title="吸収境界条件" class="md-nav__link">
+      吸収境界条件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0209_checkpoint/" title="チェックポイント・リスタート" class="md-nav__link">
+      チェックポイント・リスタート
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0210_reciprocity/" title="相反定理モード" class="md-nav__link">
+      相反定理モード
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/2._パラメタ設定/0211_2dcode/" title="2次元コード固有の設定" class="md-nav__link">
+      2次元コード固有の設定
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      3. 関係ツール
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        3. 関係ツール
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0301_snapshot/" title="スナップショット" class="md-nav__link">
+      スナップショット
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0302_vmodel/" title="構造モデルの確認" class="md-nav__link">
+      構造モデルの確認
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0303_parameter/" title="パラメタ作成支援" class="md-nav__link">
+      パラメタ作成支援
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0304_rmedia/" title="ランダム媒質生成" class="md-nav__link">
+      ランダム媒質生成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/3._関係ツール/0305_misc/" title="その他のツール" class="md-nav__link">
+      その他のツール
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      4. その他
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        4. その他
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/4._その他/0401_modelset/" title="計算モデル設定のヒント" class="md-nav__link">
+      計算モデル設定のヒント
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Japanese/4._その他/0402_modification/" title="コード改造のヒント" class="md-nav__link">
+      コード改造のヒント
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="viscoelastic-bodies">Viscoelastic Bodies<a class="headerlink" href="#viscoelastic-bodies" title="Permanent link">&para;</a></h1>
+<p><code>OpenSWPC</code> adopts the generalized Zener body (GZB) as a model of the
+viscoelastic body. It consists of several viscoelastic Zener bodies with
+different relaxation times to attain nearly constant Q in a wide
+frequency range. As a consequence, it accompanies the
+frequency-dependent body wavespeed via physical dispersion (e.g., Aki and Richards, 2002<sup id="fnref:Aki2002"><a class="footnote-ref" href="#fn:Aki2002">1</a></sup>); therefore, users should specify the reference frequency in which the velocity model is given.</p>
+<div class="admonition info">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/gzb.png" />
+A schematic illustration of the Generalized Zener body. Zener Body (boxes) having different chracteristic times are connnected. </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/qinv.png" />
+Example of frequency dependence of the intrinsic attenuation <script type="math/tex">Q^{-1}</script> for a GZB of <code>NM=3</code>. The thick solid line shows the attenuation of the entire model, while the dotted lines show the attenuation model for each constituent of the Zener body. The vertical lines show the specified minimum and maximum frequencies for the constant <script type="math/tex">Q</script> range.</p>
+</div>
+<p>GZB consists of <script type="math/tex">N_M</script> Zener bodies, as schematically shown in the Figure above. This
+viscoelastic body is described by the relaxation functions for an
+elastic moduli <script type="math/tex">\pi \equiv \lambda + \mu</script> and <script type="math/tex">\mu</script>, as</p>
+<script type="math/tex; mode=display">\begin{align}
+\begin{split}
+    \psi_\pi \left( t \right) 
+    &= 
+    \pi_R 
+    \left( 
+      1 - 
+      \frac{1}{N_M} 
+      \sum_{m=1}^{N_M}
+      \left( 1 -\frac{ \tau_m^{\epsilon P}}{\tau_{m}^\sigma} \right)
+      e^{-t/\tau^\sigma_m}
+    \right)
+    H(t)
+    \\
+    \psi_\mu \left( t \right) 
+    &= 
+    \mu_R 
+    \left( 
+      1 - 
+      \frac{1}{N_M} 
+      \sum_{m=1}^{N_M}
+      \left( 1 -\frac{ \tau_m^{\epsilon S}}{\tau^\sigma_m} \right)
+      e^{-t/\tau^\sigma_m}
+    \right)
+    H(t)
+\end{split}
+\end{align}</script>
+<p>where <script type="math/tex">\tau_m^\sigma</script> is the relaxation
+time of the <script type="math/tex">m</script>-th body, <script type="math/tex">\pi_R\equiv \lambda_R + 2 \mu_R</script> and <script type="math/tex">\mu_R</script>
+are the relaxed moduli, and <script type="math/tex">\tau_m^{\varepsilon P}</script> and
+<script type="math/tex">\tau_m^{\varepsilon S}</script> are creep times of the P- and S-waves,
+respectively. The wide frequency range of constant <script type="math/tex">Q</script> is achieved by
+connecting Zener bodies with different relaxation times. In addition,
+the intrinsic attenuations of the P- and S-waves (<script type="math/tex">Q_P</script> and <script type="math/tex">Q_S</script>,
+respectively) can be defined independently by choosing different creep
+times between the elastic moduli <script type="math/tex">\pi</script> and <script type="math/tex">\mu</script>. </p>
+<script type="math/tex; mode=display">\begin{align}
+\begin{split}
+    &\dot \sigma_{ii} (t) 
+    = 
+    \left( \dot \psi_\pi (t)  - 2 \dot \psi_\mu (t)  \right)
+    \ast
+    \partial_k v_k(t) 
+    + 2 \dot \psi_\mu(t)  \ast \partial_i v_i(t) 
+  \\
+    &\dot\sigma_{ij} (t)
+    = 
+    \dot \psi_\mu(t) 
+    \ast 
+    \left( \partial_i v_j(t)  + \partial_j v_i(t)  \right)
+\end{split}
+\end{align}</script>
+<p>The convolution appearing in the
+constitutive equation can be avoided by defining the memory variables
+ (Robertsson, 1994<sup id="fnref:Robertsson1994"><a class="footnote-ref" href="#fn:Robertsson1994">2</a></sup>) and solving the auxiliary differential equations
+for them. We also adopt the <script type="math/tex">\tau</script>-method of Blanch (1994<sup id="fnref:Blanch1994"><a class="footnote-ref" href="#fn:Blanch1994">3</a></sup>) to
+automatically choose the creep times that achieve a constant <script type="math/tex">Q</script>
+condition.</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>fq_min</code> </strong></dt>
+<dd>Minimum frequency of the constant-<script type="math/tex">Q</script> model.</dd>
+<dt><strong><code>fq_max</code> </strong></dt>
+<dd>Maximum frequency of the constant-<script type="math/tex">Q</script> model.</dd>
+<dt><strong><code>fq_ref</code>  </strong></dt>
+<dd>Reference frequency at which the velocity model is given.</dd>
+</dl>
+</div>
+<p>The <script type="math/tex">Q^{-1}</script> value becomes nearly constant between the frequencies of
+<code>fq_min</code> and <code>fq_max</code>. 
+Outside of the band, the attenuation becomes weaker with increasing/decreasing
+frequency. As shown in this figure, the nearly constant <script type="math/tex">Q^{-1}</script> is
+achieved using three different viscoelastic bodies. If one needs to make
+<script type="math/tex">Q^{-1}</script> constant over a wider frequency range, the hard-coded parameter
+<code>NM</code> should be increased. However, this leads to a significant increase
+in the memory usage and computational loads. The frequency dependence of
+<script type="math/tex">Q^{-1}</script> with the parameters specified above can be investigated using
+the program <code>qmodel_tau.x</code>.</p>
+<p>Note that velocities of P and S waves depends on a frequency if one use constant-<script type="math/tex">Q</script> model at a wide frequency band. 
+A parameter <code>fq_ref</code> is used as a reference frequency at which the input velocities are defined. </p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Aki2002">
+<p>Aki, K., &amp; Richards, P. G. (2002), Quantitative Seismology, 2nd Edition, University Science Books.&#160;<a class="footnote-backref" href="#fnref:Aki2002" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Robertsson1994">
+<p>Robertsson, J. O., J. O. Blanch, and W. W. Symes (1994), Viscoelastic finite-difference modeling, Geophysics, 59(9), 1444–1456, doi:10.1190/1.1443701.&#160;<a class="footnote-backref" href="#fnref:Robertsson1994" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Blanch1994">
+<p>Blanch, J. O., J. O. Robertsson, and W. W. Symes (1994), Modeling of a constant Q: methodology and algorithm for an efficient and optimally inexpensive viscoelastic technique, Geophysics, 60, 176–184, doi:10.1111/j.1365-246X.2004.02300.x.&#160;<a class="footnote-backref" href="#fnref:Blanch1994" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../0203_coord/" title="Coordinates and Parallel Computation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Coordinates and Parallel Computation
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../0205_output/" title="Simulation Data Output" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Simulation Data Output
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy 2019 Takuto Maeda. All Rights Reserved
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/takuto-maeda" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+            <script src="../../../assets/javascripts/lunr/lunr.multi.js"></script>
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../mathjax-config.js"></script>
+      
+        <script src="../../../extra.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>
