@@ -529,6 +529,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#strain-and-stress-output" title="Strain and stress output" class="md-nav__link">
+    Strain and stress output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distance-calculation-mode" title="Distance calculation mode" class="md-nav__link">
+    Distance calculation mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-csf-format" title="The csf format" class="md-nav__link">
     The csf format
   </a>
@@ -1267,6 +1281,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#strain-and-stress-output" title="Strain and stress output" class="md-nav__link">
+    Strain and stress output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distance-calculation-mode" title="Distance calculation mode" class="md-nav__link">
+    Distance calculation mode
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-csf-format" title="The csf format" class="md-nav__link">
     The csf format
   </a>
@@ -1721,6 +1749,17 @@ every computational time step will be exported.</dd>
 <dd>Station location filename.</dd>
 <dt><strong><code>wav_format</code></strong></dt>
 <dd>Station file format: <code>’sac’</code> (usual, recommended) or <code>’csf’</code>.</dd>
+</dl>
+</div>
+<h3 id="strain-and-stress-output">Strain and stress output<a class="headerlink" href="#strain-and-stress-output" title="Permanent link">&para;</a></h3>
+<p>By specifying <code>sw_wav_strain = .true.</code> and <code>sw_wav_stress = .true.</code>, users can obtain strain and stress time series as a SAC-formatted data file as in the case of velocity and displacement (<strong>Experimental; new in version 5.0</strong>). The specification of station locations are same with the case of velocity/displacement. The output units are nondimensional for strain and [Pa] for stress data. </p>
+<h3 id="distance-calculation-mode">Distance calculation mode<a class="headerlink" href="#distance-calculation-mode" title="Permanent link">&para;</a></h3>
+<p>In default, <code>OpenSWPC</code> will store the station location via <code>stlo</code> and <code>stla</code> headers of <code>SAC</code>, and <code>SAC</code> program will automatically calculate the epicentral distance. However if the input station location is given in <code>xy</code> coordinate and distance if very long, the error originated from the map projection is not negilible. In such cases, one may calculate epicentral distance in the <code>OpenSWPC</code> and store to the <code>epdist</code> header of <code>SAC</code> files, and prohibit <code>SAC</code> to overwright the distance header. </p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>wav_calc_dist</code></strong></dt>
+<dd>If this parameter is <code>.true.</code>, calculate and store the epicentral distance and store it to the <code>SAC</code> header. </dd>
 </dl>
 </div>
 <h3 id="the-csf-format">The csf format<a class="headerlink" href="#the-csf-format" title="Permanent link">&para;</a></h3>

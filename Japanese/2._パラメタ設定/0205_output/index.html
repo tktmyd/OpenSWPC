@@ -961,8 +961,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_7" title="ひずみ・応力波形出力" class="md-nav__link">
+    ひずみ・応力波形出力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#csf-format" title="CSF format" class="md-nav__link">
     CSF format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="距離保存モード" class="md-nav__link">
+    距離保存モード
   </a>
   
 </li>
@@ -973,7 +987,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" title="出力ファイル名" class="md-nav__link">
+  <a href="#_9" title="出力ファイル名" class="md-nav__link">
     出力ファイル名
   </a>
   
@@ -1267,8 +1281,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#_7" title="ひずみ・応力波形出力" class="md-nav__link">
+    ひずみ・応力波形出力
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#csf-format" title="CSF format" class="md-nav__link">
     CSF format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" title="距離保存モード" class="md-nav__link">
+    距離保存モード
   </a>
   
 </li>
@@ -1279,7 +1307,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" title="出力ファイル名" class="md-nav__link">
+  <a href="#_9" title="出力ファイル名" class="md-nav__link">
     出力ファイル名
   </a>
   
@@ -1682,6 +1710,8 @@
 <dd>波形ファイルフォーマット．通常は<code>’sac’</code> </dd>
 </dl>
 </div>
+<h4 id="_7">ひずみ・応力波形出力<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<p>速度や変位波形と同様に，<code>sw_wav_strain = .true.</code> とすることでひずみ波形を，<code>sw_wav_stress = .true.</code>とすることで応力波形を，それぞれSAC形式の時系列データとして出力することができる（<strong>Experimental; new in version 5.0</strong>)．観測点位置の指定は速度・変位と同じである．出力単位は歪は無次元，応力は[Pa]である．</p>
 <h3 id="csf-format">CSF format<a class="headerlink" href="#csf-format" title="Permanent link">&para;</a></h3>
 <p>波形出力は原則として<code>SAC</code>形式であるが，システムがあまりにも大量の波形ファイルを出力することに耐えられないケースがある．また，大量の小サイズファイルはネットワークを通じたデータの転送にも不向きである．そこで，Version 3.0以降ではパラメタ<code>wav_format = ’csf’</code>が指定されると，<code>SAC</code>ファイルを複数観測点・成分について単一ファイルに結合したcsfファイル（独自形式）の出力を選択することもできる．</p>
 <p>csfフォーマットは，SAC形式のバイナリファイルを単純結合したものの先頭に3つの4バイト実数をヘッダとして付加しただけの単純なフォーマットである．ヘッダは以下の構成要素からなる．</p>
@@ -1697,7 +1727,16 @@
 </dl>
 </div>
 <p>ファイルに含まれる波形のサンプル数はすべて等しいことが仮定されている．csf出力が選択された場合，並列計算のノード毎に，そのノードに含まれる観測点の同じ成分の波形が一つのファイルにまとめられて出力される．</p>
-<h2 id="_7">出力ファイル名<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="_8">距離保存モード<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p><code>OpenSWPC</code>は観測点位置を<code>stlo</code>，<code>stla</code>のSACヘッダを通じて保存するが，<code>xy</code>座標系で観測点位置を与えてかつ極端に長距離の測線での計算の場合，緯度経度変換（地図投影）による誤差が無視できない．そのような場合に以下のパラメタを設定すると，距離を<code>SAC</code>ヘッダの <code>dist</code> に保存し，かつそれを<code>SAC</code>に上書きさせないようにできる．</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>wav_calc_dist</code></strong></dt>
+<dd><code>.true.</code>のとき震央距離をSACデータに保存する．</dd>
+</dl>
+</div>
+<h2 id="_9">出力ファイル名<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
 <p>計算結果は以下のようなファイル名で出力される．</p>
 <ul>
 <li>スナップショット     <code>(odir)/(title).(section).(type).(ext)</code></li>
