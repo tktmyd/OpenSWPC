@@ -1170,6 +1170,11 @@
 </dl>
 <p><strong><code>ckp_interval</code></strong>
 <code>ckp_interval</code>時間ステップ毎に経過時間が<code>ckp_time</code>を超えたか判定する．</p>
+<dl>
+<dt><strong><code>ckp_seq</code></strong></dt>
+<dd>シーケンシャルモード：<code>.true.</code>のときMPIノード0番から順番に読み書きを行う．
+多数の計算ノードで共有されたファイルシステムにおいてチェックポイントファイル作成に極端に長い時間がかかる場合，<code>ckp_seq=.true.</code> にすると性能が改善することがある．</dd>
+</dl>
 </div>
                 
                   
