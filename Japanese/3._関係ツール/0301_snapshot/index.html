@@ -1373,7 +1373,7 @@
 <dt><code>-abs</code></dt>
 <dd>速度スナップショットに対してその絶対値を可視化する．P波・S波のスナップショットはもともとそれぞれの絶対値が出力されているので動作しない．</dd>
 <dt><code>-bin</code>, <code>-asc</code></dt>
-<dd>各時間ステップのスナップショットを単精度バイナリもしくはアスキーデータとしてbinもしくはascディレクトリに出力する．バイナリデータは<code>GMT</code>(<code>xyz2grd</code>など）から-bisオプションで直接読み込むことができる．</dd>
+<dd>各時間ステップのスナップショットを単精度バイナリもしくはアスキーデータとしてbinもしくはascディレクトリに出力する．バイナリデータは<code>GMT</code>(<code>xyz2grd</code>など）から-bisオプションで直接読み込むことができる．このオプションを用いると，<code>*.vps.(asc|bin)</code> という名前で速度構造データも出力される．速度構造データには，<script type="math/tex">xx, yy, V_P, V_S, \rho</script>の値がそれぞれ格納されている．ただし，<script type="math/tex">xx</script>と<script type="math/tex">yy</script>はスナップショット面における横軸と縦軸の座標系である．出力はカーテシアン座標系であるので，地表面に沿ったデータを緯度経度を独立変数として出力したい場合には，<code>fs2grd.x</code>を利用すると良い．</dd>
 <dt><code>-skip n</code></dt>
 <dd>最初の<script type="math/tex">n</script>スナップショットを読み飛ばす．</dd>
 <dt><code>-notim</code> (after v5.1)</dt>

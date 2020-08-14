@@ -1396,7 +1396,9 @@ velocity or displacement snapshots.</dd>
 <dd>Export the snapshot data to binary (<code>-bin</code>) or ascii (<code>-asc</code>) files.
 The data file will be created in the automatically created <code>bin</code> or
 <code>asc</code> directories. The binary formatted data can be directly used in
-<code>GMT</code> with the <code>xyz2grd</code> module by appending the <code>-bis</code> option.</dd>
+<code>GMT</code> with the <code>xyz2grd</code> module by appending the <code>-bis</code> option. 
+If this option is used, the output is also velocity structure data under the name <code>*.vps.(bin|asc)</code>. 
+The values of <script type="math/tex">xx, yy, V_P, V_S, and \rho</script> are stored in the velocity structure data, respectively. Note that <script type="math/tex">xx</script> and <script type="math/tex">yy</script> are the coordinate system of the horizontal and vertical axes in the snapshot plane. Since the output is in the Cartesian coordinate system, if users want to output data along the earth's surface with longitude and latitude as independent variables, one may use <code>fs2grd.x</code>.</dd>
 <dt><code>-skip n</code></dt>
 <dd>Skip the first <script type="math/tex">n</script> snapshots for visualization or data exports.</dd>
 <dt><code>-notim</code> (after v5.1)</dt>
