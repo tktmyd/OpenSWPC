@@ -1488,7 +1488,11 @@ the <code>i</code>-th boundary specified in the rightmost column of
 <script type="math/tex; mode=display">
     \overline{M}_0 =\times \frac{ M_0 }{\sqrt{2}} \sqrt{m_{xx}^2 +m_{yy}^2 +m_{zz}^2 + 2(m_{yz}^2+m_{xz}^2+m_{xy}^2)}
 </script>
-<p>which is determined by If more than one point source is specified, the sum of all source elements in the above equation becomes the total seismic moment; in the case of 2D P-SV and SH calculations, only the components valid for each cross section are evaluated.</p>
+<p>which is determined by If more than one point source is specified, the sum of all source elements in the above equation becomes the total seismic moment; in the case of 2D P-SV and SH calculations, only the components valid for each cross section are evaluated. Because of this notation of separable magnitudes, the moment tensor component is implicitly assumed to normalized to </p>
+<script type="math/tex; mode=display">
+ \sqrt{m_{xx}^2 +m_{yy}^2 +m_{zz}^2 + 2(m_{yz}^2+m_{xz}^2+m_{xy}^2)} = 1
+</script>
+<p>It is not necessary to do so, but without this standardization, the <script type="math/tex">M_W</script> or <script type="math/tex">M_0</script> entered as a parameter may differ from the actual calculated earthquake magnitude in the simulation. </p>
 <h3 id="psmeca-specification"><code>psmeca</code> specification<a class="headerlink" href="#psmeca-specification" title="Permanent link">&para;</a></h3>
 <p>Specify the seismic source in the standard format of <code>psmeca -Sm</code> in <a href="https://www.generic-mapping-tools.org/">GMT</a> and <a href="https://www.globalcmt.org/CMTsearch.html">globalcmt</a>. Specify the seismic source. It specifies the latitude and longitude depth of the epicenter, the moment tensor in the polar coordinate system (in the order <script type="math/tex">M_{rr}</script>, <script type="math/tex">M_{tt}</script>, <script type="math/tex">M_{ff}</script>, <script type="math/tex">M_{rt}</script>, <script type="math/tex">M_{rf}</script>, <script type="math/tex">M_{tf}</script>), and the exponential part (integer) of the seismic moment. Note that the exponential part is given in dyn-cm, as is customary. These parameters are converted into the moment tensor in the Cartesian coordinate system within OpenSWPC and used for the calculation. Fracture initiation time at the epicenter <script type="math/tex">T_0</script> is <script type="math/tex">0</script>, rise time <script type="math/tex">T_R</script> is based on Ekström et al. (2012) [^Ekström2012], and scaling</p>
 <script type="math/tex; mode=display">

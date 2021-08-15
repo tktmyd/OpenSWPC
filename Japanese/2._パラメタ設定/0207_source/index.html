@@ -1465,7 +1465,11 @@
 <script type="math/tex; mode=display">
     \overline{M}_0 =\times \frac{ M_0 }{\sqrt{2}} \sqrt{m_{xx}^2 +m_{yy}^2 +m_{zz}^2 + 2(m_{yz}^2+m_{xz}^2+m_{xy}^2)}
 </script>
-<p>により定まる．もし複数の点震源が指定される場合には上式のすべての天震源要素についての和が全地震モーメントとなる．2次元P-SV, SH計算の場合には，それぞれの断面で有効な成分のみが評価される．</p>
+<p>により定まる．もし複数の点震源が指定される場合には上式のすべての天震源要素についての和が全地震モーメントとなる．2次元P-SV, SH計算の場合には，それぞれの断面で有効な成分のみが評価される．このように大きさが分離できる記法を採用しているため，通常はモーメントテンソル成分は</p>
+<script type="math/tex; mode=display">
+ \sqrt{m_{xx}^2 +m_{yy}^2 +m_{zz}^2 + 2(m_{yz}^2+m_{xz}^2+m_{xy}^2)} = 1
+</script>
+<p>と規格化されていることが暗に期待されている．そうでない場合，パラメタとして入力した<script type="math/tex">M_W</script>や<script type="math/tex">M_0</script>と実際に計算される地震の大きさが異なる可能性がある．</p>
 <h3 id="psmeca"><code>psmeca</code> 指定<a class="headerlink" href="#psmeca" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.generic-mapping-tools.org/">GMT</a> の<code>psmeca -Sm</code> や<a href="https://www.globalcmt.org/CMTsearch.html">globalcmt</a>で標準的に使われているフォーマットで震源を指定する．指定されるのは震源の緯度経度深さならびに極座標系におけるモーメントテンソル（<script type="math/tex">M_{rr}</script>, <script type="math/tex">M_{tt}</script>, <script type="math/tex">M_{ff}</script>, <script type="math/tex">M_{rt}</script>, <script type="math/tex">M_{rf}</script>, <script type="math/tex">M_{tf}</script> の順）と地震モーメントの指数部（整数）である．指数部は慣例に従い dyn-cm 単位で与えられることに注意されたい．これらのパラメタがOpenSWPC内部で直交座標系におけるモーメントテンソルに変換されて計算に用いられる．震源における破壊開始時間<script type="math/tex">T_0</script>は<script type="math/tex">0</script>，ライズタイム<script type="math/tex">T_R</script>は Ekström et al. (2012)[^Ekström2012] に基づき，スケーリング</p>
 <script type="math/tex; mode=display">
