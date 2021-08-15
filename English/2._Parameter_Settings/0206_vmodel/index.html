@@ -15,8 +15,8 @@
       
         <link rel="canonical" href="https://tktmyd.github.io/OpenSWPC/English/2._Parameter_Settings/0206_vmodel/">
       
-      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.f7f47774.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
           
           
@@ -41,7 +41,7 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
       
     
     
@@ -54,6 +54,8 @@
     
     
       
+
+
     
     
   </head>
@@ -65,8 +67,9 @@
     
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="black">
-      
   
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -83,26 +86,24 @@
       
     </div>
     
-      
-
-<header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-header-nav__button md-logo" aria-label="OpenSWPC">
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="OpenSWPC" class="md-header__button md-logo" aria-label="OpenSWPC" data-md-component="logo">
       
   <img src="../../../fig/icon.png" alt="logo">
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
+    <label class="md-header__button md-icon" for="__drawer">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      <div class="md-header-nav__ellipsis">
-        <div class="md-header-nav__topic">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
           <span class="md-ellipsis">
             OpenSWPC
           </span>
         </div>
-        <div class="md-header-nav__topic">
+        <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
               Velocity Model
@@ -112,22 +113,28 @@
       </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
       </label>
       
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
@@ -143,12 +150,12 @@
 </div>
     
     
-      <div class="md-header-nav__source">
+      <div class="md-header__source">
         
-<a href="https://github.com/tktmyd/OpenSWPC" title="Go to repository" class="md-source">
+<a href="https://github.com/tktmyd/OpenSWPC" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     tktmyd/OpenSWPC
@@ -163,23 +170,80 @@
       
       
         
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        English
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Japanese/" class="md-tabs__link">
+        Japanese
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
 
+  
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://tktmyd.github.io/OpenSWPC" title="OpenSWPC" class="md-nav__button md-logo" aria-label="OpenSWPC">
+    <a href="../../.." title="OpenSWPC" class="md-nav__button md-logo" aria-label="OpenSWPC" data-md-component="logo">
       
   <img src="../../../fig/icon.png" alt="logo">
 
@@ -189,10 +253,10 @@
   
     <div class="md-nav__source">
       
-<a href="https://github.com/tktmyd/OpenSWPC" title="Go to repository" class="md-source">
+<a href="https://github.com/tktmyd/OpenSWPC" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     tktmyd/OpenSWPC
@@ -230,19 +294,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
-      <label class="md-nav__link" for="nav-2">
+      <label class="md-nav__link" for="__nav_2">
         English
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="English" data-md-level="1">
-        <label class="md-nav__title" for="nav-2">
+        <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           English
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -288,19 +351,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
-      <label class="md-nav__link" for="nav-2-4">
+      <label class="md-nav__link" for="__nav_2_4">
         1. SetUp
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="1. SetUp" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-4">
+        <label class="md-nav__title" for="__nav_2_4">
           <span class="md-nav__icon md-icon"></span>
           1. SetUp
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -378,19 +440,18 @@
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
       
-      <label class="md-nav__link" for="nav-2-5">
+      <label class="md-nav__link" for="__nav_2_5">
         2. Parameter Settings
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="2. Parameter Settings" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-5">
+        <label class="md-nav__title" for="__nav_2_5">
           <span class="md-nav__icon md-icon"></span>
           2. Parameter Settings
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -462,6 +523,7 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+      
         
       
       
@@ -478,6 +540,7 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
     
   
   
@@ -485,7 +548,7 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#choice-of-velocity-model-type" class="md-nav__link">
@@ -624,19 +687,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
       
-      <label class="md-nav__link" for="nav-2-6">
+      <label class="md-nav__link" for="__nav_2_6">
         3. Related Tools
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="3. Related Tools" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-6">
+        <label class="md-nav__title" for="__nav_2_6">
           <span class="md-nav__icon md-icon"></span>
           3. Related Tools
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -712,19 +774,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-7" type="checkbox" id="nav-2-7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
       
-      <label class="md-nav__link" for="nav-2-7">
+      <label class="md-nav__link" for="__nav_2_7">
         4. Additional Materials
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="4. Additional Materials" data-md-level="2">
-        <label class="md-nav__title" for="nav-2-7">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           4. Additional Materials
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -773,19 +834,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
-      <label class="md-nav__link" for="nav-3">
+      <label class="md-nav__link" for="__nav_3">
         Japanese
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="Japanese" data-md-level="1">
-        <label class="md-nav__title" for="nav-3">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Japanese
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -831,19 +891,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
       
-      <label class="md-nav__link" for="nav-3-4">
+      <label class="md-nav__link" for="__nav_3_4">
         1. 準備
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="1. 準備" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-4">
+        <label class="md-nav__title" for="__nav_3_4">
           <span class="md-nav__icon md-icon"></span>
           1. 準備
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -919,19 +978,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
       
-      <label class="md-nav__link" for="nav-3-5">
+      <label class="md-nav__link" for="__nav_3_5">
         2. パラメタ設定
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="2. パラメタ設定" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-5">
+        <label class="md-nav__title" for="__nav_3_5">
           <span class="md-nav__icon md-icon"></span>
           2. パラメタ設定
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1079,19 +1137,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
       
-      <label class="md-nav__link" for="nav-3-6">
+      <label class="md-nav__link" for="__nav_3_6">
         3. 関係ツール
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="3. 関係ツール" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-6">
+        <label class="md-nav__title" for="__nav_3_6">
           <span class="md-nav__icon md-icon"></span>
           3. 関係ツール
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1167,19 +1224,18 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
       
-      <label class="md-nav__link" for="nav-3-7">
+      <label class="md-nav__link" for="__nav_3_7">
         4. その他
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="4. その他" data-md-level="2">
-        <label class="md-nav__title" for="nav-3-7">
+        <label class="md-nav__title" for="__nav_3_7">
           <span class="md-nav__icon md-icon"></span>
           4. その他
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
-          
           
             
   
@@ -1224,87 +1280,8 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#choice-of-velocity-model-type" class="md-nav__link">
-    Choice of Velocity Model Type
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#on-treatments-of-air-and-seawater-layer" class="md-nav__link">
-    On Treatments of Air and Seawater Layer
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#small-scale-random-inhomogeneity" class="md-nav__link">
-    Small-Scale Random Inhomogeneity
-  </a>
-  
-    <nav class="md-nav" aria-label="Small-Scale Random Inhomogeneity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parameters-for-uni_rmed" class="md-nav__link">
-    Parameters for uni_rmed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters-for-lhm_rmed" class="md-nav__link">
-    Parameters for lhm_rmed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parameters-for-grd_rmed" class="md-nav__link">
-    Parameters for grd_rmed
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#truncation-of-velocity-fluctuations" class="md-nav__link">
-    Truncation of Velocity Fluctuations
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
-          <div class="md-content">
+          <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
@@ -1321,173 +1298,147 @@ program can be overlaid onto the model.</p>
 <dt><strong><code>vmodel_type</code></strong></dt>
 <dd>
 <p>Specify the input velocity model. Choose from one of the following.</p>
-<p><code>’uni’</code>
-    :  omogeneous medium with a free surface. The following additional parameters are required:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">-</span> <span class="n n-Quoted">`vp0`</span> <span class="o">:</span> <span class="n">P</span><span class="o">-</span><span class="n">wave</span> <span class="n">velocity</span> <span class="err">[</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="err">]</span> <span class="k">in</span> <span class="n">the</span> <span class="n">uniform</span> <span class="n">model</span><span class="p">.</span>
-    <span class="o">-</span> <span class="n n-Quoted">`vs0`</span> <span class="o">:</span> <span class="n">S</span><span class="o">-</span><span class="n">wave</span> <span class="n">velocity</span> <span class="err">[</span><span class="n">km</span><span class="o">/</span><span class="n">s</span><span class="err">]</span> <span class="k">in</span> <span class="n">the</span> <span class="n">uniform</span> <span class="n">model</span><span class="p">.</span>
-    <span class="o">-</span> <span class="n n-Quoted">`rho0`</span> <span class="o">:</span> <span class="n">Mass</span> <span class="n">density</span> <span class="err">[</span><span class="n">g</span><span class="o">/</span><span class="n">cm$</span><span class="err">{}</span><span class="o">^</span><span class="n">3$</span><span class="err">]</span> <span class="k">in</span> <span class="n">the</span> <span class="n">uniform</span> <span class="n">model</span><span class="p">.</span>
-    <span class="o">-</span> <span class="n n-Quoted">`qp0`</span>  <span class="o">:</span>  <span class="n">$Q_P$</span> <span class="k">of</span> <span class="n">the</span> <span class="n">uniform</span> <span class="n">model</span><span class="p">.</span>
-    <span class="o">-</span> <span class="n n-Quoted">`qs0`</span>  <span class="o">:</span>  <span class="n">$Q_S$</span> <span class="k">of</span> <span class="n">the</span> <span class="n">uniform</span> <span class="n">model</span><span class="p">.</span>
-    <span class="o">-</span> <span class="n n-Quoted">`topo0`</span> <span class="o">:</span> <span class="n">Topography</span> <span class="n">depth</span> <span class="k">in</span> <span class="n">the</span> <span class="n">uniform</span> <span class="n">model</span><span class="p">.</span> <span class="k">If</span> <span class="n">this</span> <span class="k">value</span> <span class="k">is</span> <span class="n">greater</span> <span class="k">than</span> <span class="n">zero</span><span class="p">,</span> <span class="n">seawater</span> <span class="k">is</span> <span class="n">filled</span> <span class="k">from</span> <span class="n">$z</span><span class="o">=</span><span class="n">0$</span> <span class="k">to</span> <span class="n">this</span> <span class="n">depth</span><span class="p">.</span>
+<dl>
+<dt><code>’uni’</code></dt>
+<dd>
+<p>omogeneous medium with a free surface. The following additional parameters are required:</p>
+<ul>
+<li><code>vp0</code> : P-wave velocity [km/s] in the uniform model.</li>
+<li><code>vs0</code> : S-wave velocity [km/s] in the uniform model.</li>
+<li><code>rho0</code> : Mass density [g/cm<script type="math/tex">{}^3</script>] in the uniform model.</li>
+<li><code>qp0</code>  :  <script type="math/tex">Q_P</script> of the uniform model.</li>
+<li><code>qs0</code>  :  <script type="math/tex">Q_S</script> of the uniform model.</li>
+<li><code>topo0</code> : Topography depth in the uniform model. If this value is greater than zero, seawater is filled from <script type="math/tex">z=0</script> to this depth.</li>
+</ul>
+</dd>
+<dt><code>’lhm’</code></dt>
+<dd>
+<p>Layered Homogeneous Medium. The one-dimensional velocity structure file should be specified as below.</p>
+<ul>
+<li><code>fn_lhm</code>: Medium specification file. Each line specifies the depth of
+the top of the layer, density, P-wave velocity, S-wave
+velocity, <script type="math/tex">Q_P</script>, and <script type="math/tex">Q_S</script> below that depth. They must be
+separated by space(s) (see following example). Lines
+starting with <code>#</code> will be neglected.</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp"># depth  rho(g/cm^3)  vp(km/s)   vs(km/s)     Qp      Qs</span>
+<span class="cp"># -------------------------------------------------------</span>
+      <span class="mi">0</span>        <span class="mf">2.300</span>      <span class="mf">5.50</span>      <span class="mf">3.14</span>     <span class="mi">600</span>     <span class="mi">300</span>
+      <span class="mi">3</span>        <span class="mf">2.400</span>      <span class="mf">6.00</span>      <span class="mf">3.55</span>     <span class="mi">600</span>     <span class="mi">300</span>
+     <span class="mi">18</span>        <span class="mf">2.800</span>      <span class="mf">6.70</span>      <span class="mf">3.83</span>     <span class="mi">600</span>     <span class="mi">300</span>
+     <span class="mi">33</span>        <span class="mf">3.200</span>      <span class="mf">7.80</span>      <span class="mf">4.46</span>     <span class="mi">600</span>     <span class="mi">300</span>
+    <span class="mi">100</span>        <span class="mf">3.300</span>      <span class="mf">8.00</span>      <span class="mf">4.57</span>     <span class="mi">600</span>     <span class="mi">300</span>
+    <span class="mi">225</span>        <span class="mf">3.400</span>      <span class="mf">8.40</span>      <span class="mf">4.80</span>     <span class="mi">600</span>     <span class="mi">300</span>
+    <span class="mi">325</span>        <span class="mf">3.500</span>      <span class="mf">8.60</span>      <span class="mf">4.91</span>     <span class="mi">600</span>     <span class="mi">300</span>
+    <span class="mi">425</span>        <span class="mf">3.700</span>      <span class="mf">9.30</span>      <span class="mf">5.31</span>     <span class="mi">600</span>     <span class="mi">300</span>
 </code></pre></div>
 </td></tr></table>
-<p><code>’lhm’</code>
-    :  Layered Homogeneous Medium. The one-dimensional velocity structure file should be specified as below.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">-</span> <span class="n n-Quoted">`fn_lhm`</span><span class="o">:</span> <span class="k">Medium</span> <span class="n">specification</span> <span class="k">file</span><span class="p">.</span> <span class="k">Each</span> <span class="n">line</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">depth</span> <span class="k">of</span>
-    <span class="n">the</span> <span class="n">top</span> <span class="k">of</span> <span class="n">the</span> <span class="n">layer</span><span class="p">,</span> <span class="n">density</span><span class="p">,</span> <span class="n">P</span><span class="o">-</span><span class="n">wave</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">S</span><span class="o">-</span><span class="n">wave</span>
-    <span class="n">velocity</span><span class="p">,</span> <span class="n">$Q_P$</span><span class="p">,</span> <span class="k">and</span> <span class="n">$Q_S$</span> <span class="n">below</span> <span class="n">that</span> <span class="n">depth</span><span class="p">.</span> <span class="n">They</span> <span class="n">must</span> <span class="n">be</span>
-    <span class="n">separated</span> <span class="k">by</span> <span class="nf">space</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="p">(</span><span class="n">see</span> <span class="k">following</span> <span class="n">example</span><span class="p">).</span> <span class="k">Lines</span>
-    <span class="k">starting</span> <span class="k">with</span> <span class="n n-Quoted">`#`</span> <span class="n">will</span> <span class="n">be</span> <span class="n">neglected</span><span class="p">.</span>
-
-<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">C</span>
-<span class="n n-Quoted"># depth  rho(g/cm^3)  vp(km/s)   vs(km/s)     Qp      Qs</span>
-<span class="n n-Quoted"># -------------------------------------------------------</span>
-<span class="n n-Quoted">      0        2.300      5.50      3.14     600     300</span>
-<span class="n n-Quoted">      3        2.400      6.00      3.55     600     300</span>
-<span class="n n-Quoted">     18        2.800      6.70      3.83     600     300</span>
-<span class="n n-Quoted">     33        3.200      7.80      4.46     600     300</span>
-<span class="n n-Quoted">    100        3.300      8.00      4.57     600     300</span>
-<span class="n n-Quoted">    225        3.400      8.40      4.80     600     300</span>
-<span class="n n-Quoted">    325        3.500      8.60      4.91     600     300</span>
-<span class="n n-Quoted">    425        3.700      9.30      5.31     600     300</span>
-<span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
+</dd>
+<dt><code>’grd’</code></dt>
+<dd>
+<p>Velocity model input from <code>NetCDF</code> (GMT grd) files. The
+compilation of <code>OpenSWPC</code> should be performed in accompaniment
+with the use of the <code>NetCDF</code> library. The following parameters
+are required.</p>
+<ul>
+<li>
+<p><code>dir_grd</code>: Directory of the velocity structure (<code>NetCDF</code>) files.</p>
+</li>
+<li>
+<p><code>fn_grdslt</code>: List file that specifies the grd files and the associated
+medium. Each line contains the grd filename (with a single
+or double quotation mark; recommended), density, P-wave
+velocity, S-wave velocity, <script type="math/tex">Q_P</script>, <script type="math/tex">Q_S</script>, and the layer
+number integers (0-9) separated by spaces (see following
+example). Lines starting with <code>#</code> will be neglected. The
+layer number is used to specify the source or station depth
+fit to the layer depth. The first <code>NetCDF</code> file will be
+treated as the ground surface. If the depth of the ground
+surface is deeper than zero, the depth range from <script type="math/tex">z = 0</script> to
+the surface is assumed to be an ocean layer. The grid above
+the free surface is treated as an air column.</p>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp"># grd filename          rho    vp    vs    QP   QS  sw</span>
+<span class="cp"># -------------------------------------------------------</span>
+<span class="err">&#39;</span><span class="n">eJIVSM_01_TAB_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">1.80</span>  <span class="mf">1.70</span>  <span class="mf">0.35</span>   <span class="mi">119</span>    <span class="mi">70</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_02_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">1.95</span>  <span class="mf">1.80</span>  <span class="mf">0.50</span>   <span class="mi">170</span>   <span class="mi">100</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_03_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.00</span>  <span class="mf">2.00</span>  <span class="mf">0.60</span>   <span class="mi">204</span>   <span class="mi">120</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_04_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.05</span>  <span class="mf">2.10</span>  <span class="mf">0.70</span>   <span class="mi">238</span>   <span class="mi">140</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_05_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.07</span>  <span class="mf">2.20</span>  <span class="mf">0.80</span>   <span class="mi">272</span>   <span class="mi">160</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_06_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.10</span>  <span class="mf">2.30</span>  <span class="mf">0.90</span>   <span class="mi">306</span>   <span class="mi">180</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_07_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.15</span>  <span class="mf">2.40</span>  <span class="mf">1.00</span>   <span class="mi">340</span>   <span class="mi">200</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_08_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.20</span>  <span class="mf">2.70</span>  <span class="mf">1.30</span>   <span class="mi">442</span>   <span class="mi">260</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_09_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.25</span>  <span class="mf">3.00</span>  <span class="mf">1.50</span>   <span class="mi">510</span>   <span class="mi">300</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_10_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.30</span>  <span class="mf">3.20</span>  <span class="mf">1.70</span>   <span class="mi">578</span>   <span class="mi">340</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_11_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.35</span>  <span class="mf">3.50</span>  <span class="mf">2.00</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_12_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.45</span>  <span class="mf">4.20</span>  <span class="mf">2.40</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_13_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.60</span>  <span class="mf">5.00</span>  <span class="mf">2.90</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_14_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.65</span>  <span class="mf">5.50</span>  <span class="mf">3.20</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_15_UPC_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.70</span>  <span class="mf">5.80</span>  <span class="mf">3.40</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_16_LWC_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.80</span>  <span class="mf">6.40</span>  <span class="mf">3.80</span>   <span class="mi">680</span>   <span class="mi">400</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_17_CTM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">3.20</span>  <span class="mf">7.50</span>  <span class="mf">4.50</span>   <span class="mi">850</span>   <span class="mi">500</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_18_PH2_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.40</span>  <span class="mf">5.00</span>  <span class="mf">2.90</span>   <span class="mi">340</span>   <span class="mi">200</span>  <span class="mi">1</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_19_PH3_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.90</span>  <span class="mf">6.80</span>  <span class="mf">4.00</span>   <span class="mi">510</span>   <span class="mi">300</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_20_PHM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">3.20</span>  <span class="mf">8.00</span>  <span class="mf">4.70</span>   <span class="mi">850</span>   <span class="mi">500</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_21_PA2_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.60</span>  <span class="mf">5.40</span>  <span class="mf">2.80</span>   <span class="mi">340</span>   <span class="mi">200</span>  <span class="mi">2</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_22_PA3_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">2.80</span>  <span class="mf">6.50</span>  <span class="mf">3.50</span>   <span class="mi">510</span>   <span class="mi">300</span>  <span class="mi">0</span> 
+<span class="err">&#39;</span><span class="n">eJIVSM_23_PAM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">3.40</span>  <span class="mf">8.10</span>  <span class="mf">4.60</span>   <span class="mi">850</span>   <span class="mi">500</span>  <span class="mi">0</span> 
 </code></pre></div>
 </td></tr></table>
-<p><code>’grd’</code>
-    :   Velocity model input from <code>NetCDF</code> (GMT grd) files. The
-    compilation of <code>OpenSWPC</code> should be performed in accompaniment
-    with the use of the <code>NetCDF</code> library. The following parameters
-    are required.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><code><span class="o">-</span> <span class="n n-Quoted">`dir_grd`</span><span class="o">:</span> <span class="k">Directory</span> <span class="k">of</span> <span class="n">the</span> <span class="n">velocity</span> <span class="n">structure</span> <span class="p">(</span><span class="n n-Quoted">`NetCDF`</span><span class="p">)</span> <span class="n">files</span><span class="p">.</span>
-
-<span class="o">-</span> <span class="n n-Quoted">`fn_grdslt`</span><span class="o">:</span> <span class="k">List</span> <span class="k">file</span> <span class="n">that</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">grd</span> <span class="n">files</span> <span class="k">and</span> <span class="n">the</span> <span class="n">associated</span>
-    <span class="k">medium</span><span class="p">.</span> <span class="k">Each</span> <span class="n">line</span> <span class="k">contains</span> <span class="n">the</span> <span class="n">grd</span> <span class="n">filename</span> <span class="p">(</span><span class="k">with</span> <span class="n">a</span> <span class="n">single</span>
-    <span class="k">or</span> <span class="kt">double</span> <span class="n">quotation</span> <span class="n">mark</span><span class="p">;</span> <span class="n">recommended</span><span class="p">),</span> <span class="n">density</span><span class="p">,</span> <span class="n">P</span><span class="o">-</span><span class="n">wave</span>
-    <span class="n">velocity</span><span class="p">,</span> <span class="n">S</span><span class="o">-</span><span class="n">wave</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">$Q_P$</span><span class="p">,</span> <span class="n">$Q_S$</span><span class="p">,</span> <span class="k">and</span> <span class="n">the</span> <span class="n">layer</span>
-    <span class="k">number</span> <span class="n">integers</span> <span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span> <span class="n">separated</span> <span class="k">by</span> <span class="n">spaces</span> <span class="p">(</span><span class="n">see</span> <span class="k">following</span>
-    <span class="n">example</span><span class="p">).</span> <span class="k">Lines</span> <span class="k">starting</span> <span class="k">with</span> <span class="n n-Quoted">`#`</span> <span class="n">will</span> <span class="n">be</span> <span class="n">neglected</span><span class="p">.</span> <span class="n">The</span>
-    <span class="n">layer</span> <span class="k">number</span> <span class="k">is</span> <span class="n">used</span> <span class="k">to</span> <span class="n">specify</span> <span class="n">the</span> <span class="k">source</span> <span class="k">or</span> <span class="n">station</span> <span class="n">depth</span>
-    <span class="n">fit</span> <span class="k">to</span> <span class="n">the</span> <span class="n">layer</span> <span class="n">depth</span><span class="p">.</span> <span class="n">The</span> <span class="k">first</span> <span class="n n-Quoted">`NetCDF`</span> <span class="k">file</span> <span class="n">will</span> <span class="n">be</span>
-    <span class="n">treated</span> <span class="k">as</span> <span class="n">the</span> <span class="n">ground</span> <span class="n">surface</span><span class="p">.</span> <span class="k">If</span> <span class="n">the</span> <span class="n">depth</span> <span class="k">of</span> <span class="n">the</span> <span class="n">ground</span>
-    <span class="n">surface</span> <span class="k">is</span> <span class="n">deeper</span> <span class="k">than</span> <span class="n">zero</span><span class="p">,</span> <span class="n">the</span> <span class="n">depth</span> <span class="k">range</span> <span class="k">from</span> <span class="n">$z</span> <span class="o">=</span> <span class="n">0$</span> <span class="k">to</span>
-    <span class="n">the</span> <span class="n">surface</span> <span class="k">is</span> <span class="n">assumed</span> <span class="k">to</span> <span class="n">be</span> <span class="n">an</span> <span class="n">ocean</span> <span class="n">layer</span><span class="p">.</span> <span class="n">The</span> <span class="n">grid</span> <span class="n">above</span>
-    <span class="n">the</span> <span class="n">free</span> <span class="n">surface</span> <span class="k">is</span> <span class="n">treated</span> <span class="k">as</span> <span class="n">an</span> <span class="n">air</span> <span class="k">column</span><span class="p">.</span>
-
-<span class="n n-Quoted">`</span><span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted"> c</span>
-<span class="n n-Quoted"># grd filename          rho    vp    vs    QP   QS  sw</span>
-<span class="n n-Quoted"># -------------------------------------------------------</span>
-<span class="n n-Quoted">&#39;eJIVSM_01_TAB_.grd&#39;   1.80  1.70  0.35   119    70  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_02_BSM_.grd&#39;   1.95  1.80  0.50   170   100  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_03_BSM_.grd&#39;   2.00  2.00  0.60   204   120  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_04_BSM_.grd&#39;   2.05  2.10  0.70   238   140  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_05_BSM_.grd&#39;   2.07  2.20  0.80   272   160  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_06_BSM_.grd&#39;   2.10  2.30  0.90   306   180  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_07_BSM_.grd&#39;   2.15  2.40  1.00   340   200  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_08_BSM_.grd&#39;   2.20  2.70  1.30   442   260  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_09_BSM_.grd&#39;   2.25  3.00  1.50   510   300  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_10_BSM_.grd&#39;   2.30  3.20  1.70   578   340  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_11_BSM_.grd&#39;   2.35  3.50  2.00   680   400  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_12_BSM_.grd&#39;   2.45  4.20  2.40   680   400  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_13_BSM_.grd&#39;   2.60  5.00  2.90   680   400  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_14_BSM_.grd&#39;   2.65  5.50  3.20   680   400  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_15_UPC_.grd&#39;   2.70  5.80  3.40   680   400  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_16_LWC_.grd&#39;   2.80  6.40  3.80   680   400  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_17_CTM_.grd&#39;   3.20  7.50  4.50   850   500  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_18_PH2_.grd&#39;   2.40  5.00  2.90   340   200  1 </span>
-<span class="n n-Quoted">&#39;eJIVSM_19_PH3_.grd&#39;   2.90  6.80  4.00   510   300  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_20_PHM_.grd&#39;   3.20  8.00  4.70   850   500  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_21_PA2_.grd&#39;   2.60  5.40  2.80   340   200  2 </span>
-<span class="n n-Quoted">&#39;eJIVSM_22_PA3_.grd&#39;   2.80  6.50  3.50   510   300  0 </span>
-<span class="n n-Quoted">&#39;eJIVSM_23_PAM_.grd&#39;   3.40  8.10  4.60   850   500  0 </span>
-<span class="n n-Quoted n-Quoted-Escape">``</span><span class="n n-Quoted">`</span>
-
-<span class="o">-</span> <span class="n n-Quoted">`node_grd`</span><span class="o">:</span> <span class="n">MPI</span> <span class="n">node</span> <span class="k">to</span> <span class="n">input</span> <span class="n">the</span> <span class="n n-Quoted">`NetCDF`</span> <span class="k">data</span><span class="p">.</span> <span class="k">All</span> <span class="n n-Quoted">`NetCDF`</span> <span class="n">files</span> <span class="n">are</span>
-    <span class="k">first</span> <span class="k">read</span> <span class="k">by</span> <span class="n">this</span> <span class="n">node</span><span class="p">,</span> <span class="k">and</span> <span class="k">then</span><span class="p">,</span> <span class="n">transferred</span> <span class="k">to</span> <span class="k">all</span> <span class="n">nodes</span>
-    <span class="n">via</span> <span class="n">MPI</span> <span class="k">data</span> <span class="n">communication</span><span class="p">.</span>
-
-<span class="o">-</span> <span class="n n-Quoted">`is_ocean`</span> <span class="o">:</span> <span class="k">In</span> <span class="n">the</span> <span class="k">default</span> <span class="p">(</span><span class="n n-Quoted">`.true.`</span><span class="p">),</span> <span class="n">the</span> <span class="n">depth</span> <span class="k">from</span> <span class="n">$z</span> <span class="o">=</span> <span class="n">0$</span> <span class="k">to</span> <span class="n">the</span> <span class="k">set</span>
-    <span class="n">topography</span> <span class="n">will</span> <span class="n">be</span> <span class="n">treated</span> <span class="k">as</span> <span class="n">an</span> <span class="n">ocean</span> <span class="n">layer</span><span class="p">.</span> <span class="k">If</span> <span class="n">this</span>
-    <span class="n">parameter</span> <span class="k">is</span> <span class="k">set</span> <span class="k">to</span> <span class="n n-Quoted">`.false.`</span><span class="p">,</span> <span class="n">the</span> <span class="n">seafloor</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span> <span class="k">as</span>
-    <span class="n">a</span> <span class="n">free</span> <span class="n">surface</span> <span class="k">and</span> <span class="k">no</span> <span class="n">seawater</span> <span class="n">will</span> <span class="n">be</span> <span class="n">used</span><span class="p">.</span>
-</code></pre></div>
-</td></tr></table>
-<p><code>’user’</code>
-    :   A user subroutine defined in <code>src/swpc_*/m_vmodel_user.F90</code>
-    is used for defining velocity model. Recompilation of the code
-    is necessary if this Fortran file is modified. Please refer the
-    comments in the file for input/output of the user subroutine.</p>
+<ul>
+<li>
+<p><code>node_grd</code>: MPI node to input the <code>NetCDF</code> data. All <code>NetCDF</code> files are
+first read by this node, and then, transferred to all nodes
+via MPI data communication.</p>
+</li>
+<li>
+<p><code>is_ocean</code> : In the default (<code>.true.</code>), the depth from <script type="math/tex">z = 0</script> to the set
+topography will be treated as an ocean layer. If this
+parameter is set to <code>.false.</code>, the seafloor will be used as
+a free surface and no seawater will be used.</p>
+</li>
+</ul>
+</dd>
+<dt><code>’user’</code></dt>
+<dd>A user subroutine defined in <code>src/swpc_*/m_vmodel_user.F90</code>
+is used for defining velocity model. Recompilation of the code
+is necessary if this Fortran file is modified. Please refer the
+comments in the file for input/output of the user subroutine.</dd>
+</dl>
 </dd>
 <dt><strong><code>vcut</code></strong></dt>
 <dd>Cut-off velocity. For the <code>’lhm’</code> or <code>’grd’</code> models, a velocity
@@ -1566,16 +1517,16 @@ random velocity models at different layers.</p>
 <p>The list file has a similar format to <code>fn_lhm</code>; it contains the
 filenames of the random media files in the rightmost column as in the
 following example.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp"># depth  rho(g/cm^3)  vp(km/s)   vs(km/s)     Qp      Qs     fn_rmed</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp"># depth  rho(g/cm^3)  vp(km/s)   vs(km/s)     Qp      Qs     fn_rmed</span>
 <span class="cp"># ----------------------------------------------------------------------</span>
      <span class="mi">0</span>        <span class="mf">2.300</span>      <span class="mf">5.50</span>      <span class="mf">3.14</span>     <span class="mi">600</span>     <span class="mi">300</span>     <span class="n">rmedia1</span><span class="p">.</span><span class="n">nc</span>
      <span class="mi">3</span>        <span class="mf">2.400</span>      <span class="mf">6.00</span>      <span class="mf">3.55</span>     <span class="mi">600</span>     <span class="mi">300</span>     <span class="n">rmedia1</span><span class="p">.</span><span class="n">nc</span>
@@ -1610,31 +1561,31 @@ fluctuation files for each layer.</dd>
 </dl>
 <p>The list file has two additional columns at the right: the filename of
 the random medium and the reference layer number.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp"># grd filename          rho    vp    vs   QP   QS  sw  fn_rmed      ref</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp"># grd filename          rho    vp    vs   QP   QS  sw  fn_rmed      ref</span>
 <span class="cp"># -----------------------------------------------------------------------</span>
 <span class="err">&#39;</span><span class="n">eJIVSM_01_TAB_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">1.80</span>  <span class="mf">1.70</span>  <span class="mf">0.35</span>   <span class="mi">119</span>    <span class="mi">70</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
 <span class="err">&#39;</span><span class="n">eJIVSM_02_BSM_</span><span class="p">.</span><span class="n">grd</span><span class="err">&#39;</span>   <span class="mf">1.95</span>  <span class="mf">1.80</span>  <span class="mf">0.50</span>   <span class="mi">170</span>   <span class="mi">100</span>  <span class="mi">0</span> <span class="err">&#39;</span><span class="n">rmed3d_1</span><span class="p">.</span><span class="n">nc</span><span class="err">&#39;</span> <span class="mi">0</span>
@@ -1727,45 +1678,51 @@ possible velocity derived from the stability condition.</p>
             </article>
           </div>
         </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            Back to top
+          </a>
+        
       </main>
       
         
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
         
-          <a href="../0205_output/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <a href="../0205_output/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Simulation Data Output" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Simulation Data Output
             </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Simulation Data Output
-              </div>
-            </div>
-          </a>
+          </div>
+        </a>
+      
+      
         
-        
-          <a href="../0207_source/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Earthquake Source Specification
-              </div>
+        <a href="../0207_source/" class="md-footer__link md-footer__link--next" aria-label="Next: Earthquake Source Specification" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Earthquake Source Specification
             </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1779,6 +1736,7 @@ possible velocity derived from the stability condition.</p>
         <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs
         </a>
+        
       </div>
       
   <div class="md-footer-social">
@@ -1799,19 +1757,13 @@ possible velocity derived from the stability condition.</p>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "toc.integrate"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
     
-      <script src="../../../assets/javascripts/vendor.18f0862e.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../../..",
-          features: ['tabs', 'instant'],
-          search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    
+      <script src="../../../assets/javascripts/bundle.febc23d1.min.js"></script>
       
         <script src="../../../mathjax-config.js"></script>
       
