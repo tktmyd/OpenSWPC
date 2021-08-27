@@ -711,6 +711,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wvconvx-a-waveform-conversion-tool-from-2d-to-3d" class="md-nav__link">
+    wvconv.x: a waveform conversion tool from 2D to 3D
+  </a>
+  
+    <nav class="md-nav" aria-label="wvconv.x: a waveform conversion tool from 2D to 3D">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1247,15 +1267,75 @@
                 
                 <h1 id="miscellaneous-tools">Miscellaneous Tools<a class="headerlink" href="#miscellaneous-tools" title="Permanent link">&para;</a></h1>
 <h2 id="timvis-scripts">timvis scripts<a class="headerlink" href="#timvis-scripts" title="Permanent link">&para;</a></h2>
-<p>Four scripts, <code>timvis.gmt4</code>, <code>/timvis.gmt5</code>, <code>timvis_abs.gmt4</code>, and
-<code>/timvis_abs.gmt5</code>, are used to visualize the elapsed time of the
+<p>Scripts <code>timvis.gmt</code> and <code>timvis_abs.gmt</code> are used to visualize the elapsed time of the
 computation obtained with the input parameter <code>stopwatch_mode = .true.</code>
-by using GMT versions 4 and 5.</p>
+by using GMT versions 5 or later.</p>
 <h2 id="geographic-coordinate-conversion">Geographic Coordinate Conversion<a class="headerlink" href="#geographic-coordinate-conversion" title="Permanent link">&para;</a></h2>
 <p>The Fortran programs <code>ll2xy.x</code> and <code>xy2ll.x</code> can project and inversely
 project the geographic and Cartesian coordinates with the same algorithm
 as <code>OpenSWPC</code>. These tools are provided for <code>OpenSWPC</code> version 3.0 or
 later.</p>
+<h2 id="wvconvx-a-waveform-conversion-tool-from-2d-to-3d"><code>wvconv.x</code>: a waveform conversion tool from 2D to 3D<a class="headerlink" href="#wvconvx-a-waveform-conversion-tool-from-2d-to-3d" title="Permanent link">&para;</a></h2>
+<p><strong>New in version 5.2</strong></p>
+<p>is a tool to convert 2D simulation results into 3D-simulation-equivalent seismic waveforms.</p>
+<p>Let us denote the 3D seismic waveform from a point source located at <script type="math/tex">(\xi, \eta, \zeta)</script> as <script type="math/tex">V_{3D}(\xi, \eta, \zeta, t)</script>. The 2D simulation result from a point source at <script type="math/tex">(\xi, \zeta)</script> can be expressed by line integral with respect to y-direction as </p>
+<script type="math/tex; mode=display">
+\begin{align}
+V_{2D}(\xi, \zeta, t) = \int_{-\infty}^\infty V_{3D}(\xi, \eta, \zeta, t) d \eta. 
+\end{align}
+</script>
+<p>The inverse transformation can be written as <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<script type="math/tex; mode=display">
+\begin{align}
+    V_{3D}(\xi, \eta=0, \zeta, t) = \frac{1}{\pi} 
+    \sqrt{\frac{1}{2 R v}} 
+    \frac{d}{dt}
+    \left[ \frac{1}{\sqrt{t}} \ast V_{2D}(\xi, \zeta, t) \right], 
+\end{align}
+</script>
+<p>where <script type="math/tex">R</script> is a propagation distance, and <script type="math/tex">V</script> is a seismic velocity at each phase appeared in the waveform. The simbol <script type="math/tex">\ast</script> denotes convolution integral. </p>
+<p>The tool <code>wvconv.x</code> evaluate this translation by frequency-domain calculation with assumptions that <script type="math/tex">R</script> and <script type="math/tex">V</script> are both constant: </p>
+<script type="math/tex; mode=display">
+\begin{align}
+    & \widetilde{V}_{2D} (\xi, \zeta, f) = \int_{-\infty}^\infty 
+    V_{2D} (\xi, \zeta, f) e^{i 2 \pi f t} dt 
+    \\
+    & V_{3D}(\xi, \eta=0, \zeta, t) = 
+    \int_{-\infty}^\infty     \sqrt{-\frac{i f}{Rv}}
+    \widetilde{V}_{2D} (\xi, \zeta, f)
+    e^{-i 2 \pi f t} d f. 
+\end{align}
+</script>
+<p>In the calculation, <script type="math/tex">R</script> is assuumed to be a straight line between the source and the receiver. The value of <script type="math/tex">v</script> can be given as a parameter, but by default it is calculated assuming <script type="math/tex">v=4000</script> m/s.</p>
+<h4 id="usage">Usage:<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>wvconv.x in.sac out.sac (V0)
+     in.sac: input SAC file (must be 2D simulation output)
+     out.sac: output SAC filename
+     V0 (optional): assumed average velocity in m/s unit. Default is 4000 m/s
+</code></pre></div>
+</td></tr></table>
+<p>As an example, the following figure shows a comparison between the waveform calculated with the P-SV 2D code in the 1D structure of <code>example/lhm.dat</code> and converted by <code>wvconv.x</code> (<script type="math/tex">V=4000</script> m/s) and the result of 3D calculation with the same structure.</p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/wvconv.png" />
+Comparison of 3D simulation results (gray curve) and 2D P-SV simulation results converted by <code>wvconv.x</code> (red curve).</p>
+</div>
+<p>Since the velocity of the seismic phase is assumed to be 4000 m/s, the amplitudes of the P-wave and subsequent surface wave phases are slightly different, but in general, the waveforms are in very good agreement. If the comparison is made without <code>wvconv.x</code>, the amplitudes and shapes of the waveforms are completely different.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>wvconv.x</code> is a very new code introduced in Version 5.2, and might contain bug(s). Please use it with caution. </p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Li, D., Helmberger, D., Clayton, R. W., &amp; Sun, D. (2014). Global synthetic seismograms using a 2-D finite-difference method. Geophysical Journal International, 197(2), 1166–1183. doi:10.1093/gji/ggu050&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
               
               

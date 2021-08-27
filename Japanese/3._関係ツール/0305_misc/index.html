@@ -1161,6 +1161,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#2d-3d-wvconvx" class="md-nav__link">
+    2D-3D変換ツール wvconv.x
+  </a>
+  
+    <nav class="md-nav" aria-label="2D-3D変換ツール wvconv.x">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1247,10 +1267,70 @@
                 
                 <h1 id="_1">その他のツール<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="timvis-tools">timvis tools<a class="headerlink" href="#timvis-tools" title="Permanent link">&para;</a></h2>
-<p><code>timvis.gmt4</code>, <code>timvis.gmt5</code>, <code>timvis_abs.gmt4</code>,
-<code>timvis_abs.gmt5</code>の4つのスクリプトがある．これらは<code>stopwatch_mode = .true.</code>の際に出力される経過時間ファイルを解析し，各計算ノードでサブルーチン毎の計算負荷のバランスを可視化する．GMTバージョン4用と5用の2セットが用意されている．</p>
+<p><code>timvis.gmt</code> と <code>timvis_abs.gmt</code> は<code>stopwatch_mode = .true.</code>の際に出力される経過時間ファイルを解析し，各計算ノードでサブルーチン毎の計算負荷のバランスを可視化する．GMTバージョン5以降が必要である．</p>
 <h2 id="_2">地理座標変換<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><code>ll2xy.x</code>と<code>xy2ll.x</code>は，で採用されているガウス・クリューゲル変換によって緯度経度とデカルト座標系の相互変換を行うツールである．</p>
+<h2 id="2d-3d-wvconvx">2D-3D変換ツール wvconv.x<a class="headerlink" href="#2d-3d-wvconvx" title="Permanent link">&para;</a></h2>
+<p><strong>New in version 5.2</strong></p>
+<p><code>wvconv.x</code> は2次元シミュレーションの結果に基づいて，3次元シミュレーション相当の地震波形に変換するツールである．</p>
+<p>震源位置<script type="math/tex">(\xi, \eta, \zeta)</script>の点震源による3次元空間の地震波形<script type="math/tex">V_{3D}(\xi, \eta, \zeta, t)</script>は，震源位置<script type="math/tex">(\xi, \zeta)</script>による2次元空間の地震波形<script type="math/tex">V_{2D}(\xi,\zeta, t)</script>と，以下のような関係にある: </p>
+<script type="math/tex; mode=display">
+\begin{align}
+V_{2D}(\xi, \zeta, t) = \int_{-\infty}^\infty V_{3D}(\xi, \eta, \zeta, t) d \eta 
+\end{align}
+</script>
+<p>つまり，<script type="math/tex">V_{3D}</script>を<script type="math/tex">y</script>軸方向に震源について積分した線震源による地震波が2次元シミュレーションの結果である．一方，この逆変換は，</p>
+<script type="math/tex; mode=display">
+\begin{align}
+    V_{3D}(\xi, \eta=0, \zeta, t) = \frac{1}{\pi} 
+    \sqrt{\frac{1}{2 R v}} 
+    \frac{d}{dt}
+    \left[ \frac{1}{\sqrt{t}} \ast V_{2D}(\xi, \zeta, t) \right]
+\end{align}
+</script>
+<p>によって計算できる<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>．ここで<script type="math/tex">R</script>は伝播距離，<script type="math/tex">v</script>は各地震波相の速度である．記号<script type="math/tex">\ast</script>は畳み込みを表す．</p>
+<p>ツール <code>wvconv.x</code> は，<script type="math/tex">R</script>と<script type="math/tex">v</script>一定の仮定のもとで，周波数領域による計算</p>
+<script type="math/tex; mode=display">
+\begin{align}
+    & \widetilde{V}_{2D} (\xi, \zeta, f) = \int_{-\infty}^\infty 
+    V_{2D} (\xi, \zeta, f) e^{i 2 \pi f t} dt 
+    \\
+    & V_{3D}(\xi, \eta=0, \zeta, t) = 
+    \int_{-\infty}^\infty     \sqrt{-\frac{i f}{Rv}}
+    \widetilde{V}_{2D} (\xi, \zeta, f)
+    e^{-i 2 \pi f t} d f
+\end{align}
+</script>
+<p>によって3次元空間における模擬波形を計算する．ここで<script type="math/tex">R</script>は震源観測点からの直線距離で，<script type="math/tex">v</script>の値はパラメタとして与えることもできるが，デフォルトでは<script type="math/tex">v=4000</script> m/sを仮定して計算する．</p>
+<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>wvconv.x in.sac out.sac (V0)
+     in.sac: input SAC file (must be 2D simulation output)
+     out.sac: output SAC filename
+     V0 (optional): assumed average velocity in m/s unit. Default is 4000 m/s
+</code></pre></div>
+</td></tr></table>
+<p>一例として，<code>example/lhm.dat</code>の1次元構造で計算したP-SV2次元コードによる波形から<code>wvconv.x</code>により変換した（<script type="math/tex">V=4000</script> m/s）波形と，同じ構造での3次元計算の結果の比較を下図に示す．</p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../../fig/wvconv.png" />
+3次元シミュレーション結果（灰色線）と2次元P-SVシミュレーション結果を<code>wvconv.x</code>で変換したもの（赤線）の比較．</p>
+</div>
+<p>地震波相の速度を4000 m/sと仮定するため，そこから外れるP波や表面波後続相では若干の振幅の違いが見られるが，全般的に波形は非常によく一致している．もし<code>wvconv.x</code>を介さずに比較すると，振幅も波形形状もまったく異なる．</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code>wvconv.x</code>はVersion 5.2で新たに導入されたコードであり，まだ十分に枯れていない．利用には細心の注意を払って欲しい．</p>
+</div>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>Li, D., Helmberger, D., Clayton, R. W., &amp; Sun, D. (2014). Global synthetic seismograms using a 2-D finite-difference method. Geophysical Journal International, 197(2), 1166–1183. doi:10.1093/gji/ggu050&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
                 
               
               

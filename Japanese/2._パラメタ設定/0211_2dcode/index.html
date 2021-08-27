@@ -1037,9 +1037,39 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2次元コード固有の設定
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         2次元コード固有の設定
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2次元コードの結果について
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1219,6 +1249,9 @@
 </div>
 <p>ただし，それぞれの成分で利用しないパラメタ（たとえば観測点位置の<script type="math/tex">y</script>方向成分や震源におけるモーメントテンソルの非利用成分）は無視される．観測点や震源位置の投影の際，そのy軸方向の座標は考慮されない．投影軸から遠い観測点の記録も出力されてしまうため，リストの指定には注意が必要である．
 平面波入射にも対応しているが，<code>pw_strike</code>, <code>pw_rake</code> は2次元断面内での振動を満たすように固定される．傾斜角<code>pw_dip</code>だけが指定できる．</p>
+<h2 id="2_1">2次元コードの結果について<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
+<p>地震波伝播において，3次元と2次元の問題は本質的に異なっている．2次元のシミュレーションは，3次元空間で<script type="math/tex">y</script>方向に無限に続く線震源を仮定したことに等しく，地震波の振幅や幾何減衰が3次元のものと大きくことなる．そのため，2次元のシミュレーション結果の地震波形を観測された記録と定量的に比較するのはたいへんに危険である．</p>
+<p>ただし，一定の仮定のもとで，2次元コードの結果をあたかも<script type="math/tex">y</script>方向には一様な構造を持つ3次元空間での地震波形であるかのように変換する手法は存在する．Version 5.2以降は<a href="../../3._%E9%96%A2%E4%BF%82%E3%83%84%E3%83%BC%E3%83%AB/0305_misc/">wvconv</a>でそのような変換を実現できる．</p>
                 
               
               

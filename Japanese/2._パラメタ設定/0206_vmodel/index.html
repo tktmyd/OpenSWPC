@@ -1289,7 +1289,8 @@
                 <h1 id="_1">速度構造の指定<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="_2">構造モデルの選択<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><code>OpenSWPC</code>の入力速度構造は層構造モデルを基本としている．一つ一つの層は，深さ（もしくは高さ）の変化を持つ<script type="math/tex">x</script>--<script type="math/tex">y</script>（もしくは緯度経度）の面であり，これを地震波速度・密度ならびに内部減衰の等値面として取り扱う．
-変数<code>vmodel_type</code>の設定によって一様構造，水平成層構造，あるいは<code>NetCDF</code>バイナリ入力種別を選択できる．</p>
+変数<code>vmodel_type</code>の設定によって一様構造，水平成層構造，あるいは<code>NetCDF</code>バイナリ入力種別を選択できる．
+c</p>
 <div class="admonition info">
 <p class="admonition-title">Parameters</p>
 <dl>
@@ -1408,7 +1409,14 @@
 <li>
 <p><code>is_ocean</code> : 海水モード．<code>.true.</code>（デフォルト）の場合<script type="math/tex">z=0</script>より地表面までは海水で満たされる．<code>.false.</code>の場合には海底面の上はすべて空気となり，海底が自由表面として取り扱われる．</p>
 </li>
+<li>
+<p><code>topo_flatten</code> : 地形変化を強制的に平坦にする．その分地下構造もオフセットされる．</p>
+</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title"><code>topo_flatten</code> 名称変更の注意</p>
+<p>このオプションはVersion 5.1までは <code>is_flatten</code> であったが，Version 5.2で実装された <code>earth_flattening</code> オプションとの混同を避けるため名前が変更された．</p>
+</div>
 </dd>
 <dt><code>’user’</code></dt>
 <dd><code>src/swpc_*/m_vmodel_user.F90</code> 内のサブルーチンでユーザーが定義する速度構造が読み込まれる．このF90ファイルを<strong>変更した場合には再コンパイルが必要</strong>となる．サブルーチンの引数についてはファイル内コメントを参照のこと．</dd>
@@ -1416,17 +1424,31 @@
 </dd>
 <dt><strong><code>vcut</code></strong></dt>
 <dd>カットオフ速度．<code>’lhm’</code>ならびに<code>’grd’</code>構造で，この値よりも小さな速度値が与えられた場合には，それを強制的に<code>vcut</code>に置き換える．低速度域を排除して波長とグリッドサイズの比を一定以上に保つために用いられる．この値が0の場合には置き換えは実施されない．また，海水層（<script type="math/tex">\mu=0</script>）の速度には適用されない．</dd>
+<dt><strong><code>munk_profile</code></strong> &nbsp; <strong>(new in version 5.2)</strong></dt>
+<dd><code>.true.</code> のとき，海水層中に極小値を持つMunk's profileが適用される．<code>.false.</code>であれば一定値が用いられる．次節の説明を参照のこと．</dd>
+<dt><strong> <code>earth_flattening</code></strong> &nbsp;  <strong>(new in version 5.2)</strong></dt>
+<dd><code>.true.</code>のときEarth-flattening tranformation (e.g., Aki and Richards, Box 9.2) により，デカルト座標系を球殻構造に対応する深さと速度の非線形変換を行う．このオプションは長距離（~500 km以上）や深発地震の到達時刻の正確な再現に特に有用である．ただし，P-SVと3D構造ではこの変換は<strong>厳密ではない</strong>ことに注意．</dd>
 </dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Version 5.2における<code>earth_flattening</code>モードの実装はまだ試験段階である．利用には十分注意すること．</p>
+</div>
 </div>
 <h2 id="_3">空気および海水層の取り扱い<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><code>OpenSWPC</code> では，空気層は密度 <script type="math/tex">\rho=0.001</script> [g/cm<script type="math/tex">{}^3</script>]，地震波速度<script type="math/tex">V_P=V_S=0</script>
-[km/s]，内部減衰<script type="math/tex">Q_P = Q_S = 10^{10}</script>を，海水層では<script type="math/tex">\rho=1.0</script>
-[g/cm<script type="math/tex">{}^3</script>], <script type="math/tex">V_P=1.5</script> [km/s], <script type="math/tex">V_S=0.0</script> [km/s], <script type="math/tex">Q_P = Q_S = 10^6</script>をそれぞれ仮定している．
+[km/s]，内部減衰<script type="math/tex">Q_P = Q_S = 10^{10}</script>をそれぞれ仮定している．
 空気層は事実上真空として扱えるほどに小さな密度を持ち，かつ地震波速度が0であるため，空中音波は伝播しない．
 従って，空気層中の<script type="math/tex">Q</script>値は結果に影響しない．
-ただし，計算コード中に密度の逆数を求める演算があるため，<strong>空気層の密度はゼロにしてはならない</strong>．
-海水層については平均的な海中音波一定速度をP波速度として利用している．
-海中音波の減衰は非常に小さいことが知られており，事実上無減衰になるようなQ値を導入している．</p>
+ただし，計算コード中に密度の逆数を求める演算があるため，<strong>空気層の密度はゼロにしてはならない</strong>．</p>
+<p>海水層では<script type="math/tex">\rho=1.0</script>
+[g/cm<script type="math/tex">{}^3</script>], <script type="math/tex">V_S=0.0</script> [km/s], <script type="math/tex">Q_P = Q_S = 10^6</script>を用いている．
+海中音波の減衰は非常に小さいことが知られており，事実上無減衰になるようなQ値を導入している．
+また，P波速度は<script type="math/tex">V_P=1.5</script> [km/s] であるが，Version 5.2 以降では <code>munk_profile = .true.</code> にすることにより，以下の式で定まる Munk's profile を用いることもできる．</p>
+<script type="math/tex; mode=display">\begin{align*}
+&V_P(z) = 1.5 \times \left[ 1.0 + 0.00737 \left( z_b - 1 + e^{-zb} \right) \right] \text{[m/s]}\\
+&z_b = 2(z-1.3) /1.3
+\end{align*}</script>
+<p>ただし<script type="math/tex">z</script>の単位は[km]である．この構造は水深1,300 mにSOFARチャネルに該当する極小を持つ．このパラメタが<code>.false.</code>の場合には<script type="math/tex">V_P = 1.5</script> [km/s]の一様な値が用いられる．</p>
 <p>地表ならびに海底面では，差分式を2次精度変更する境界条件が適用される（e.g., Okamoto and Takenaka, 2005<sup id="fnref:OT2005"><a class="footnote-ref" href="#fn:OT2005">1</a></sup>; Maeda and Furumura, 2003<sup id="fnref:MF2003"><a class="footnote-ref" href="#fn:MF2003">2</a></sup>）．海底ならびに地表の境界は，<script type="math/tex">\mu</script>と<script type="math/tex">\lambda</script>が有限の値から0になる，という条件を用いて自動的に抽出される．</p>
 <h2 id="_4">ランダム媒質の重畳<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>速度構造<code>’uni’</code>, <code>’lhm’</code>, <code>’grd’</code>それぞれに対して，平均速度を成層構造であたえ，それに別途生成したランダムな短波長速度ゆらぎを重畳させることができる．ランダムな速度ゆらぎ<script type="math/tex">\xi</script>を事前に生成しておき，別途定義される平均的速度構造<script type="math/tex">V_{P0}</script>,

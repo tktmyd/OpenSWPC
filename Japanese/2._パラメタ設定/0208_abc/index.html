@@ -1246,13 +1246,19 @@ Frequency-Shifted Perfectly Matched Layer (ADE CFS-PML; Zhang et al., 2010<sup i
 <dd>吸収境界領域のグリッド厚．通常10から20程度の値が用いられる．</dd>
 <dt><strong><code>stabilize_pml</code></strong></dt>
 <dd><code>.true.</code>のとき，低速度層を排除してPMLの安定化を試みる．ただしこのオプションの副作用として人工反射波の振幅は大きくなることがある．</dd>
-<dt><strong><code>fullspace_mode</code></strong> (new in version 5)</dt>
-<dd><code>.true.</code>のとき，<script type="math/tex">z</script>軸の上部にも吸収境界条件を適用する．このオプションは通常は空気層のため必要ないが，地表面の存在しない全無限媒質のシミュレーションの際に有用であろう．</dd>
 </dl>
 </div>
+<!---
+    **`fullspace_mode`** (new in version 5.2)
+    : `.true.`のとき，$z$軸の上部にも吸収境界条件を適用する．このオプションは通常は空気層のため必要ないが，地表面の存在しない全無限媒質のシミュレーションの際に有用であろう．ただし，既存の速度構造モデルの多くは地表境界の存在を前提としている．このモードを活用するためには，`vmodel_user`による自前の速度構造モデルの定義が必要であろう．
+
+!!! Caution
+    `fullspace_mode` は，Version 5.0.0 では2次元（P-SV, SH）コードでのみ有効である．Version 5.2 以降では3次元でも動作する．
+--->
+
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
-<p><code>fullspace_mode</code> は，Version 5.0.0 では2次元（P-SV, SH）コードでのみ有効である．3次元には近い将来実装される予定である．</p>
+<p>Version 5.0 -- 5.1 に実装されていた <code>fullspace_mode</code> は，特定の環境下で，該当モードを設定していなくてもトラブルを引き起こすことが判明したため，一時的に利用不可としている．トラブルの原因は目下追求中である．</p>
 </div>
 <div class="footnote">
 <hr />

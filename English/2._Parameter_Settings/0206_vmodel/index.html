@@ -1431,7 +1431,14 @@ topography will be treated as an ocean layer. If this
 parameter is set to <code>.false.</code>, the seafloor will be used as
 a free surface and no seawater will be used.</p>
 </li>
+<li>
+<p><code>topo_flatten</code> : Make topography variatinon flat by offsetting the medium below. </p>
+</li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Renaming <code>is_flatten</code> to <code>topo_flatten</code></p>
+<p>This option used to be <code>is_flatten</code> until Version 5.1, but has been renamed to avoid confusion with the <code>earth_flattening</code> option implemented in Version 5.2.</p>
+</div>
 </dd>
 <dt><code>’user’</code></dt>
 <dd>A user subroutine defined in <code>src/swpc_*/m_vmodel_user.F90</code>
@@ -1447,16 +1454,33 @@ parameter is used to avoid wavelengths that are too short and
 violate the wavelength condition (the wavelength is recommended to
 be longer than 5-10 grids). This substitution will not be performed
 in the oceanic area.</dd>
+<dt><strong><code>munk_profile</code></strong> &nbsp; <strong>(new in version 5.2)</strong></dt>
+<dd>If this value is <code>.true.</code>, the Munk's profile with minima is applied in the seawater layer. Otherwise a constant value of 1.5 km/s is used. See the explanation in the next section.</dd>
+<dt><strong> <code>earth_flattening</code></strong> &nbsp;  <strong>(new in version 5.2)</strong></dt>
+<dd>If this option is <code>.true.</code>, OpenSWPC performs the transformation the Cartesian coordinate to pseudo-spherical coordinate by means of the Earth-flattening tranformation (e.g., Aki and Richards, Box 9.2). This option may be useful for reproducing accurate arrival time of seismic waves for long (~500 km or more) traveling distances and/or for deep-focus earthquake. Please be noted that this transformation is <strong>not</strong> exact in P-SV and 3D models. </dd>
 </dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The implementation of <code>earth_flattening</code> mode in version 5.2 is still in the experimental stage. Please use it with caution. </p>
+</div>
 </div>
 <h2 id="on-treatments-of-air-and-seawater-layer">On Treatments of Air and Seawater Layer<a class="headerlink" href="#on-treatments-of-air-and-seawater-layer" title="Permanent link">&para;</a></h2>
 <p>In <code>OpenSWPC</code>, the air column has a mass density of <script type="math/tex">\rho=0.001</script> [g/cm<script type="math/tex">{}^3</script>], 
 velocities of <script type="math/tex">V_P = V_S = 0</script> [km/s], and intrinsic
-attenuation parameters of <script type="math/tex">Q^P = Q^S = 10^{10}</script>. In the ocean column,
-<script type="math/tex">\rho= 1.0</script> [g/cm<script type="math/tex">{}^3</script>], <script type="math/tex">V_P = 1.5</script> [km/s], <script type="math/tex">V_S = 0.0</script> [km/s],
-and <script type="math/tex">Q^P = Q^S = 10^6</script> are assumed. The air column is treated as a
+attenuation parameters of <script type="math/tex">Q^P = Q^S = 10^{10}</script>. 
+The air column is treated as a
 vacuum with no seismic wave propagation (with zero velocities). However,
-<strong>the mass density in the air column must not be zero to avoid division by zero</strong>. In the free
+<strong>the mass density in the air column must not be zero to avoid division by zero</strong>. </p>
+<p>In the ocean column, <script type="math/tex">\rho= 1.0</script> [g/cm<script type="math/tex">{}^3</script>], <script type="math/tex">V_S = 0.0</script> [km/s],
+and <script type="math/tex">Q^P = Q^S = 10^6</script> are assumed. 
+The attenuation of underwater sound waves is known to be very small, so we have introduced a very large <script type="math/tex">Q</script> values that are virtually unattenuated. 
+The P-wave velocity is <script type="math/tex">V_P=1.5</script> km/s, but in the version 5.2 and later, the depth-dependent Munk's profile which is defined the equation below can be used by setting <code>munk_profile = .true.</code>. </p>
+<script type="math/tex; mode=display">\begin{align*}
+&V_P(z) = 1.5 \times \left[ 1.0 + 0.00737 \left( z_b - 1 + e^{-zb} \right) \right] \text{[m/s]}\\
+&z_b = 2(z-1.3) /1.3
+\end{align*}</script>
+<p>where the unit of <script type="math/tex">z</script> is km. This profile contains a minima which corresponds to the SOFAR channel at a depth of 1300 m. </p>
+<p>In the free
 surface and seafloor, the reduced order of the finite difference is
 performed according to Okamoto and Takenaka (2005<sup id="fnref:OT2005"><a class="footnote-ref" href="#fn:OT2005">1</a></sup>) and Maeda and Furumura (2003<sup id="fnref:MF2003"><a class="footnote-ref" href="#fn:MF2003">2</a></sup>). 
 These discontinuities are automatically detected as boundaries that change <script type="math/tex">\mu</script> and <script type="math/tex">\lambda</script> from zero to a finite value.</p>
