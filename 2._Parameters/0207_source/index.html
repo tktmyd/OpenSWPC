@@ -1,0 +1,1424 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="OpenSWPC User's Guide">
+      
+      
+        <meta name="author" content="Takuto Maeda">
+      
+      
+        <link rel="canonical" href="https://tktmyd.github.io/OpenSWPC/2._Parameters/0207_source/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.6">
+    
+    
+      
+        <title>Earthquake Source Specification - OpenSWPC</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="black">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#earthquake-source-specification" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="OpenSWPC" class="md-header__button md-logo" aria-label="OpenSWPC" data-md-component="logo">
+      
+  <img src="../../fig/icon.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OpenSWPC
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Earthquake Source Specification
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <div class="md-header__option">
+        <div class="md-select">
+          
+          <button class="md-header__button md-icon" aria-label="Select language">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+          </button>
+          <div class="md-select__inner">
+            <ul class="md-select__list">
+              
+                <li class="md-select__item">
+                  <a href="./" hreflang="en" class="md-select__link">
+                    English
+                  </a>
+                </li>
+                
+                <li class="md-select__item">
+                  <a href="../../ja/2._Parameters/0207_source/" hreflang="ja" class="md-select__link">
+                    Japanese
+                  </a>
+                </li>
+                
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/tktmyd/OpenSWPC" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tktmyd/OpenSWPC
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../" class="md-tabs__link">
+      OpenSWPC Users' Guide
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../1._SetUp/0101_env/" class="md-tabs__link">
+        Set up
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../0201_description/" class="md-tabs__link md-tabs__link--active">
+        Parameters
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../3._Tools/0301_snapshot/" class="md-tabs__link">
+        Tools
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../4._Hints/0401_modelset/" class="md-tabs__link">
+        Hints
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Misc/New_Feature/" class="md-tabs__link">
+        Misc
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OpenSWPC" class="md-nav__button md-logo" aria-label="OpenSWPC" data-md-component="logo">
+      
+  <img src="../../fig/icon.png" alt="logo">
+
+    </a>
+    OpenSWPC
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/tktmyd/OpenSWPC" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    tktmyd/OpenSWPC
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        OpenSWPC Users' Guide
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Set up
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Set up" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Set up
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1._SetUp/0101_env/" class="md-nav__link">
+        System requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1._SetUp/0102_tree/" class="md-nav__link">
+        Code directory tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1._SetUp/0103_compile/" class="md-nav__link">
+        Compilation and Execution
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1._SetUp/0104_dataset/" class="md-nav__link">
+        Preparing the Dataset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1._SetUp/0105_parallel/" class="md-nav__link">
+        Execution
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Parameters
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Parameters" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Parameters
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0201_description/" class="md-nav__link">
+        Notation of the Parameter File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0202_env/" class="md-nav__link">
+        Controlling Parameters
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0203_coord/" class="md-nav__link">
+        Coordinates and Parallel Computation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0204_visco/" class="md-nav__link">
+        Viscoelastic Bodies
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0205_output/" class="md-nav__link">
+        Simulation Data Output
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0206_vmodel/" class="md-nav__link">
+        Velocity Model
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Earthquake Source Specification
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Earthquake Source Specification
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#moment-rate-function" class="md-nav__link">
+    Moment Rate Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moment-tensor-source" class="md-nav__link">
+    Moment Tensor Source
+  </a>
+  
+    <nav class="md-nav" aria-label="Moment Tensor Source">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#specifying-the-magnitude-of-an-earthquake" class="md-nav__link">
+    Specifying the magnitude of an earthquake
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psmeca-specification" class="md-nav__link">
+    psmeca specification
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#body-force-mode" class="md-nav__link">
+    Body Force Mode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plane-wave-mode" class="md-nav__link">
+    Plane Wave Mode
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0208_abc/" class="md-nav__link">
+        Absorbing Boundary Conditions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0209_checkpoint/" class="md-nav__link">
+        Checkpointing and Restarting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0210_reciprocity/" class="md-nav__link">
+        Reciprocity Mode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0211_2dcode/" class="md-nav__link">
+        About Two-Dimensional Codes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Tools" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3._Tools/0301_snapshot/" class="md-nav__link">
+        Snapshot data handling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3._Tools/0302_vmodel/" class="md-nav__link">
+        Velocity Structure
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3._Tools/0303_parameter/" class="md-nav__link">
+        Programs for Supporting Parameter Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3._Tools/0304_rmedia/" class="md-nav__link">
+        Generation of Random Media
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3._Tools/0305_misc/" class="md-nav__link">
+        Miscellaneous Tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Hints
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Hints" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Hints
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4._Hints/0401_modelset/" class="md-nav__link">
+        For Parameter Settings
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4._Hints/0402_modification/" class="md-nav__link">
+        For Modifying the Code
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Misc
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Misc" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Misc
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/New_Feature/" class="md-nav__link">
+        New features
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Revision_History/" class="md-nav__link">
+        Revision Histories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/License/" class="md-nav__link">
+        License
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="earthquake-source-specification">Earthquake Source Specification<a class="headerlink" href="#earthquake-source-specification" title="Permanent link">&para;</a></h1>
+<h2 id="moment-rate-function">Moment Rate Function<a class="headerlink" href="#moment-rate-function" title="Permanent link">&para;</a></h2>
+<p>This section describes the moment rate functions, <span class="arithmatex"><script type="math/tex">\dot{M}(t)</script></span>, that can
+be used in <code>OpenSWPC</code> by choosing the parameter <code>stftype</code>. In the
+following, all moment rate functions have a duration (or characteristic
+time) <span class="arithmatex"><script type="math/tex">T_R</script></span> and are normalized so that the total moment is <span class="arithmatex"><script type="math/tex">1</script></span>.</p>
+<ul>
+<li>Box-car function (<code>boxcar</code>)</li>
+</ul>
+<div class="arithmatex">
+<script type="math/tex; mode=display">\begin{align}
+   \dot{m}^ R \left(t\right) &=
+    \frac{1}{T_R} 
+  & \begin{array}{r} ( 0 \le t \le T_R) \\ \end{array}
+\end{align}</script>
+</div>
+<ul>
+<li>Triangle function (<code>triangle</code>)</li>
+</ul>
+<div class="arithmatex">
+<script type="math/tex; mode=display">\begin{align}
+\dot{m}^ T \left(t\right)  = 
+\begin{cases}
+4t/T_R^2 & ( 0 \le t \le T_R/2 ) \\
+-4(t-T_R)/T_R^2 & ( T_R/2 < t \le T_R )
+\end{cases}
+\end{align}</script>
+</div>
+<ul>
+<li>Herrmann function (<code>herrmann</code>)</li>
+</ul>
+<div class="arithmatex">
+<script type="math/tex; mode=display">\begin{align}
+\dot{m}^ H \left(t\right) =
+\begin{cases}
+16 t^2 / T_R^3 & ( 0 \le t \le T_R/4  ) \\
+-2 ( 8 t^2 - 8 t T_R + T_R^2 ) / T_R^3  & ( T_R/4 < t \le 3T_R/4  ) \\
+16 \left( t - T_R \right)^2 / T_R^3 &  (3T_R/4 < t \le T_R  )
+\end{cases}
+\end{align}</script>
+</div>
+<ul>
+<li>Cosine function (<code>cosine</code>)</li>
+</ul>
+<div class="arithmatex">
+<script type="math/tex; mode=display">\begin{align}
+\dot{m}^ C \left(t\right) =
+\frac{1}{T_R} \left[ 1 - \cos \left(\frac{2 \pi t}{T_R} \right) \right]
+\quad ( 0 \le t \le T_R) 
+\end{align}</script>
+</div>
+<ul>
+<li>Küpper wavelet (<code>kupper</code>)</li>
+</ul>
+<div class="arithmatex">
+<script type="math/tex; mode=display">\begin{align}
+  \dot{m}^K \left( t \right ) &= 
+  \frac{3 \pi}{4 T_R} \sin^3\left( \frac{\pi t}{T_R} \right) 
+  \quad ( 0 \le t \le T_R) 
+\end{align}</script>
+</div>
+<ul>
+<li>t-exp type function (<code>texp</code>)</li>
+</ul>
+<div class="arithmatex">
+<script type="math/tex; mode=display">\begin{align}
+  \dot{m}^{E} \left( t \right) &= \frac{(2 \pi)^2 t}{T_R^2} \exp\left[ - \frac{ 2 \pi t}{T_R}\right]
+  \quad ( 0 \le t ) 
+\end{align}</script>
+</div>
+<p>The next figure shows each moment rate function and its Fourier spectrum. </p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../fig/stf.png" />
+Moment rate functions <span class="arithmatex"><script type="math/tex">\dot{M}(t)</script></span> (left) and their Fourier spectra (right). </p>
+</div>
+<p>The moment rate
+functions have a roll off of <span class="arithmatex"><script type="math/tex">f^{-1}</script></span>--<span class="arithmatex"><script type="math/tex">f^{-4}</script></span> at frequencies of
+<span class="arithmatex"><script type="math/tex">f\gg 1/T_R</script></span>. To avoid numerical dispersion, the source spectrum should
+be sufficiently small at the highest target frequency. As this maximum
+frequency, we adopt <span class="arithmatex"><script type="math/tex">f_\text{max}=2/T_R</script></span> for all types of source time
+functions (the red dotted line in the figure.If the
+parameter is appropriately set so that numerical dispersion does not
+occur at frequencies below <span class="arithmatex"><script type="math/tex">f_\text{max}</script></span>, the result should not be
+contaminated by numerical dispersion. In addition, the uppermost
+frequency, where the spectrum response of the source time function
+becomes flat in the frequency domain, is approximately <span class="arithmatex"><script type="math/tex">f \le 1/(2 T_R)</script></span>
+(the blue dotted line in the figure. </p>
+<h2 id="moment-tensor-source">Moment Tensor Source<a class="headerlink" href="#moment-tensor-source" title="Permanent link">&para;</a></h2>
+<p>The source mechanisms of the faulting are given by a six-component
+moment tensor or by three parameters of a double couple source
+(<code>strike</code>, <code>dip</code>, <code>rake</code>). The source locations can be given either by
+their computational or geographical coordinates. The size of the earthquake can be described by seismic moment <span class="arithmatex"><script type="math/tex">M_0</script></span> or moment magnitude <span class="arithmatex"><script type="math/tex">M_W</script></span> or fault slip <span class="arithmatex"><script type="math/tex">D</script></span> &amp; area <span class="arithmatex"><script type="math/tex">S</script></span>. 
+In total, there are
+ten possible formats to describe the source. In the program, sources are given as a
+stress-drop source by using the moment rate function. The moment rate
+function is chosen from the given six functions. They require
+parameters in the source list file for their starting time <span class="arithmatex"><script type="math/tex">T_0</script></span>,
+duration <span class="arithmatex"><script type="math/tex">T_R</script></span>, and total moment <span class="arithmatex"><script type="math/tex">M_0</script></span>.</p>
+<p><code>OpenSWPC</code> can accept multiple point sources as multiple lines in the
+source list file. There is no fixed limit to the number of sources (in
+practice, this is determined by the memory size). By gradually changing
+the starting time and source location, a finite fault rupture can be
+mimicked. In the source list file, lines starting with <code>#</code> will be
+ignored. By setting <code>sdep_fit</code>, the source depth can be changed so that
+it fits the medium's velocity boundary. In this case, the depth in the
+source list file will be ignored. The layer number should be specified
+in the <code>fn_grd</code> or <code>fn_grd_rmed</code> list files.</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>stf_format</code></strong></dt>
+<dd>
+<p>Format of the source list file. Choose from the following six candidates. </p>
+<ul>
+<li><code>'xym0ij'</code> :  <span class="arithmatex"><script type="math/tex">x</script></span>, <span class="arithmatex"><script type="math/tex">y</script></span>, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">T_0</script></span>, <span class="arithmatex"><script type="math/tex">T_R</script></span>, <span class="arithmatex"><script type="math/tex">M_0</script></span>, <span class="arithmatex"><script type="math/tex">m_{xx}</script></span>, <span class="arithmatex"><script type="math/tex">m_{yy}</script></span>,  <span class="arithmatex"><script type="math/tex">m_{zz}</script></span>,  <span class="arithmatex"><script type="math/tex">m_{yz}</script></span>, <span class="arithmatex"><script type="math/tex">m_{xz}</script></span>, <span class="arithmatex"><script type="math/tex">m_{xy}</script></span>    </li>
+<li>
+<p><code>'xym0dc'</code>  :  <span class="arithmatex"><script type="math/tex">x</script></span>, <span class="arithmatex"><script type="math/tex">y</script></span>, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">T_0</script></span>, <span class="arithmatex"><script type="math/tex">T_R</script></span>, <span class="arithmatex"><script type="math/tex">M_0</script></span>,  strike, dip, rake  </p>
+</li>
+<li>
+<p><code>'llm0ij'</code>   : lon, lat, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">T_0</script></span>, <span class="arithmatex"><script type="math/tex">T_R</script></span>, <span class="arithmatex"><script type="math/tex">M_0</script></span>, <span class="arithmatex"><script type="math/tex">m_{xx}</script></span>, <span class="arithmatex"><script type="math/tex">m_{yy}</script></span>,  <span class="arithmatex"><script type="math/tex">m_{zz}</script></span>, <span class="arithmatex"><script type="math/tex">m_{yz}</script></span>, <span class="arithmatex"><script type="math/tex">m_{xz}</script></span>, <span class="arithmatex"><script type="math/tex">m_{xy}</script></span>  </p>
+</li>
+<li>
+<p><code>'llm0dc'</code>  :  lon, lat, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">T_0</script></span>, <span class="arithmatex"><script type="math/tex">T_R</script></span>, <span class="arithmatex"><script type="math/tex">M_0</script></span>, strike, dip, rake  </p>
+</li>
+<li>
+<p><code>'xymwij'</code>   :  <span class="arithmatex"><script type="math/tex">x</script></span>, <span class="arithmatex"><script type="math/tex">y</script></span>, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">T_0</script></span>, <span class="arithmatex"><script type="math/tex">T_R</script></span>, <span class="arithmatex"><script type="math/tex">M_W</script></span>,  <span class="arithmatex"><script type="math/tex">m_{xx}</script></span>, <span class="arithmatex"><script type="math/tex">m_{yy}</script></span>, <span class="arithmatex"><script type="math/tex">m_{zz}</script></span>, <span class="arithmatex"><script type="math/tex">m_{yz}</script></span>, <span class="arithmatex"><script type="math/tex">m_{xz}</script></span>, <span class="arithmatex"><script type="math/tex">m_{xy}</script></span>  </p>
+</li>
+<li>
+<p><code>'xymwdc'</code> :  <span class="arithmatex"><script type="math/tex">x</script></span>, <span class="arithmatex"><script type="math/tex">y</script></span>, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">T_0</script></span>, <span class="arithmatex"><script type="math/tex">T_R</script></span>, <span class="arithmatex"><script type="math/tex">M_W</script></span>, strike, dip, rake  </p>
+</li>
+<li>
+<p><code>'llmwij'</code>  : lon, lat, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">T_0</script></span>, <span class="arithmatex"><script type="math/tex">T_R</script></span>, <span class="arithmatex"><script type="math/tex">M_W</script></span>, <span class="arithmatex"><script type="math/tex">m_{xx}</script></span>, <span class="arithmatex"><script type="math/tex">m_{yy}</script></span>, <span class="arithmatex"><script type="math/tex">m_{zz}</script></span>, <span class="arithmatex"><script type="math/tex">m_{yz}</script></span>,  <span class="arithmatex"><script type="math/tex">m_{xz}</script></span>,  <span class="arithmatex"><script type="math/tex">m_{xy}</script></span>  </p>
+</li>
+<li>
+<p><code>'llmwdc'</code>  : lon, lat, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">T_0</script></span>, <span class="arithmatex"><script type="math/tex">T_R</script></span>, <span class="arithmatex"><script type="math/tex">M_W</script></span>, strike, dip, rake</p>
+</li>
+<li>
+<p><code>'lldsdc'</code> : lon, lat, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">T_0</script></span>, <span class="arithmatex"><script type="math/tex">T_R</script></span>, <span class="arithmatex"><script type="math/tex">D</script></span>, <span class="arithmatex"><script type="math/tex">S</script></span>, strike, dip, rake</p>
+</li>
+<li>
+<p><code>'xydsdc'</code> : <span class="arithmatex"><script type="math/tex">x</script></span>, <span class="arithmatex"><script type="math/tex">y</script></span>, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">T_0</script></span>, <span class="arithmatex"><script type="math/tex">T_R</script></span>, <span class="arithmatex"><script type="math/tex">D</script></span>, <span class="arithmatex"><script type="math/tex">S</script></span>, strike, dip, rake</p>
+</li>
+<li>
+<p><code>'psmeca'</code> : lon, lat, <span class="arithmatex"><script type="math/tex">z</script></span>, <span class="arithmatex"><script type="math/tex">M_{rr}</script></span>, <span class="arithmatex"><script type="math/tex">M_{tt}</script></span>, <span class="arithmatex"><script type="math/tex">M_{ff}</script></span>, <span class="arithmatex"><script type="math/tex">M_{rt}</script></span>, <span class="arithmatex"><script type="math/tex">M_{rf}</script></span>, <span class="arithmatex"><script type="math/tex">M_{tf}</script></span>, iexp &nbsp; <strong>(new in v5.2)</strong></p>
+</li>
+</ul>
+<p>The unit of each variables are [km] for <span class="arithmatex"><script type="math/tex">x</script></span>, <span class="arithmatex"><script type="math/tex">y</script></span>, <span class="arithmatex"><script type="math/tex">z</script></span>, [Nm] for <span class="arithmatex"><script type="math/tex">M_0</script></span> and <span class="arithmatex"><script type="math/tex">m_{ij}</script></span>, [s] for <span class="arithmatex"><script type="math/tex">T_0</script></span> and <span class="arithmatex"><script type="math/tex">T_R</script></span>, [degree] for all parameters describing angles, [m] for slip <span class="arithmatex"><script type="math/tex">D</script></span> and [m<span class="arithmatex"><script type="math/tex">{}^2</script></span>] for area <span class="arithmatex"><script type="math/tex">S</script></span>. </p>
+</dd>
+<dt><strong> <code>stftype</code></strong></dt>
+<dd>Choice of the source time function. Select from <code>'boxcar'</code>,
+<code>'triangle'</code>, <code>'herrmann'</code>, <code>'kupper'</code>, <code>'cosine'</code>, and <code>'texp'</code>.</dd>
+<dt><strong> <code>fn_stf</code></strong></dt>
+<dd>Filename of the source list.</dd>
+<dt><strong> <code>sdep_fit</code> </strong></dt>
+<dd>Flag to fit the source depth to the velocity discontinuity. 
+<code>'asis'</code>: do not fit (default). <code>'bd{i}'</code>(i=1,2,<span class="arithmatex"><script type="math/tex">\cdots</script></span>9): fits to
+the <code>i</code>-th boundary specified in the rightmost column of
+<code>fn_grdlst</code>.</dd>
+</dl>
+</div>
+<h3 id="specifying-the-magnitude-of-an-earthquake">Specifying the magnitude of an earthquake<a class="headerlink" href="#specifying-the-magnitude-of-an-earthquake" title="Permanent link">&para;</a></h3>
+<p>When the moment tensor component is given directly, there is a trade-off regarding magnitude between the specification of the seismic moment <span class="arithmatex"><script type="math/tex">M_0</script></span> or moment magnitude <span class="arithmatex"><script type="math/tex">M_W</script></span> and the moment tensor component. For example, the following two specifications are completely equivalent</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex"><script type="math/tex">M_0</script></span></th>
+<th></th>
+<th><span class="arithmatex"><script type="math/tex">m_{xx}</script></span></th>
+<th><span class="arithmatex"><script type="math/tex">m_{yy}</script></span></th>
+<th><span class="arithmatex"><script type="math/tex">m_{zz}</script></span></th>
+<th><span class="arithmatex"><script type="math/tex">m_{yz}</script></span></th>
+<th><span class="arithmatex"><script type="math/tex">m_{xz}</script></span></th>
+<th><span class="arithmatex"><script type="math/tex">m_{xy}</script></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1e15</code></td>
+<td></td>
+<td><code>1.0</code></td>
+<td><code>1.0</code></td>
+<td><code>1.0</code></td>
+<td><code>0.0</code></td>
+<td><code>0.0</code></td>
+<td><code>0.0</code></td>
+</tr>
+<tr>
+<td><code>1.0</code></td>
+<td></td>
+<td><code>1e15</code></td>
+<td><code>1e15</code></td>
+<td><code>1e15</code></td>
+<td><code>0.0</code></td>
+<td><code>0.0</code></td>
+<td><code>0.0</code></td>
+</tr>
+</tbody>
+</table>
+<p>Based on the input parameters, the final seismic moment <span class="arithmatex"><script type="math/tex">\overline{M}_0</script></span> is</p>
+<div class="arithmatex">
+<script type="math/tex; mode=display">
+    \overline{M}_0 =\times \frac{ M_0 }{\sqrt{2}} \sqrt{m_{xx}^2 +m_{yy}^2 +m_{zz}^2 + 2(m_{yz}^2+m_{xz}^2+m_{xy}^2)}
+</script>
+</div>
+<p>which is determined by If more than one point source is specified, the sum of all source elements in the above equation becomes the total seismic moment; in the case of 2D P-SV and SH calculations, only the components valid for each cross section are evaluated. Because of this notation of separable magnitudes, the moment tensor component is implicitly assumed to normalized to </p>
+<div class="arithmatex">
+<script type="math/tex; mode=display">
+ \sqrt{m_{xx}^2 +m_{yy}^2 +m_{zz}^2 + 2(m_{yz}^2+m_{xz}^2+m_{xy}^2)} = 1
+</script>
+</div>
+<p>It is not necessary to do so, but without this standardization, the <span class="arithmatex"><script type="math/tex">M_W</script></span> or <span class="arithmatex"><script type="math/tex">M_0</script></span> entered as a parameter may differ from the actual calculated earthquake magnitude in the simulation. </p>
+<h3 id="psmeca-specification"><code>psmeca</code> specification<a class="headerlink" href="#psmeca-specification" title="Permanent link">&para;</a></h3>
+<p>Specify the seismic source in the standard format of <code>psmeca -Sm</code> in <a href="https://www.generic-mapping-tools.org/">GMT</a> and <a href="https://www.globalcmt.org/CMTsearch.html">globalcmt</a>. Specify the seismic source. It specifies the latitude and longitude depth of the epicenter, the moment tensor in the polar coordinate system (in the order <span class="arithmatex"><script type="math/tex">M_{rr}</script></span>, <span class="arithmatex"><script type="math/tex">M_{tt}</script></span>, <span class="arithmatex"><script type="math/tex">M_{ff}</script></span>, <span class="arithmatex"><script type="math/tex">M_{rt}</script></span>, <span class="arithmatex"><script type="math/tex">M_{rf}</script></span>, <span class="arithmatex"><script type="math/tex">M_{tf}</script></span>), and the exponential part (integer) of the seismic moment. Note that the exponential part is given in dyn-cm, as is customary. These parameters are converted into the moment tensor in the Cartesian coordinate system within OpenSWPC and used for the calculation. Fracture initiation time at the epicenter <span class="arithmatex"><script type="math/tex">T_0</script></span> is <span class="arithmatex"><script type="math/tex">0</script></span>, rise time <span class="arithmatex"><script type="math/tex">T_R</script></span> is based on Ekström et al. (2012) [^Ekström2012], and scaling</p>
+<div class="arithmatex">
+<script type="math/tex; mode=display">
+ T_R = 2 \times 1.05 \times 10^{-8} \times M_0^{1/3}
+</script>
+</div>
+<p>which is determined by <span class="arithmatex"><script type="math/tex">M_0</script></span>$. Again, <span class="arithmatex"><script type="math/tex">M_0</script></span> is a value in dyn-cm.</p>
+<p>This specification is effective from version 5.2.</p>
+<div class="admonition warning">
+<p class="admonition-title">Note on horizontal rotation</p>
+<p>As of version 5.2, when the parameter <code>phi</code> is not equall to zero, the rotation behavior of the source mechanism is different when the source mechanism is given as strike, dip, or rake, and when it is given as moment tensor.</p>
+<p>In the former case, the moment tensor is calculated based on the assumption that the strike were measured from the north, regardless of the value of <code>phi</code>. On the other hand, the moment tensor is assumed to be defined for the <span class="arithmatex"><script type="math/tex">x</script></span>, <span class="arithmatex"><script type="math/tex">y</script></span> coordinates after rotation. In other words, if one want to use moment tensor components from the catalog and rotate the coordinate system horizontally, one have calculate the rotated moment by yourself and give it as a parameter.</p>
+<p>The developers are aware that these behaviors are not systematic and may be changed in future versions.</p>
+</div>
+<h2 id="body-force-mode">Body Force Mode<a class="headerlink" href="#body-force-mode" title="Permanent link">&para;</a></h2>
+<p>A body force source can be used instead of a moment tensor source. In
+this mode, the three-component force vector (<span class="arithmatex"><script type="math/tex">f_x</script></span>, <span class="arithmatex"><script type="math/tex">f_y</script></span>, <span class="arithmatex"><script type="math/tex">f_z</script></span>) should
+be specified. The force vector is assumed to have a bell-shaped source
+time function, as in the case of the moment tensor source. Although
+there is no restriction on the number of body force elements, it is not
+possible to use both a moment tensor and a body force at the same time.</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>bf_mode</code></strong></dt>
+<dd>Flag for the body force mode. If this is <code>.true.</code>, the following
+parameters are used for the body force and the moment tensor source
+is ignored.</dd>
+<dt><strong><code>stf_format</code></strong></dt>
+<dd>
+<p>Format of the source file. Select from <code>'xy'</code> or <code>'ll'</code>. Note that the source file format is different from that for the moment tensor. </p>
+<ul>
+<li>
+<p><code>'xy'</code>:    x,    y,     z,   <span class="arithmatex"><script type="math/tex">T_0</script></span> ,  <span class="arithmatex"><script type="math/tex">T_R</script></span> ,  <span class="arithmatex"><script type="math/tex">f_x</script></span>,   <span class="arithmatex"><script type="math/tex">f_y</script></span>,   <span class="arithmatex"><script type="math/tex">f_z</script></span></p>
+</li>
+<li>
+<p><code>'ll'</code>:   lon,    lat ,  z,   <span class="arithmatex"><script type="math/tex">T_0</script></span>,   <span class="arithmatex"><script type="math/tex">T_R</script></span> ,  <span class="arithmatex"><script type="math/tex">f_x</script></span>,   <span class="arithmatex"><script type="math/tex">f_y</script></span> ,  <span class="arithmatex"><script type="math/tex">f_z</script></span></p>
+</li>
+</ul>
+</dd>
+<dt><strong><code>stftype</code></strong></dt>
+<dd>Choice of the source time function. Same as the case with a moment
+tensor source.</dd>
+<dt><strong><code>fn_stf</code></strong></dt>
+<dd>Filename of the source list file.</dd>
+<dt><strong><code>sdep_fit</code></strong></dt>
+<dd>Flag to fit the source depth to a specified velocity discontinuity.
+Same as the case with a moment tensor source.</dd>
+</dl>
+</div>
+<h2 id="plane-wave-mode">Plane Wave Mode<a class="headerlink" href="#plane-wave-mode" title="Permanent link">&para;</a></h2>
+<p>A plane wave incident from the bottom can be used as an input source
+instead of the moment tensor or body force sources. In <code>OpenSWPC</code>, plane
+wave incidence is achieved by setting the velocity vector and stress
+tensor components based on the analytic solution of a plane wave
+propagating upward as the initial condition.</p>
+<p>The specification of the initial conditions includes the depth of the
+initial plane wave (<code>pw_ztop</code>) and its characteristic length (<code>pw_zlen</code>;
+corresponding to the wavelength), the strike and dip angle of the plane
+wave (<code>pw_strike</code>, <code>pw_dip</code>), and the polarization direction (rake
+angle) in the case of an S-wave (<code>pw_rake</code>). See the next figure for the geometry. </p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../fig/pw_mode_coord.png" />
+Geometry of the plane wave specification. (Left) The specification of the uppermost plane and the polarization direction. (Right) The depth cross section of the initial plane wave.</p>
+</div>
+<p>The definitions of the
+strike, dip, and rake parameters follow those of the earthquake source
+fault geometry of Aki and Richards (2002[^Aki2002]). For three-dimensional space,
+<code>pw_strike=0</code> results in the plane dip toward the <span class="arithmatex"><script type="math/tex">y</script></span>-direction (east
+for <code>phi=0</code>). A rake angle of <code>pw_rake=0</code><span class="arithmatex"><script type="math/tex">{}^\circ</script></span> or
+<code>pw_rake=180</code><span class="arithmatex"><script type="math/tex">{}^\circ</script></span> will result in pure SH waves whose polarization
+is parallel to the free surface.</p>
+<p>The initial plane wave occupies a depth range of <code>pw_zlen</code> (km) starting
+at depths of <span class="arithmatex"><script type="math/tex">z=</script></span><code>pw_ztop</code> at the center of the horizontal coordinate.
+The depth dependence of the wave amplitude is determined by the source
+time functions used in the moment rate function as a function of space. 
+Via the definition of the source time
+function, the integration of the initial plane wave along the
+propagation direction will be normalized to 1.</p>
+<div class="admonition info">
+<p class="admonition-title">Parameters</p>
+<dl>
+<dt><strong><code>pw_mode</code></strong></dt>
+<dd>Flag to use the plane-wave mode. If it is <code>.true.</code>, all point-source
+locations (body force or moment tensor source) will be ignored.</dd>
+<dt><strong><code>pw_ztop</code></strong></dt>
+<dd><span class="arithmatex"><script type="math/tex">z</script></span>-value of the top of the initial plane wave at <span class="arithmatex"><script type="math/tex">x=y=0</script></span>.</dd>
+<dt><strong><code>pw_zlen</code></strong></dt>
+<dd>Characteristic spatial scale of the initial plane wave.</dd>
+<dt><strong><code>pw_ps</code></strong></dt>
+<dd>Plane wave type. Choose from <code>'p'</code> or <code>'s'</code></dd>
+<dt><strong><code>pw_strike</code></strong></dt>
+<dd>Strike direction of initial plane wave in degrees measured from the <span class="arithmatex"><script type="math/tex">x</script></span>-axis.</dd>
+<dt><strong><code>pw_dip</code></strong></dt>
+<dd>Dip angle of the initial plane wave in degrees. The initial plane wave propagates vertically if this angle is zero.</dd>
+<dt><strong><code>pw_rake</code></strong></dt>
+<dd>Polarization direction of initial plane S-wave in degrees measured from the horizontal plane.</dd>
+<dt><strong><code>stftype</code></strong></dt>
+<dd>Source time function type. Same as the cases with the moment tensor
+or body force sources.</dd>
+</dl>
+</div>
+<p>The use of the PML absorbing boundary condition (<code>abc_type='pml'</code>; see <a href="../0208_abc/">this section</a> for details) is
+strongly recommended for the case of plane wave incidence. The simple
+Cerjan's (<code>abc_type='cerjan'</code>) condition always causes significant
+contamination by artificial reflections.</p>
+<div class="admonition quote">
+<p class="admonition-title">Figure</p>
+<p><img alt="" src="../../fig/planewave.png" />
+Snapshots of the absolute values of divergence (red) and rotation
+(green) for the case of vertical plane S-wave incidence with (a)
+Cerjan's condition and (b) PML boundary
+conditions.</p>
+</div>
+<p>Even when using the PML boundary, the tilted plane wave incidence (with
+nonzero <code>pw_dip</code> angle) causes some amount of artificial reflections. It
+is highly recommended that the boundary effect be confirmed with
+snapshot visualization when using this plane wave mode.</p>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../0206_vmodel/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Velocity Model" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Velocity Model
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../0208_abc/" class="md-footer__link md-footer__link--next" aria-label="Next: Absorbing Boundary Conditions" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Absorbing Boundary Conditions
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy Takuto Maeda. All Rights Reserved
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/tktmyd" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.top", "toc.integrate", "navigation.sections"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a877e258.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>
