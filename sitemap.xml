@@ -1,40 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-         <loc>https://tktmyd.github.io/OpenSWPC/License/</loc>
-         <lastmod>2023-02-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/License/"/>
-         <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/License/"/>
-         
-    </url>
-    <url>
-         <loc>https://tktmyd.github.io/OpenSWPC/New_Feature/</loc>
-         <lastmod>2023-02-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/New_Feature/"/>
-         <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/New_Feature/"/>
-         
-    </url>
-    <url>
          <loc>https://tktmyd.github.io/OpenSWPC/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/"/>
          
     </url>
     <url>
-         <loc>https://tktmyd.github.io/OpenSWPC/1._SetUp/0100_trial/</loc>
-         <lastmod>2023-02-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/1._SetUp/0100_trial/"/>
-         <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/1._SetUp/0100_trial/"/>
-         
-    </url>
-    <url>
          <loc>https://tktmyd.github.io/OpenSWPC/1._SetUp/0101_env/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/1._SetUp/0101_env/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/1._SetUp/0101_env/"/>
@@ -42,7 +18,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/1._SetUp/0102_tree/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/1._SetUp/0102_tree/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/1._SetUp/0102_tree/"/>
@@ -50,7 +26,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/1._SetUp/0103_compile/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/1._SetUp/0103_compile/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/1._SetUp/0103_compile/"/>
@@ -58,7 +34,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/1._SetUp/0104_dataset/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/1._SetUp/0104_dataset/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/1._SetUp/0104_dataset/"/>
@@ -66,7 +42,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/1._SetUp/0105_parallel/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/1._SetUp/0105_parallel/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/1._SetUp/0105_parallel/"/>
@@ -74,7 +50,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0201_description/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0201_description/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0201_description/"/>
@@ -82,7 +58,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0202_env/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0202_env/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0202_env/"/>
@@ -90,7 +66,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0203_coord/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0203_coord/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0203_coord/"/>
@@ -98,7 +74,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0204_visco/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0204_visco/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0204_visco/"/>
@@ -106,7 +82,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0205_output/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0205_output/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0205_output/"/>
@@ -114,7 +90,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0206_vmodel/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0206_vmodel/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0206_vmodel/"/>
@@ -122,7 +98,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0207_source/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0207_source/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0207_source/"/>
@@ -130,7 +106,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0208_abc/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0208_abc/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0208_abc/"/>
@@ -138,7 +114,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0209_checkpoint/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0209_checkpoint/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0209_checkpoint/"/>
@@ -146,7 +122,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0210_reciprocity/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0210_reciprocity/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0210_reciprocity/"/>
@@ -154,7 +130,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/2._Parameters/0211_2dcode/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/2._Parameters/0211_2dcode/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/2._Parameters/0211_2dcode/"/>
@@ -162,7 +138,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/3._Tools/0301_snapshot/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/3._Tools/0301_snapshot/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/3._Tools/0301_snapshot/"/>
@@ -170,7 +146,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/3._Tools/0302_vmodel/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/3._Tools/0302_vmodel/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/3._Tools/0302_vmodel/"/>
@@ -178,7 +154,7 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/3._Tools/0303_parameter/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/3._Tools/0303_parameter/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/3._Tools/0303_parameter/"/>
@@ -186,31 +162,23 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/3._Tools/0304_rmedia/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/3._Tools/0304_rmedia/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/3._Tools/0304_rmedia/"/>
          
     </url>
     <url>
-         <loc>https://tktmyd.github.io/OpenSWPC/3._Tools/0305_python/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <loc>https://tktmyd.github.io/OpenSWPC/3._Tools/0305_misc/</loc>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/3._Tools/0305_python/"/>
-         <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/3._Tools/0305_python/"/>
-         
-    </url>
-    <url>
-         <loc>https://tktmyd.github.io/OpenSWPC/3._Tools/0306_misc/</loc>
-         <lastmod>2023-02-02</lastmod>
-         <changefreq>daily</changefreq>
-         <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/3._Tools/0306_misc/"/>
-         <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/3._Tools/0306_misc/"/>
+         <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/3._Tools/0305_misc/"/>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/3._Tools/0305_misc/"/>
          
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/4._Hints/0401_modelset/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/4._Hints/0401_modelset/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/4._Hints/0401_modelset/"/>
@@ -218,10 +186,34 @@
     </url>
     <url>
          <loc>https://tktmyd.github.io/OpenSWPC/4._Hints/0402_modification/</loc>
-         <lastmod>2023-02-02</lastmod>
+         <lastmod>2023-08-06</lastmod>
          <changefreq>daily</changefreq>
          <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/4._Hints/0402_modification/"/>
          <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/4._Hints/0402_modification/"/>
+         
+    </url>
+    <url>
+         <loc>https://tktmyd.github.io/OpenSWPC/Misc/License/</loc>
+         <lastmod>2023-08-06</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/Misc/License/"/>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/Misc/License/"/>
+         
+    </url>
+    <url>
+         <loc>https://tktmyd.github.io/OpenSWPC/Misc/New_Feature/</loc>
+         <lastmod>2023-08-06</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/Misc/New_Feature/"/>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/Misc/New_Feature/"/>
+         
+    </url>
+    <url>
+         <loc>https://tktmyd.github.io/OpenSWPC/Misc/Revision_History/</loc>
+         <lastmod>2023-08-06</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="https://tktmyd.github.io/OpenSWPC/en/Misc/Revision_History/"/>
+         <xhtml:link rel="alternate" hreflang="ja" href="https://tktmyd.github.io/OpenSWPC/ja/Misc/Revision_History/"/>
          
     </url>
 </urlset>
